@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Root from './routes/root';
-import ErrorPage from './ErrorPage';
+import ErrorPage from './error/ErrorPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
