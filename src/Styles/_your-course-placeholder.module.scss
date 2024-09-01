@@ -1,0 +1,10 @@
+@import '../app/_theme.scss';
+
+.main_tittle_color {
+    background: $secondary-color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: $fs-xl !important;
+    font-family: $ff-title;
+}
