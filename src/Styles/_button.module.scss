@@ -1,0 +1,15 @@
+@import '../app/_theme.scss';
+
+.btn_color {
+    color: #fff !important;
+    border: none !important;
+    background: $primary-color;
+}
+
+.btn_fs {
+    font-size: $fs-sm !important;
+}
+
+.btn_color:hover {
+    background: $primary-color-hover;
+}
