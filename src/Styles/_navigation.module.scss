@@ -1,0 +1,18 @@
+@import '../app/_theme.scss';
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    li {
+        list-style: none !important;
+        font-size: $fs-sm;
+    }
+}
+
+.nav_bar {
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    padding: .8rem 1.5rem !important;
+}

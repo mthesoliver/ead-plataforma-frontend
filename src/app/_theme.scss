@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+// _theme.scss
+$max-width: 1100px;
+$border-radius: 12px;
+$font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+        "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+        "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+$primary-color: linear-gradient(to bottom right,
+                rgba(254, 0, 254, 1),
+                rgba(124, 3, 142, 1));
+
+$primary-color-hover: radial-gradient(circle,
+                rgba(124, 3, 142, 1) 30%,
+                rgba(254, 0, 254, 1) 100%);
+
+// Font styles
+$ff-menu: "Rajdhani";
+$fs-sm: clamp(0.75rem, 0.6071rem + 0.2976vw, 0.875rem);
+
+
+// Variáveis para light-theme
+$foreground-rgb-light: 0 0 0;
+$background-start-rgb-light: 214 219 220;
+$background-end-rgb-light: 255 255 255;
+$primary-glow-light: conic-gradient(from 180deg at 50% 50%,
+                #16abff33 0deg,
+                #0885ff33 55deg,
+                #54d6ff33 120deg,
+                #0071ff33 160deg,
+                transparent 360deg);
+$secondary-glow-light: radial-gradient(rgba(255, 255, 255, 1),
+                rgba(255, 255, 255, 0));
+$tile-start-rgb-light: 239 24 249;
+$tile-end-rgb-light: 228 232 233;
+$tile-border-light: conic-gradient(#00000080,
+                #00000040,
+                #00000030,
+                #00000020,
+                #00000010,
+                #00000010,
+                #00000080);
+$callout-rgb-light: 238 240 241;
+$callout-border-rgb-light: 172 175 176;
+$card-rgb-light: 180 185 188;
+$card-border-rgb-light: 131 134 135;
+
+// Variáveis para dark-theme
+$foreground-rgb-dark: 255 255 255;
+$background-start-rgb-dark: 28 2 55;
+$background-end-rgb-dark: 32 2 56;
+$primary-glow-dark: radial-gradient(rgba(124, 3, 142, 1), rgba(20, 20, 20, 1));
+$secondary-glow-dark: linear-gradient(to bottom right,
+                rgba(128, 11, 146, 1),
+                rgba(36, 3, 66, 1));
+$tile-start-rgb-dark: 2 13 46;
+$tile-end-rgb-dark: 2 5 19;
+$tile-border-dark: conic-gradient(#ffffff80,
+                #ffffff40,
+                #ffffff30,
+                #ffffff20,
+                #ffffff10,
+                #ffffff10,
+                #ffffff80);
+$callout-rgb-dark: 20 20 20;
+$callout-border-rgb-dark: 108 108 108;
+$card-rgb-dark: 100 100 100;
+$card-border-rgb-dark: 200 200 200;
+
+// Mixins para aplicar temas
+@mixin light-theme {
+        $foreground-rgb: $foreground-rgb-light !global;
+        $background-start-rgb: $background-start-rgb-light !global;
+        $background-end-rgb: $background-end-rgb-light !global;
+        $primary-glow: $primary-glow-light !global;
+        $secondary-glow: $secondary-glow-light !global;
+        $tile-start-rgb: $tile-start-rgb-light !global;
+        $tile-end-rgb: $tile-end-rgb-light !global;
+        $tile-border: $tile-border-light !global;
+        $callout-rgb: $callout-rgb-light !global;
+        $callout-border-rgb: $callout-border-rgb-light !global;
+        $card-rgb: $card-rgb-light !global;
+        $card-border-rgb: $card-border-rgb-light !global;
+}
+
+@mixin dark-theme {
+        $foreground-rgb: $foreground-rgb-dark !global;
+        $background-start-rgb: $background-start-rgb-dark !global;
+        $background-end-rgb: $background-end-rgb-dark !global;
+        $primary-glow: $primary-glow-dark !global;
+        $secondary-glow: $secondary-glow-dark !global;
+        $tile-start-rgb: $tile-start-rgb-dark !global;
+        $tile-end-rgb: $tile-end-rgb-dark !global;
+        $tile-border: $tile-border-dark !global;
+        $callout-rgb: $callout-rgb-dark !global;
+        $callout-border-rgb: $callout-border-rgb-dark !global;
+        $card-rgb: $card-rgb-dark !global;
+        $card-border-rgb: $card-border-rgb-dark !global;
+}
