@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 // _theme.scss
 $max-width: 1100px;
 $border-radius: 12px;
 $font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
         "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+$primary-color: linear-gradient(to bottom right,
+                rgba(254, 0, 254, 1),
+                rgba(124, 3, 142, 1));
+
+$primary-color-hover: radial-gradient(circle,
+                rgba(124, 3, 142, 1) 30%,
+                rgba(254, 0, 254, 1) 100%);
+
+// Font styles
+$ff-menu: "Rajdhani";
+$fs-sm: clamp(0.75rem, 0.6071rem + 0.2976vw, 0.875rem);
+
 
 // Variáveis para light-theme
 $foreground-rgb-light: 0 0 0;
