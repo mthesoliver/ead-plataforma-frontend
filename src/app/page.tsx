@@ -1,19 +1,23 @@
 import styles from "./page.module.scss";
+import Header from "Ead/Components/Header";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <div className={styles.description}>
 
-      </div>
+        </div>
 
-      <div className={styles.center}>
+        <div className={styles.center}>
 
-      </div>
+        </div>
 
-      <div className={styles.grid}>
+        <div className={styles.grid}>
 
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
