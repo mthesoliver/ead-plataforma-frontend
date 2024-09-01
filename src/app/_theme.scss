@@ -33,13 +33,12 @@ $card-border-rgb-light: 131 134 135;
 
 // Variáveis para dark-theme
 $foreground-rgb-dark: 255 255 255;
-$background-start-rgb-dark: 0 0 0;
-$background-end-rgb-dark: 0 0 0;
-$primary-glow-dark: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+$background-start-rgb-dark: 28 2 55;
+$background-end-rgb-dark: 32 2 56;
+$primary-glow-dark: radial-gradient(rgba(124, 3, 142, 1), rgba(20, 20, 20, 1));
 $secondary-glow-dark: linear-gradient(to bottom right,
-                rgba(1, 65, 255, 0),
-                rgba(1, 65, 255, 0),
-                rgba(1, 65, 255, 0.3));
+                rgba(128, 11, 146, 1),
+                rgba(36, 3, 66, 1));
 $tile-start-rgb-dark: 2 13 46;
 $tile-end-rgb-dark: 2 5 19;
 $tile-border-dark: conic-gradient(#ffffff80,
