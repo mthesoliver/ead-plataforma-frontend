@@ -2,7 +2,7 @@
 
 import { useState, useLayoutEffect } from 'react';
 import styles from 'Ead/Styles/_button.module.scss';
-import { SvgIconTypeMap } from '@mui/material';
+import { ButtonBase, SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 function Button(props: Readonly<{ children: any, icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>, givenClass: string }>) {
@@ -19,12 +19,12 @@ function Button(props: Readonly<{ children: any, icon: OverridableComponent<SvgI
     }, []);
 
     return (
-        <button type='button' className={'btn p-2 px-4 ' + stylesClass + ' ' + props.givenClass}>
+        <ButtonBase type='button' className={'btn p-2 px-4 ' + stylesClass + ' ' + props.givenClass}>
             <span className='me-2'>
                 <props.icon />
             </span>
             {props.children}
-        </button >
+        </ButtonBase >
     )
 }
 
