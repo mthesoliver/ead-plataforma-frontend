@@ -1,53 +1,44 @@
 'use client'
 
-import styles from 'Ead/Styles/_card-custom-border.module.scss';
 import { useLayoutEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { SvgIconTypeMap } from '@mui/material';
+import { Box, SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
+import styles from "Ead/Styles/_card-custom-border.module.scss";
 
-function CardCustomBorder(props: Readonly<{ icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>, title: string, content: string }>) {
-    const [icon, setIcon] = useState<OverridableComponent<SvgIconTypeMap<{}, "svg">> | null>();
+function CardCustomBorder(props: Readonly<{ icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>, title?: string, content?: string }>) {
+    const [givenIcon, setIcon] = useState<OverridableComponent<SvgIconTypeMap<{}, "svg">> | null>();
 
     useLayoutEffect(() => {
-        if (icon !== null || icon !== undefined) {
-            const givenIcon = props.icon;
-            setIcon(givenIcon);
+        if (props.icon !== null || props.icon !== undefined) {
+            setIcon(props.icon);
         } else {
             setIcon(null);
         }
     }, []);
 
-    const cardBody = (
-        <React.Fragment>
+    const iconPlaceholder = (
+        <Box className={'' + styles.icon_container}>
             <props.icon />
-            <CardContent>
-                <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 24, lineHeight: 1.2 }}>
-                    {props.title}
-                </Typography>
-                <Typography variant="body2">
-                    {props.content}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-                <props.icon />
-            </CardActions>
-        </React.Fragment >
+        </Box>
     );
 
     return (
-        <Box >
-            <Card variant="outlined">{cardBody}</Card>
-        </Box>
-
+        <Card className={"p-4 " + styles.card_custom} variant="outlined" >
+            {iconPlaceholder}
+            <CardContent className={"p-1"} >
+                <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: 24, lineHeight: 1.4 }} >
+                    {props.title}
+                </Typography>
+                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 16, lineHeight: 1.4 }}>
+                    {props.content}
+                </Typography>
+            </CardContent>
+        </Card >
     )
 }
 
