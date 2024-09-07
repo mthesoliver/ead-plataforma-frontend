@@ -1,0 +1,39 @@
+@import '../app/_theme.scss';
+
+.video_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+    height: auto;
+}
+
+#video_content {
+    margin-inline: auto !important;
+    width: 1080px !important;
+    height: 760px !important;
+    -webkit-box-shadow: 13px 10px 36px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 10px 36px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 10px 36px -4px rgba(0, 0, 0, 0.75);
+    background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 20px, transparent 20px) 0% 0%/36px 36px no-repeat,
+        radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 20px, transparent 20px) 100% 0%/36px 36px no-repeat,
+        radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 20px, transparent 20px) 0% 100%/36px 36px no-repeat,
+        radial-gradient(circle at 0 0, #ffffff 0, #ffffff 20px, transparent 20px) 100% 100%/36px 36px no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 32px) calc(100% - 72px) no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 72px) calc(100% - 32px) no-repeat,
+        linear-gradient(145deg, #727272 0%, rgba(208, 208, 208, 1) 49%, #4d4d4d 100%) !important;
+    border-radius: 36px;
+    padding: 16px !important;
+    box-sizing: border-box;
+}
+
+.video_overlay:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100dvw;
+    height: 105%;
+    background: $overlay-color;
+}

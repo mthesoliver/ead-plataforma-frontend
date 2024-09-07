@@ -5,12 +5,12 @@ import InputPlaceholder from './InputPlaceholder';
 
 function YourCoursePlaceholder() {
     return (
-        <section className="text-center">
+        <section className="text-center m-5">
             <div>
                 <h1 className={'fw-bolder ' + styles.main_tittle_color}>Crie seu curso online agora</h1>
                 <p>Experimente os melhores recursos, comece agora.</p>
             </div>
-            <div>
+            <div className="text-center m-5">
                 <InputPlaceholder />
             </div>
         </section>

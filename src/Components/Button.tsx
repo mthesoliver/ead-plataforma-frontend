@@ -2,26 +2,29 @@
 
 import { useState, useLayoutEffect } from 'react';
 import styles from 'Ead/Styles/_button.module.scss';
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
-function Button({ children, givenIcon }: any) {
-    const [icon, setIcon] = useState('');
+function Button(props: Readonly<{ children: any, icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>, givenClass: string }>) {
+    const [icon, setIcon] = useState<OverridableComponent<SvgIconTypeMap<{}, "svg">> | null>();
     const stylesClass: string = styles.btn_color + ' ' + styles.btn_fs;
 
     useLayoutEffect(() => {
         if (icon !== null || icon !== undefined) {
+            const givenIcon = props.icon;
             setIcon(givenIcon);
         } else {
-            setIcon('');
+            setIcon(null);
         }
     }, []);
 
     return (
-        <button type='button' className={'btn p-2 px-4 rounded-pill fw-light ' + stylesClass}>
+        <button type='button' className={'btn p-2 px-4 ' + stylesClass + ' ' + props.givenClass}>
             <span className='me-2'>
-                {icon}
+                <props.icon />
             </span>
-            {children}
-        </button>
+            {props.children}
+        </button >
     )
 }
 

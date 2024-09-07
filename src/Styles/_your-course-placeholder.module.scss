@@ -8,3 +8,22 @@
     font-size: $fs-xl !important;
     font-family: $ff-title;
 }
+
+.placeholder_wrapper {
+    background: #fff;
+    color: #000;
+    display: flex !important;
+    font-size: $fs-md;
+    justify-content: center;
+    align-items: center !important;
+    border-radius: 120px 120px 120px 120px;
+
+    input {
+        background: none !important;
+        color: $grey-color;
+    }
+
+    input:focus {
+        outline: none;
+    }
+}
