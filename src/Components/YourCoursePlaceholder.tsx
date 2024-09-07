@@ -2,18 +2,21 @@
 
 import styles from 'Ead/Styles/_your-course-placeholder.module.scss';
 import InputPlaceholder from './InputPlaceholder';
+import { Box, Typography } from '@mui/material';
 
 function YourCoursePlaceholder() {
     return (
-        <section className="text-center m-5">
-            <div>
-                <h1 className={'fw-bolder ' + styles.main_tittle_color}>Crie seu curso online agora</h1>
-                <p>Experimente os melhores recursos, comece agora.</p>
-            </div>
-            <div className="text-center m-5">
+        <Box className="text-center m-5">
+            <Typography gutterBottom className={'fw-bolder ' + styles.main_tittle_color}>
+                Crie seu curso online agora
+            </Typography>
+            <Typography gutterBottom className={'fw-light '} sx={{ fontSize: 22, lineHeight: 1.4 }}>
+                Experimente os melhores recursos, comece agora.
+            </Typography>
+            <Box className="text-center m-5">
                 <InputPlaceholder />
-            </div>
-        </section>
+            </Box>
+        </Box>
     )
 }
 
