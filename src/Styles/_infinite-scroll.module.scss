@@ -1,0 +1,34 @@
+@import '../app/_theme.scss';
+
+.infinite_scroll_container {
+    position: absolute;
+    top: -150px;
+    z-index: 1;
+}
+
+.overlay_images {
+    position: absolute;
+    max-width: 100vw !important;
+    height: 120px;
+    z-index: 10;
+    top: -20px;
+    background: $overlay-color-2;
+}
+
+.infinite_scroll_animation {
+    animation-name: infiniteScroll;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-direction: initial;
+    animation-timing-function: linear;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(-600px);
+    }
+
+    100% {
+        transform: translateX(800px);
+    }
+}

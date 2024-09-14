@@ -1,3 +1,5 @@
+'use client'
+
 import styles from 'Ead/Styles/_navigation.module.scss';
 
 function Navigation() {

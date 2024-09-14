@@ -7,6 +7,7 @@ $font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
         "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+// Colors
 $primary-color: linear-gradient(to bottom right,
                 rgba(254, 0, 254, 1),
                 rgba(124, 3, 142, 1));
@@ -15,9 +16,30 @@ $primary-color-hover: radial-gradient(circle,
                 rgba(124, 3, 142, 1) 30%,
                 rgba(254, 0, 254, 1) 100%);
 
+$secondary-color: linear-gradient(to bottom right,
+                #FE00FE,
+                #7C038E);
+
+$overlay-color: linear-gradient(180deg,
+                rgba(28, 2, 55, 0) 10%,
+                rgba(28, 2, 55, 100) 70%);
+
+$grey-color: #858585;
+
+$overlay-color-2: linear-gradient(90deg,
+                #1C0237 5%,
+                transparent 50%,
+                #1C0237 95%);
+
+$box_shadow-1: 12px 12px 24px -6px rgba(0, 0, 0, 0.55);
+
 // Font styles
-$ff-menu: "Rajdhani";
+$ff-title: "Rajdhani";
+$fs-xs: clamp(0.5rem, 0.3571rem + 0.2976vw, 0.625rem);
 $fs-sm: clamp(0.75rem, 0.6071rem + 0.2976vw, 0.875rem);
+$fs-md: clamp(1.5rem, 1.2143rem + 0.5952vw, 1.75rem);
+$fs-lg: clamp(2rem, 1.7143rem + 0.5952vw, 2.25rem);
+$fs-xl: clamp(3.25rem, 2.5357rem + 1.4881vw, 3.875rem);
 
 
 // Variáveis para light-theme
@@ -97,4 +119,20 @@ $card-border-rgb-dark: 200 200 200;
         $callout-border-rgb: $callout-border-rgb-dark !global;
         $card-rgb: $card-rgb-dark !global;
         $card-border-rgb: $card-border-rgb-dark !global;
+}
+
+.main_tittle_color {
+        background: $secondary-color;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $ff-title;
+}
+
+.main_tittle_color_light {
+        background: #1C0237;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $ff-title;
 }

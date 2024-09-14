@@ -1,0 +1,42 @@
+@import '../app/_theme.scss';
+
+.card_custom {
+    position: relative;
+    background: linear-gradient(130deg,
+            rgba(14, 12, 21, 100) 0%,
+            rgba(14, 12, 21, 0) 100%);
+    color: #CAC6DD;
+    border-radius: 24px 56px 24px 24px;
+    border: 4px solid #7C038E;
+    -webkit-box-shadow: $box_shadow-1;
+    -moz-box-shadow: $box_shadow-1;
+    box-shadow: $box_shadow-1;
+}
+
+.card_custom:after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(#FE00FE 40%, #7C038E 30%);
+    mix-blend-mode: color-dodge;
+    filter: blur(50px);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    top: 60px;
+    right: 0;
+}
+
+.icon_container {
+    background: linear-gradient(135deg,
+            #160528 0%,
+            #290D47 30%,
+            #381460 70%,
+            #160528 100%);
+    width: fit-content;
+    padding: 1rem !important;
+    border-radius: 12px;
+}
+
+.icon_self {
+    color: #67418D;
+}
