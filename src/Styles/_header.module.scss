@@ -1,0 +1,10 @@
+@import '../app/_theme.scss';
+
+.header_width {
+    display: flex;
+    flex-direction: row;
+    margin: auto !important;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max-width;
+}

@@ -7,7 +7,7 @@ import Image from 'next/image';
 function StampCircle({ children }: any) {
 
     return (
-        <Box className={"m-2 d-flex flex-row align-itens-center justify-content-center position-relative p-2 " + styles.back_circle}>
+        <Box className={"m-2 d-flex flex-row align-itens-center justify-content-center position-relative p-2 z-3 " + styles.back_circle}>
             <Box className={styles.main_circle}>
                 <Typography sx={{ maxWidth: 120, textAlign: 'center', fontWeight: 800, fontSize: 14, lineHeight: 1.2 }}
                     className="position-relative top-50 start-50 translate-middle">

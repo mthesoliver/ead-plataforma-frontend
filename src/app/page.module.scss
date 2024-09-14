@@ -13,7 +13,26 @@
   margin: auto !important;
 }
 
+.inner_contents {
+  margin: auto !important;
+  max-width: calc($max-width + 200px) !important;
+}
+
+
+.full_width {
+  max-width: 100vw !important;
+  width: 100vw !important;
+}
+
+.align_to_top_el {
+  margin-top: -10rem !important;
+}
+
 .code {
   font-weight: 700;
   font-family: $font-mono;
+}
+
+.round_border_video iframe {
+  border-radius: 20px !important;
 }

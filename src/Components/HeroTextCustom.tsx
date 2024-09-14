@@ -2,34 +2,33 @@
 
 import { Box, Typography } from "@mui/material";
 import styles from "Ead/Styles/_hero-text.module.scss";
-import { useEffect, useState } from "react";
+import { ColorMode, HeroTextType } from "Ead/Types/HeroTextType";
+import { useLayoutEffect, useState } from "react";
 
-interface ColorMode {
-    lightColor?: boolean;
-}
 
-function HeroTextCustom(props: Readonly<{ title: string, sub: string, titleSize?: number | null, colorMode?: ColorMode }>) {
-    const [colorMode, setColorMode] = useState<string[]>([styles.main_tittle_color, styles.sub_title]);
 
-    useEffect(() => {
-        handleColorMode(props.colorMode);
-    });
+function HeroTextCustom({ title, sub, titleSize, colorMode, align }: Readonly<HeroTextType>) {
+    const [mode, setColorMode] = useState<string[]>([styles.main_tittle_color, styles.sub_title]);
+
+    useLayoutEffect(() => {
+        handleColorMode(colorMode as ColorMode);
+    }, [colorMode]);
 
     const handleColorMode = (colorMode: ColorMode | undefined) => {
-        if (colorMode?.lightColor) {
+        if (colorMode === ColorMode.lightColor) {
             setColorMode([styles.main_tittle_color_light, styles.sub_title_light_mode]);
         } else {
-            setColorMode([styles.main_tittle_color, styles.sub_title_dark_mode]);
+            return;
         }
     }
 
     return (
-        <Box className="my-4 container-fluid d-flex justify-content-evenly align-items-center flex-column">
-            <Typography gutterBottom className={'fw-semibold ' + colorMode[1]}>
-                {props.title}
+        <Box className="my-4 container-fluid d-flex justify-content-evenly flex-column">
+            <Typography gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: 36, lineHeight: 1, textAlign: align ?? "center" }}>
+                {title}
             </Typography>
-            <Typography gutterBottom className={'fw-bolder ' + colorMode[0]} sx={{ fontSize: props.titleSize ? props.titleSize : 56 }}>
-                {props.sub}
+            <Typography gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ?? 56, textAlign: align ?? "center" }}>
+                {sub}
             </Typography>
         </Box>
     )
