@@ -1,0 +1,37 @@
+// _stamp.module.scss
+.back_circle {
+    background-color: #7C038E;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: auto !important;
+}
+
+.main_circle {
+    background-color: #1C0237;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: auto !important;
+}
+
+.animation_rotate {
+    animation-name: animateRotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    position: absolute;
+    top: -6px;
+    left: -7px;
+    /* Adicionei uma duração para a animação */
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

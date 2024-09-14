@@ -21,8 +21,8 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     }
 
     return (
-        <Box className={"text-center video_wrapper " + stylesClass}>
-            <YouTube videoId={props.videoId} options={opts} id={styles.video_content} className={styles.video_content} onReady={handleOnReady} />
+        <Box className={"text-center " + stylesClass}>
+            <YouTube videoId={props.videoId} options={opts} id={styles.video_content} onReady={handleOnReady} />
         </Box>
     )
 }

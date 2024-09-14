@@ -18,7 +18,7 @@ function InputPlaceholder() {
             <input onInput={handleInput} type="text" className="text-end border-0 p-2 pe-0" placeholder="seu site" aria-label="Recipient's username" aria-describedby="basic-addon2" value={input} />
             <span className=" text-start border-0 p-2 ps-0 fw-bolder">.eadplataforma.app</span>
             <span className=" text-end border-0 p-2">
-                <Button icon={PlayArrowIcon} givenClass="rounded-pill"><span className="fw-bolder">Criar EAD</span></Button>
+                <Button givenIcon={PlayArrowIcon} givenClass="rounded-pill"><span className="fw-bolder">Criar EAD</span></Button>
             </span>
         </Box >
     )

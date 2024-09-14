@@ -26,7 +26,7 @@ $overlay-color: linear-gradient(180deg,
 
 $grey-color: #858585;
 
-$box_shadow-1: 13px 10px 36px -4px rgba(0, 0, 0, 0.75);
+$box_shadow-1: 12px 12px 24px -6px rgba(0, 0, 0, 0.55);
 
 // Font styles
 $ff-title: "Rajdhani";
@@ -114,4 +114,20 @@ $card-border-rgb-dark: 200 200 200;
         $callout-border-rgb: $callout-border-rgb-dark !global;
         $card-rgb: $card-rgb-dark !global;
         $card-border-rgb: $card-border-rgb-dark !global;
+}
+
+.main_tittle_color {
+        background: $secondary-color;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $ff-title;
+}
+
+.main_tittle_color_light {
+        background: #1C0237;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $ff-title;
 }

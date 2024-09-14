@@ -5,15 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    width: fit-content;
     height: auto;
 }
 
 #video_content {
     margin-inline: auto !important;
     width: 1080px !important;
-    height: 760px !important;
+    height: 740px !important;
     -webkit-box-shadow: $box_shadow-1;
     -moz-box-shadow: $box_shadow-1;
     box-shadow: $box_shadow-1;
@@ -26,7 +24,6 @@
         linear-gradient(145deg, #727272 0%, rgba(208, 208, 208, 1) 49%, #4d4d4d 100%) !important;
     border-radius: 36px;
     padding: 16px !important;
-    box-sizing: border-box;
 }
 
 .video_overlay:before {

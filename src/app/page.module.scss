@@ -9,19 +9,11 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  max-width: $max-width;
+  margin: auto !important;
 }
 
 .code {
   font-weight: 700;
   font-family: $font-mono;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(25%, auto));
-  place-content: center;
-  justify-content: center;
-  gap: 20px;
-  max-width: 100%;
-  width: $max-width;
 }

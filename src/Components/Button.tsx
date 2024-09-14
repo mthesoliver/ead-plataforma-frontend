@@ -1,29 +1,21 @@
 'use client'
 
-import { useState, useLayoutEffect } from 'react';
 import styles from 'Ead/Styles/_button.module.scss';
-import { ButtonBase, SvgIconTypeMap } from '@mui/material';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { ButtonBase } from '@mui/material';
+import { ButtonType } from 'Ead/Types/ButtonType';
 
-function Button(props: Readonly<{ children: any, icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>, givenClass: string }>) {
-    const [icon, setIcon] = useState<OverridableComponent<SvgIconTypeMap<{}, "svg">> | null>();
+function Button({ children, givenIcon: GivenIcon, givenClass }: Readonly<ButtonType>) {
     const stylesClass: string = styles.btn_color + ' ' + styles.btn_fs;
 
-    useLayoutEffect(() => {
-        if (icon !== null || icon !== undefined) {
-            const givenIcon = props.icon;
-            setIcon(givenIcon);
-        } else {
-            setIcon(null);
-        }
-    }, []);
 
     return (
-        <ButtonBase type='button' className={'btn p-2 px-4 ' + stylesClass + ' ' + props.givenClass}>
-            <span className='me-2'>
-                <props.icon />
-            </span>
-            {props.children}
+        <ButtonBase type='button' className={'btn p-2 px-4 ' + stylesClass + ' ' + givenClass}>
+            {GivenIcon && (
+                <span className="me-2">
+                    <GivenIcon />
+                </span>
+            )}
+            {children}
         </ButtonBase >
     )
 }
