@@ -34,7 +34,7 @@ function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimp
 
     return (
         <Card className={`d-flex flex-column col-${size} py-5 align-items-center justify-content-center text-center gap-1 ` + styles.background_card} variant="outlined" >
-            <Image src={imageBackground!} alt={imageBackground!} width={90} height={90} />
+            <Image src={imageBackground!} alt={imageBackground!} width={90} height={90} loading="lazy" />
             <CardContent className={"px-4 mb-2"} >
                 {cardContent}
             </CardContent>

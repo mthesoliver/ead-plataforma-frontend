@@ -5,11 +5,13 @@
 }
 
 .placeholder_wrapper {
+    max-width: fit-content;
     background: #fff;
     color: #000;
     display: flex !important;
+    flex-direction: row;
     font-size: $fs-md;
-    justify-content: center;
+    justify-content: end;
     align-items: center !important;
     border-radius: 120px 120px 120px 120px;
 

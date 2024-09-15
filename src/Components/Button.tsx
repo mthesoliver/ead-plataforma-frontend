@@ -4,8 +4,8 @@ import styles from 'Ead/Styles/_button.module.scss';
 import { ButtonBase } from '@mui/material';
 import { ButtonType } from 'Ead/Types/ButtonType';
 
-function Button({ children, givenIcon: GivenIcon, givenClass }: Readonly<ButtonType>) {
-    const stylesClass: string = styles.btn_color + ' ' + styles.btn_fs;
+function Button({ children, givenIcon: GivenIcon, givenClass, btnColor, rounded }: Readonly<ButtonType>) {
+    const stylesClass: string = (btnColor === 'light' ? styles.btn_color_light : styles.btn_color_primary) + ' ' + (rounded ? 'rounded-pill' : '') + ' ' + styles.btn_fs + ' ' + styles.btn_wrapper;
 
 
     return (

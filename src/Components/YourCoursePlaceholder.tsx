@@ -13,7 +13,7 @@ function YourCoursePlaceholder() {
             <Typography gutterBottom className={'fw-light '} sx={{ fontSize: 22, lineHeight: 1.4 }}>
                 Experimente os melhores recursos, comece agora.
             </Typography>
-            <Box className="text-center m-5">
+            <Box className="d-flex flex-row justify-content-center text-center m-5">
                 <InputPlaceholder />
             </Box>
         </Box >
