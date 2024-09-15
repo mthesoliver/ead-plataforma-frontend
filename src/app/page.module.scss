@@ -18,7 +18,6 @@
   max-width: calc($max-width + 200px) !important;
 }
 
-
 .full_width {
   max-width: 100vw !important;
   width: 100vw !important;
@@ -35,4 +34,10 @@
 
 .round_border_video iframe {
   border-radius: 20px !important;
+}
+
+.integrations_bg {
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }

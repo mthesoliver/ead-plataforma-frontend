@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 // _theme.scss
-$max-width: 1100px;
+$max-width: 1320px;
 $border-radius: 12px;
 $font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
@@ -26,10 +26,19 @@ $overlay-color: linear-gradient(180deg,
 
 $grey-color: #858585;
 
+$transparent-color: linear-gradient(180deg,
+                rgba(95, 95, 95, .11) 0%,
+                rgba(23, 23, 23, 0) 100%);
+
 $overlay-color-2: linear-gradient(90deg,
                 #1C0237 5%,
                 transparent 50%,
                 #1C0237 95%);
+
+$overlay-color-3: linear-gradient(180deg,
+                rgba(32, 2, 56, 1) 5%,
+                rgba(32, 2, 56, .5) 40%,
+                rgba(32, 2, 56, 1) 90%);
 
 $box_shadow-1: 12px 12px 24px -6px rgba(0, 0, 0, 0.55);
 

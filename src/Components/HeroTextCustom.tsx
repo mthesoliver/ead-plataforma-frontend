@@ -27,7 +27,7 @@ function HeroTextCustom({ title, sub, titleSize, colorMode, align }: Readonly<He
             <Typography gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: 36, lineHeight: 1, textAlign: align ?? "center" }}>
                 {title}
             </Typography>
-            <Typography gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ?? 56, textAlign: align ?? "center" }}>
+            <Typography gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ?? 56, textAlign: align ?? "center", lineHeight: 1 }}>
                 {sub}
             </Typography>
         </Box>

@@ -1,9 +1,19 @@
 @import '../app/_theme.scss';
 
-.btn_color {
+.btn_color_primary {
     color: #fff !important;
     border: none !important;
     background: $primary-color;
+}
+
+.btn_color_light {
+    color: #7C038E !important;
+    border: none !important;
+    background: #FFFFFF !important;
+}
+
+.btn_wrapper {
+    min-width: fit-content;
 }
 
 .btn_fs {
