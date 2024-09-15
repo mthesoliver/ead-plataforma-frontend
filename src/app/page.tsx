@@ -26,7 +26,9 @@ import IntegrationsImageCols from "Ead/Components/IntegrationsImageCols";
 export default function Home() {
   return (
     <>
-      <Header />
+      <header>
+        <Header />
+      </header>
 
       <main className={"container " + styles.main}>
 

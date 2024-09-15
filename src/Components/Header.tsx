@@ -10,11 +10,11 @@ function Header() {
     const phoneNumber: string = '(11) 3136-0017';
 
     return (
-        <header className={"my-4 container d-flex " + styles.header_width}>
+        <section className={"my-4 container d-flex " + styles.header_width}>
             <Image src={'/assets/ead_main_logo.png'} alt='Logotipo da empresa Ead Plataforma' width={160} height={90} loading="eager" placeholder="blur" blurDataURL="/assets/ead_main_logo.png"></Image>
             <Navigation />
             <Button givenIcon={LocalPhoneOutlinedIcon} givenClass={"fw-light"} rounded><span className="fw-light">{phoneNumber}</span></Button>
-        </header >
+        </section >
     )
 }
 
