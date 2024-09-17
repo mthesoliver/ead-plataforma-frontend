@@ -1,0 +1,38 @@
+@import '../app/_theme.scss';
+
+.footer_width {
+    position: relative;
+    max-height: 600px !important;
+    height: 320px !important;
+    display: flex;
+    flex-direction: row;
+    margin: auto !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_width::before {
+    content: '';
+    position: absolute;
+    background: $primary-glow-dark;
+    width: 600px;
+    height: 400px;
+    bottom: -60%;
+    left: -20%;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
+.footer_width::after {
+    content: '';
+    position: absolute;
+    background: $primary-glow-dark;
+    width: 600px;
+    height: 400px;
+    bottom: -60%;
+    right: -20%;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(30px);
+}
