@@ -1,0 +1,17 @@
+.accordion_wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 !important;
+}
+
+.accordion_wrapper::before {
+    content: '';
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.accordion_summary_wrapper {
+    border: none !important;
+    box-shadow: none !important;
+}

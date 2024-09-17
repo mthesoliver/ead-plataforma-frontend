@@ -1,0 +1,37 @@
+@import '../app/_theme.scss';
+
+.background_card {
+    background: #fff !important;
+    max-width: fit-content !important;
+    padding: 3rem !important;
+    border-radius: 24px;
+    border: 1px solid #9A9A9A;
+    overflow: visible;
+}
+
+.background_card_dark {
+    background: #1C0237 !important;
+    max-width: fit-content !important;
+    padding: 3rem !important;
+    border-radius: 24px;
+    border: 1px solid #9A9A9A;
+    overflow: visible;
+}
+
+.child_color_dark ul li {
+    color: #1C0237;
+    font-size: calc($fs-md - 14px);
+}
+
+.child_color_light ul li {
+    color: #fff;
+    font-size: calc($fs-md - 14px);
+}
+
+.badge_wrapper {
+    background: $primary-color;
+    position: absolute;
+    font-size: calc($fs-sm + 2px);
+    top: -20px;
+    z-index: 5 !important;
+}
