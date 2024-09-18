@@ -6,13 +6,12 @@ import Header from "Ead/Components/Header";
 import VideoPlaceholder from "Ead/Components/VideoPlaceholder";
 import YourCoursePlaceholder from "Ead/Components/YourCoursePlaceholder";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Accordion, AccordionDetails, AccordionSummary, colors, List, ListItem, Typography } from "@mui/material";
+import { List, ListItem, Typography } from "@mui/material";
 import Carousel from "Ead/Components/SliderCustom";
 import HeroTextCustom from "Ead/Components/HeroTextCustom";
 import CardSimple from "Ead/Components/CardSimple";
@@ -27,8 +26,22 @@ import IntegrationsImageCols from "Ead/Components/IntegrationsImageCols";
 import PriceCard from "Ead/Components/PriceCard";
 import AccordionCustom from "Ead/Components/AccordionCustom";
 import Footer from "Ead/Components/Footer";
+import { useState } from "react";
+import DemonstrationCta from "Ead/Components/DemonstrationCta";
+import DemonstrationForm from "Ead/Components/DemonstrationForm";
+import BestFee, { CardFeeContent } from "Ead/Components/BestFee";
+import PixIcon from '@mui/icons-material/Pix';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import ReceiptIcon from '@mui/icons-material/Receipt';
 
 export default function Home() {
+  const [oveflowCard, setOverflowCard] = useState<boolean>(false);
+
+  const handleOverflow = (e: any) => {
+    e.preventDefault();
+    setOverflowCard(!oveflowCard);
+  }
+
   return (
     <>
       <header>
@@ -111,9 +124,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="best_taxes_container" className="container d-flex flex-row row gap-4 my-3 w-100">
-          <div className="container d-flex flex-column col gap-4">
-            <HeroTextCustom sub={"do mercado"} title={"As melhores taxas"} titleSize={86} />
+        <section id="best_fee_container" className="container d-flex flex-row row gap-4 my-5 w-100">
+          <div className="container d-flex flex-column col my-3 gap-4">
+
+            <div className="d-flex flex-row col gap-4">
+              <HeroTextCustom sub={"do mercado"} title={"As melhores taxas"} titleSize={86} />
+            </div>
+
+            <div className="d-flex flex-row row gap-1">
+              <BestFee>
+                <CardFeeContent title="Pix" feeValues="R$1,00 + 5,99%" release="Imediatamente" givenIcon={PixIcon} size={3} />
+                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$1,00 + 5,99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={3} />
+                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$1,00 + 6,29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={3} />
+                <CardFeeContent title="Boleto" feeValues="R$2,50 + 5,99%" release="1 dia útil" givenIcon={ReceiptIcon} size={3} />
+              </BestFee>
+            </div>
+
           </div>
         </section>
 
@@ -183,7 +209,12 @@ export default function Home() {
           <div className={"container d-flex flex-column col gap-4 pt-5"}>
             <HeroTextCustom sub={"Confira nossas funcionalidades"} title={"Por que escolher a EAD plataforma?"} titleSize={60} align="left" />
 
-            <section id="features_overflow" className="container row">
+            <section id="features_overflow" className={"container row " + (!oveflowCard ? styles.features_overflow + ' ' + styles.features_overflow_closed : styles.features_overflow + ' ' + styles.features_overflow_open)}>
+              <span className={"d-flex flex-row justify-content-center " + (!oveflowCard ? styles.features_overflow_btn : styles.features_overflow_btn_open)} onClick={(e: any) => handleOverflow(e)}>
+                <Button btnColor="light" rounded>
+                  {!oveflowCard ? 'Confira a lista completa de funcionalidades' : 'Ocultar a lista de funcionalidades'}
+                </Button>
+              </span>
               <div className={"d-flex flex-row row pt-5 m-auto gap-4"}>
                 <CardTransparent title="EAD LIVE"
                   subTitle="Deixe seus alunos mais engajados criando aulas ao vivo. Você pode disponibilizar um chat em tempo real para comunicação."
@@ -549,6 +580,19 @@ export default function Home() {
                     Pode sim. O professor terá uma área exclusiva para acompanhar e gerenciar suas aulas do curso e seus alunos. Ah, e você também poderá dividir os pagamentos recebidos e definir o percentual de ganho dele por venda.
                   </AccordionCustom>
                 </div>
+              </div>
+            </section>
+
+            <section id="form_container" className={"d-flex flex-row row align-items-center my-4 w-100"}>
+              <div className={"d-flex flex-column col align-items-center justify-content-center"}>
+                <DemonstrationCta
+                  imagePath="/assets/images/support_team_ead.png"
+                  title="Agende uma demonstração gratuita com nosso time de especialistas"
+                  subTitle="Veja o que a EAD Plataforma é capaz de fazer por você!">
+
+                  <DemonstrationForm />
+
+                </DemonstrationCta>
               </div>
             </section>
 

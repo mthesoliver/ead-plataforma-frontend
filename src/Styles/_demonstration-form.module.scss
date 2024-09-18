@@ -1,0 +1,14 @@
+@import '../app/_theme.scss';
+
+.demonstration_wrapper {
+    position: relative;
+    overflow: visible !important;
+    margin-top: 5rem !important;
+}
+
+.top_image_form {
+    position: relative;
+    top: -140px !important;
+    z-index: 20;
+    margin-bottom: -10rem !important;
+}
