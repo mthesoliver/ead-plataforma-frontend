@@ -16,8 +16,7 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     };
 
     const handleOnReady: YouTubeProps['onReady'] = (event: YouTubeEvent) => {
-        event.target.playVideo();
-        console.log(event.target);
+        //event.target.pauseVideo();
     }
 
     return (

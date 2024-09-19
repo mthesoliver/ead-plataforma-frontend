@@ -5,8 +5,10 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Slide from "@mui/material/Slide";
 import Stack from "@mui/material/Stack";
+import useResize from "Ead/CustomHooks/useResize";
 
 function Carousel({ children }: any) {
+    const { isMobile } = useResize();
     // setting the state variables
     // cards will be the cards that are displayed
     const [cards, setCards] = useState<React.ReactElement[]>([]);
@@ -17,7 +19,7 @@ function Carousel({ children }: any) {
 
     // cardsPerPage is the number of cards that will be displayed per page
     // you can modify for your needs
-    const cardsPerPage = 3;
+    const cardsPerPage = isMobile ? 1 : 3;
     // this is just a dummy array of cards it uses the MUI card demo and repeats it 10 times
     const duplicateCards: React.ReactElement[] = Array.from(
         { length: children.length },
@@ -64,13 +66,13 @@ function Carousel({ children }: any) {
         >
             <IconButton
                 onClick={handlePrevPage}
-                sx={{ margin: 5, color: "white" }}
+                sx={{ margin: 2, color: "white" }}
                 disabled={currentPage === 0}
             >
                 {/* this is the button that will go to the previous page you can change these icons to whatever you wish*/}
                 <NavigateBeforeIcon sx={{ fontSize: 56 }} />
             </IconButton>
-            <Box sx={{ width: `${containerWidth}px`, height: "100%", overflow: "hidden" }}>
+            <Box sx={{ width: `${containerWidth}px`, height: "100%", overflow: "visible" }}>
                 {/* this is the box that holds the cards and the slide animation,
         in this implementation the card is already constructed but in later versions you will see how the
         items you wish to use will be dynamically created with the map method*/}
@@ -86,7 +88,7 @@ function Carousel({ children }: any) {
                         {/* this is the slide animation that will be used to slide the cards in and out*/}
                         <Slide direction={slideDirection} in={currentPage === index}>
                             <Stack
-                                spacing={10}
+                                spacing={3}
                                 direction="row"
                                 alignContent="center"
                                 justifyContent="center"
@@ -103,7 +105,7 @@ function Carousel({ children }: any) {
             </Box>
             <IconButton
                 onClick={handleNextPage}
-                sx={{ margin: 5, color: "white" }}
+                sx={{ margin: 1, color: "white" }}
                 disabled={
                     currentPage >= Math.ceil((cards.length || 0) / cardsPerPage) - 1
                 }

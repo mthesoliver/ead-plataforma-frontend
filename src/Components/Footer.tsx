@@ -8,12 +8,14 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PublicIcon from '@mui/icons-material/Public';
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
 import Link from "next/link";
+import useResize from "Ead/CustomHooks/useResize";
 
 function Footer() {
+    const { isMobile } = useResize();
 
     return (
         <section id="footer_container" className={"my-5 py-5 align-items-start container d-flex flex-row row " + styles.footer_width}>
-            <div className="d-flex flex-column align-items-start col col-5 gap-2">
+            <div className={`d-flex flex-column align-items-${!isMobile ? 'start' : 'center'} col col-${!isMobile ? 5 : 12} gap-2 ` + (isMobile ? 'justify-content-center gap-3 mb-5' : '')}>
                 <Image src={'/assets/images/ead_horizontal_footer_logo.png'}
                     alt='Logotipo da empresa Ead Plataforma' width={307} height={65} loading="eager"
                     placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
@@ -48,7 +50,7 @@ function Footer() {
 
             </div>
 
-            <div className="d-flex flex-column align-items-end col col-2 gap-2">
+            <div className={`d-flex flex-column align-items-start col col-${!isMobile ? 2 : 5} gap-2`}>
                 <List className="d-flex flex-column col gap-2">
                     <ListItem>
                         <Typography className="fw-bolder">
@@ -83,7 +85,7 @@ function Footer() {
                 </List>
             </div>
 
-            <div className="d-flex flex-column align-items-center col col-2 gap-2">
+            <div className={`d-flex flex-column align-items-start col col-${!isMobile ? 2 : 5} gap-2`}>
                 <List className="d-flex flex-column col gap-2">
                     <ListItem>
                         <Typography className="fw-bolder">
@@ -113,12 +115,12 @@ function Footer() {
                 </List>
             </div>
 
-            <div className="d-flex flex-column align-items-end col col-1 gap-4">
+            <div className={`d-flex flex-${!isMobile ? 'column' : 'row'} align-items-${!isMobile ? 'start' : 'center'} col col-${!isMobile ? 1 : 12} gap-2 ` + (isMobile ? 'justify-content-center gap-4 mt-5' : '')}>
                 <Image src={'/assets/images/amazon_logo.png'}
-                    alt='Logotipo da amazon' width={100} height={75} loading="eager"
+                    alt='Logotipo da amazon' width={!isMobile ? 100 : 100 / 1.6} height={!isMobile ? 75 : 75 / 1.6} loading="eager"
                     placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
                 <Image src={'/assets/images/GPTW_logo.png'}
-                    alt='Logotipo do Great Place to Work' width={100} height={166} loading="eager"
+                    alt='Logotipo do Great Place to Work' width={!isMobile ? 100 : 100 / 2} height={!isMobile ? 166 : 166 / 2} loading="eager"
                     placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
             </div>
         </section >

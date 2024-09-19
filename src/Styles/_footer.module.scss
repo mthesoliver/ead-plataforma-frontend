@@ -36,3 +36,42 @@
     border-radius: 50%;
     filter: blur(30px);
 }
+
+@media screen and (max-width:960px) {
+    .footer_width {
+        position: relative;
+        max-height: fit-content !important;
+        height: fit-content !important;
+        display: flex;
+        flex-direction: column !important;
+        margin: auto !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer_width::before {
+        content: '';
+        position: absolute;
+        background: $primary-glow-dark;
+        width: 600px;
+        height: 400px;
+        bottom: -30%;
+        left: -60%;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(30px);
+    }
+
+    .footer_width::after {
+        content: '';
+        position: absolute;
+        background: $primary-glow-dark;
+        width: 600px;
+        height: 400px;
+        bottom: -40%;
+        right: -20%;
+        z-index: -1;
+        border-radius: 50%;
+        filter: blur(30px);
+    }
+}

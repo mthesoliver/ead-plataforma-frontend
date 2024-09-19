@@ -35,3 +35,33 @@
     top: -20px;
     z-index: 5 !important;
 }
+
+@media screen and (max-width:960px) {
+    .child_color_dark ul li {
+        color: #1C0237;
+        font-size: calc($fs-md - 10px);
+    }
+
+    .child_color_light ul li {
+        color: #fff;
+        font-size: calc($fs-md - 10px);
+    }
+
+    .background_card {
+        background: #fff !important;
+        max-width: fit-content !important;
+        padding: 3rem !important;
+        border-radius: 24px;
+        border: 1px solid #9A9A9A;
+        overflow: visible;
+    }
+
+    .background_card_dark {
+        background: #1C0237 !important;
+        max-width: fit-content !important;
+        padding: 3rem !important;
+        border-radius: 24px;
+        border: 1px solid #9A9A9A;
+        overflow: visible;
+    }
+}

@@ -37,3 +37,23 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width:960px) {
+
+    // _stamp.module.scss
+    .back_circle {
+        background-color: #7C038E;
+        width: calc(220px - 50px);
+        height: calc(220px - 50px);
+        border-radius: 50%;
+        margin: auto !important;
+    }
+
+    .main_circle {
+        background-color: #1C0237;
+        width: calc(140px - 30px);
+        height: calc(140px - 30px);
+        border-radius: 50%;
+        margin: auto !important;
+    }
+}
