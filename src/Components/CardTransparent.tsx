@@ -12,16 +12,7 @@ import Image from 'next/image';
 import useResize from 'Ead/CustomHooks/useResize';
 
 function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimpleType>) {
-    const [imageBackground, setImageBackground] = useState<string>();
     const { isMobile } = useResize();
-
-    useLayoutEffect(() => {
-        if (imagePath) {
-            setImageBackground(imagePath);
-        } else {
-            setImageBackground('');
-        }
-    }, []);
 
     const cardContent = (
         <>
@@ -36,7 +27,7 @@ function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimp
 
     return (
         <Card className={`d-flex flex-column col-${size} py-5 align-items-center justify-content-center text-center gap-1 ` + styles.background_card} variant="outlined" >
-            <Image src={imageBackground!} alt={imageBackground!} width={!isMobile ? 90 : 60} height={!isMobile ? 90 : 60} loading="lazy" />
+            <Image src={imagePath!} alt={imagePath!} width={!isMobile ? 90 : 60} height={!isMobile ? 90 : 60} loading="lazy" />
             <CardContent className={`px-${!isMobile ? 4 : 1} mb-2`} >
                 {cardContent}
             </CardContent>
