@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     swcMinify: false,
-    cssModules: true,
+    swcMinifyFallback: false,
     sassOptions: {
-        includePaths: ['./styles'],
+        includePaths: ['./src/Styles'],
     },
-
 };
 
 export default nextConfig;
