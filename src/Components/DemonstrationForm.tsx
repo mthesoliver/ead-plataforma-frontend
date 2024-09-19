@@ -3,8 +3,10 @@
 import * as React from 'react';
 
 import { Box, ButtonBase, FormControl, FormHelperText, Input } from '@mui/material';
+import useResize from 'Ead/CustomHooks/useResize';
 
-function DemonstrationForm({ any }: Readonly<any>) {
+function DemonstrationForm() {
+    const { isMobile } = useResize();
     const [email, setEmail] = React.useState("")
     const [name, setName] = React.useState("")
     const [emailError, setEmailError] = React.useState(false)
@@ -29,7 +31,7 @@ function DemonstrationForm({ any }: Readonly<any>) {
     }
 
     return (
-        <Box className={'d-flex flex-column col w-50 m-auto'} component={'form'} onSubmit={(e: any) => handleSubmit(e)}>
+        <Box className={`d-flex flex-column col w-${!isMobile ? 50 : 100} m-auto`} component={'form'} onSubmit={(e: any) => handleSubmit(e)}>
             <FormControl >
                 <Input id="email-field" name="email-field" placeholder="Seu email" type="email" inputMode="email"
                     aria-describedby='my-helper-text'

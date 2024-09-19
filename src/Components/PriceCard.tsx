@@ -9,8 +9,11 @@ import styles from "Ead/Styles/_price-card.module.scss";
 import { PriceType } from 'Ead/Types/PriceType';
 import Button from './Button';
 import { Badge } from '@mui/material';
+import useResize from 'Ead/CustomHooks/useResize';
 
 export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readonly<PriceType>) => {
+    const { isMobile } = useResize();
+
     return (
         <>
             {plans && (
@@ -19,7 +22,7 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
                 </Typography>
             )}
 
-            <Typography gutterBottom className='fw-bolder d-flex flex-column' sx={{ fontSize: 80, lineHeight: 1.4, color: color ?? '#1C0237' }} >
+            <Typography gutterBottom className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 80 : 60, lineHeight: !isMobile ? 1.4 : 1., color: color ?? '#1C0237' }} >
                 {children}
                 {typeOfpay && (
                     <span className='fs-4 fw-regular mb-4'>
@@ -29,13 +32,13 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
             </Typography>
 
             {opts?.smallDescription && (
-                <Typography variant="body2" className='fw-medium mt-3' sx={{ fontSize: 24, lineHeight: 1.6, color: color ?? '#1C0237' }}>
+                <Typography variant="body2" className='fw-medium mt-3' sx={{ fontSize: !isMobile ? 24 : 18, lineHeight: !isMobile ? 1.6 : 1.4, color: color ?? '#1C0237' }}>
                     {opts?.smallDescription}
                 </Typography>
             )}
 
             {opts?.description && (
-                <Typography variant="body2" className='fw-regular' sx={{ fontSize: 18, lineHeight: 1.6, color: color ?? '#1C0237', maxWidth: '300px' }}>
+                <Typography variant="body2" className='fw-regular' sx={{ fontSize: !isMobile ? 18 : 14, lineHeight: 1.6, color: color ?? '#1C0237', maxWidth: '300px' }}>
                     {opts?.description}
                 </Typography>
             )}

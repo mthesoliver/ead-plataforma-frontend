@@ -33,8 +33,10 @@ import BestFee, { CardFeeContent } from "Ead/Components/BestFee";
 import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
+import useResize from "Ead/CustomHooks/useResize";
 
 export default function Home() {
+  const { isMobile } = useResize();
   const [oveflowCard, setOverflowCard] = useState<boolean>(false);
 
   const handleOverflow = (e: any) => {
@@ -59,9 +61,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cards_container" className="container d-flex flex-row row my-3 w-100">
+        <section id="carousel_container" className="container d-flex flex-row row my-3 w-100">
           <div className="container d-flex flex-column col">
-            <Typography gutterBottom className='fw-semibold mb-3 z3 position-relative ' sx={{ fontSize: 44, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani" }} >
+            <Typography gutterBottom className='fw-semibold mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani" }} >
               Veja as possibilidades com a EAD Plataforma
             </Typography>
             <div className={"z3 position-relative"}>
@@ -92,27 +94,28 @@ export default function Home() {
         <section id="cards_img_container" className="container d-flex flex-row row gap-4 mb-5 w-100">
           <div className="container d-flex flex-column col gap-4">
             <HeroTextCustom sub={"da nossa plataforma?"} title={"Quais são os principais recursos"} titleSize={80} />
-            <div className="d-flex flex-row gap-4 flex-nowrap">
+            <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="EAD Live"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
-                imagePath="/assets/images/bg_card_image_2.png" size={7} />
+                imagePath="/assets/images/bg_card_image_2.png" size={!isMobile ? 7 : 12} />
               <CardSimple title="EAD Player"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
-                imagePath="/assets/images/bg_card_image_1.png" size={5} />
+                imagePath="/assets/images/bg_card_image_1.png" size={!isMobile ? 5 : 12} />
             </div>
-            <div className="d-flex flex-row gap-4 flex-nowrap">
+            <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="Provas e Certificados"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
-                imagePath="/assets/images/bg_card_image_4.png" size={5} />
+                imagePath="/assets/images/bg_card_image_4.png" size={!isMobile ? 5 : 12} />
               <CardSimple title="EAD Checkout"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
-                imagePath="/assets/images/bg_card_image_3.png" size={7} />
+                imagePath="/assets/images/bg_card_image_3.png" size={!isMobile ? 7 : 12} />
             </div>
-            <section className="d-flex flex-row gap-4 flex-nowrap text-center justify-content-center align-items-center">
+
+            <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center`}>
               <div className="justify-content-center align-items-center">
                 <Button givenClass="fw-light p-3" rounded>Confira todas as funcionalidades</Button>
               </div>
-              <div className="d-flex flex-row text-center justify-content-end align-items-end gap-4">
+              <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                 <Typography gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
                   ou
                 </Typography>
@@ -127,16 +130,16 @@ export default function Home() {
         <section id="best_fee_container" className="container d-flex flex-row row gap-4 my-5 w-100">
           <div className="container d-flex flex-column col my-3 gap-4">
 
-            <div className="d-flex flex-row col gap-4">
+            <div className="d-flex flex-row col m-auto gap-4">
               <HeroTextCustom sub={"do mercado"} title={"As melhores taxas"} titleSize={86} />
             </div>
 
-            <div className="d-flex flex-row row gap-1">
-              <BestFee>
-                <CardFeeContent title="Pix" feeValues="R$1,00 + 5,99%" release="Imediatamente" givenIcon={PixIcon} size={3} />
-                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$1,00 + 5,99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={3} />
-                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$1,00 + 6,29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={3} />
-                <CardFeeContent title="Boleto" feeValues="R$2,50 + 5,99%" release="1 dia útil" givenIcon={ReceiptIcon} size={3} />
+            <div className={"d-flex flex-row row gap-1"}>
+              <BestFee direction={!isMobile ? 'row' : 'column'} >
+                <CardFeeContent title="Pix" feeValues="R$1,00 + 5,99%" release="Imediatamente" givenIcon={PixIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$1,00 + 5,99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$1,00 + 6,29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="Boleto" feeValues="R$2,50 + 5,99%" release="1 dia útil" givenIcon={ReceiptIcon} size={!isMobile ? 3 : 12} />
               </BestFee>
             </div>
 
@@ -147,7 +150,7 @@ export default function Home() {
           <div className="container d-flex flex-column col gap-4">
             <HeroTextCustom sub={"Sucesso com nossa plataforma EAD"} title={"Quem confia em nós!"} titleSize={60} />
             <figure>
-              <Image src="/assets/images/trust_us_image.png" width={1440} height={450} alt="Imagem com clientes da empresa"
+              <Image src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
                 className="position-relative top-0 start-50 translate-middle-x" placeholder="blur" blurDataURL="/assets/images/trust_us_image.png" loading="lazy" />
             </figure>
             <section className="text-center my-2 py-2">
@@ -158,22 +161,22 @@ export default function Home() {
         </section>
 
         <section id="light_container" className={"container d-flex flex-row row gap-4 p-5 bg-light " + styles.full_width + ' ' + styles.align_to_top_el}>
-          <div className={"container d-flex flex-column col mt-5 " + styles.inner_contents}>
+          <div className={" d-flex flex-column col mt-5 " + styles.inner_contents}>
             <section id="clients_feedback_container" className={"d-flex flex-row row align-items-center"}>
               <div className={"d-flex flex-column col"}>
-                <Typography gutterBottom className='fw-bolder mb-3 z3 position-relative ' sx={{ fontSize: 44, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani", color: "#7C038E" }} >
+                <Typography gutterBottom className='fw-bolder mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: !isMobile ? 1.4 : 1, textAlign: 'center', fontFamily: "Rajdhani", color: "#7C038E" }} >
                   Veja o que nossos cliente falam sobre nós
                 </Typography>
-                <div className={"d-inline-flex flex-row gap-4 justify-content-center align-items-center"}>
+                <div className={`d-inline-flex flex-${!isMobile ? 'row' : 'column'} gap-4 justify-content-center align-items-center`}>
                   <YouTube videoId={'0yrJU7b09Oc'} className={styles.round_border_video} />
                   <YouTube videoId={'0yrJU7b09Oc'} className={styles.round_border_video} />
                 </div>
 
-                <section className="d-flex flex-row gap-4 flex-nowrap text-center justify-content-center align-items-center my-5">
+                <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center my-5`}>
                   <div className="justify-content-center align-items-center">
                     <Button givenClass="fw-light p-3" rounded>Quero vender como eles!</Button>
                   </div>
-                  <div className="d-flex flex-row text-center justify-content-end align-items-end gap-4">
+                  <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
@@ -185,11 +188,11 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="customize_container" className={"container d-flex flex-row row gap-4"}>
-              <div className={"container d-flex flex-col col gap-4"}>
-                <div className="justify-content-center align-items-center col-4 mt-5">
+            <section id="customize_container" className={" d-flex flex-row row gap-4"}>
+              <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} col gap-4`}>
+                <div className={`justify-content-center align-items-center col-${!isMobile ? 4 : 12} mt-5`}>
                   <HeroTextCustom sub={"do seu jeito!"} title={"Sua plataforma EAD,"} titleSize={80} colorMode={"light"} align="left" />
-                  <Typography sx={{ color: "#3F3F3F", fontSize: 26 }}>
+                  <Typography sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
@@ -198,81 +201,83 @@ export default function Home() {
                 </div>
 
                 <figure className="justify-content-center align-items-center">
-                  <Image src={"/assets/images/customize/custom_dark_purp.png"} width={1276} height={830} alt="Layout personalizado" />
+                  <Image src={"/assets/images/customize/custom_dark_purp.png"} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" />
                 </figure>
               </div>
             </section>
           </div>
         </section>
 
-        <section id="features_container" className={"container d-flex flex-row row gap-4 pt-5 mt-5 w-100"}>
+        <section id="features_container" className={"container d-flex flex-row gap-4 pt-5 mt-5 w-100"}>
           <div className={"container d-flex flex-column col gap-4 pt-5"}>
             <HeroTextCustom sub={"Confira nossas funcionalidades"} title={"Por que escolher a EAD plataforma?"} titleSize={60} align="left" />
 
-            <section id="features_overflow" className={"container row " + (!oveflowCard ? styles.features_overflow + ' ' + styles.features_overflow_closed : styles.features_overflow + ' ' + styles.features_overflow_open)}>
-              <span className={"d-flex flex-row justify-content-center " + (!oveflowCard ? styles.features_overflow_btn : styles.features_overflow_btn_open)} onClick={(e: any) => handleOverflow(e)}>
-                <Button btnColor="light" rounded>
-                  {!oveflowCard ? 'Confira a lista completa de funcionalidades' : 'Ocultar a lista de funcionalidades'}
-                </Button>
-              </span>
-              <div className={"d-flex flex-row row pt-5 m-auto gap-4"}>
+            <section id="features_overflow" className={"row " + (!oveflowCard ? styles.features_overflow + ' ' + styles.features_overflow_closed : styles.features_overflow + ' ' + styles.features_overflow_open)}>
+              {!isMobile && (
+                <span className={"d-flex flex-row justify-content-center " + (!oveflowCard ? styles.features_overflow_btn : styles.features_overflow_btn_open)} onClick={(e: any) => handleOverflow(e)}>
+                  <Button btnColor="light" rounded>
+                    {!oveflowCard ? 'Confira a lista completa de funcionalidades' : 'Ocultar a lista de funcionalidades'}
+                  </Button>
+                </span>
+              )}
+              <div id="features_cards" className={`d-flex flex-row ${!isMobile ? 'row' : 'col'} pt-5 m-auto gap-4 justify-content-start w-100`}>
                 <CardTransparent title="EAD LIVE"
                   subTitle="Deixe seus alunos mais engajados criando aulas ao vivo. Você pode disponibilizar um chat em tempo real para comunicação."
-                  imagePath="/assets/images/card_icons/EAD_LIVE.png" size={3} />
+                  imagePath="/assets/images/card_icons/EAD_LIVE.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="EAD Checkout"
                   subTitle="Ofereça opções customizadas de pagamentos, configure parcelamento, juros e vencimento do boleto por curso."
-                  imagePath="/assets/images/card_icons/EAD_Checkout.png" size={3} />
+                  imagePath="/assets/images/card_icons/EAD_Checkout.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="API Webhooks"
                   subTitle="Integre seu EAD com sistemas externos, automatize processos de cadastro do aluno, matrículas e outros."
-                  imagePath="/assets/images/card_icons/API_Webhooks.png" size={3} />
+                  imagePath="/assets/images/card_icons/API_Webhooks.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="EAD Store"
                   subTitle="Lorem ipsum dolor sit amet consectetur. Vitae diam."
-                  imagePath="/assets/images/card_icons/EAD_Store.png" size={3} />
+                  imagePath="/assets/images/card_icons/EAD_Store.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Assinatura e recorrência"
                   subTitle="Seu EAD como um Netflix! Crie planos de assinatura com cobranças mensais, trimestrais, semestrais ou anuais."
-                  imagePath="/assets/images/card_icons/Assinatura_e_recorrência.png" size={3} />
+                  imagePath="/assets/images/card_icons/Assinatura_e_recorrência.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Grupos e turmas"
                   subTitle="Crie grupos e automatize o processo de cadastro e matrículas em seu EAD, importe até 1.000 alunos por vez."
-                  imagePath="/assets/images/card_icons/Grupos_e_turmas.png" size={3} />
+                  imagePath="/assets/images/card_icons/Grupos_e_turmas.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Carrinho de Compras"
                   subTitle="Receba pagamentos através de cartão ou boleto com matrícula automática após confirmação de recebimento."
-                  imagePath="/assets/images/card_icons/Carrinho_de_Compras.png" size={3} />
+                  imagePath="/assets/images/card_icons/Carrinho_de_Compras.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Cupom de desconto"
                   subTitle="Ofereça cupons de desconto com até 100% do valor e matrícula automática no curso."
-                  imagePath="/assets/images/card_icons/Cupom_de_desconto.png" size={3} />
+                  imagePath="/assets/images/card_icons/Cupom_de_desconto.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Aulas"
                   subTitle="Deixe seus alunos mais engajados criando aulas ao vivo. Você pode disponibilizar um chat em tempo real para comunicação."
-                  imagePath="/assets/images/card_icons/Aulas.png" size={3} />
+                  imagePath="/assets/images/card_icons/Aulas.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Provas"
                   subTitle="Insira provas entre aulas e módulos, torne a prova requisito, programe a liberação com data fixa ou flexível, área de boletim."
-                  imagePath="/assets/images/card_icons/Provas.png" size={3} />
+                  imagePath="/assets/images/card_icons/Provas.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Certificados"
                   subTitle="Certificado de conclusão de curso com código de autenticação, envio automático para o e-mail do aluno."
-                  imagePath="/assets/images/card_icons/Certificados.png" size={3} />
+                  imagePath="/assets/images/card_icons/Certificados.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Permissões"
                   subTitle="Determine funções administrativas customizadas para cada usuário, crie seus próprios padrões de permissões."
-                  imagePath="/assets/images/card_icons/Permissões.png" size={3} />
+                  imagePath="/assets/images/card_icons/Permissões.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Multiplos professores"
                   subTitle="Adicione múltiplos professores em seus cursos e planos com pagamento automático da participação nas vendas."
-                  imagePath="/assets/images/card_icons/Multiplos_professores.png" size={3} />
+                  imagePath="/assets/images/card_icons/Multiplos_professores.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Cobranças"
                   subTitle="Envie cobranças por e-mail com a automação de liberar cursos ou grupo, defina condições de pagamento e vencimento."
-                  imagePath="/assets/images/card_icons/Cobranças.png" size={3} />
+                  imagePath="/assets/images/card_icons/Cobranças.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Biblioteca"
                   subTitle="Você pode reaproveitar uma  aula em vários cursos, gerenciar conteúdo de maneira separada dos cursos."
-                  imagePath="/assets/images/card_icons/Biblioteca.png" size={3} />
+                  imagePath="/assets/images/card_icons/Biblioteca.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Notificações"
                   subTitle="Acompanhe tudo o que acontece em seu perfil, seja notificado a cada venda, solicitação de suporte, correção de provas, novas aulas..."
-                  imagePath="/assets/images/card_icons/Notificações.png" size={3} />
+                  imagePath="/assets/images/card_icons/Notificações.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Fórum professores"
                   subTitle="Fórum público para gerar conteúdos / Fórum fechado para  cada curso, apenas para  professores e alunos  matriculados.."
-                  imagePath="/assets/images/card_icons/Fórum.png" size={3} />
+                  imagePath="/assets/images/card_icons/Fórum.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Domínio e SSL"
                   subTitle="Configure seu próprio domínio com hospedagem e certificado de segurança inclusos."
-                  imagePath="/assets/images/card_icons/Domínio_e_SSL.png" size={3} />
+                  imagePath="/assets/images/card_icons/Domínio_e_SSL.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Personalize"
                   subTitle="Fácil configuração, tema customizável, painel administrativo para você mesmo gerenciar todas as áreas do EAD."
-                  imagePath="/assets/images/card_icons/Personalize.png" size={3} />
+                  imagePath="/assets/images/card_icons/Personalize.png" size={!isMobile ? 3 : 8} />
               </div>
             </section>
           </div>
@@ -294,7 +299,7 @@ export default function Home() {
         </section>
 
         <section id="integrations_container" className={"container d-flex flex-row row gap-4 my-5 w-100 position-relative"}>
-          <div className={"container d-flex flex-row row gap-4 position-relative py-5 z-3"}>
+          <div className={"container d-flex flex-row row gap-4 position-relative py-5 z-3 m-auto"}>
             <CtaWrapper
               titleSize={56}
               title="Mais de 50 integrações para você em um só lugar"
@@ -308,14 +313,14 @@ export default function Home() {
         </section>
 
         <section id="light_container" className={"container d-flex flex-row row gap-4 py-5 bg-light " + styles.full_width + ' ' + styles.align_to_top_el}>
-          <div className={"container d-flex flex-column col mt-5 " + styles.inner_contents}>
+          <div className={"d-flex flex-column col mt-5 " + styles.inner_contents}>
 
             <section id="price_container" className={"d-flex flex-row row align-items-center my-4"}>
               <div className={"d-flex flex-column col"}>
                 <HeroTextCustom sub={"com a sua necessidade"} title={"Planos sob demanda de acordo"} titleSize={80} colorMode="light" />
 
-                <div className={"d-inline-flex flex-row gap-4 justify-content-center align-items-center"}>
-                  <PriceCard
+                <div className={"d-inline-flex flex-row gap-4 justify-content-center row align-items-center"}>
+                  <PriceCard column={isMobile ?? true}
                     plans={'Grátis'}
                     btnText={'Comece hoje mesmo'}
                     opts={{
@@ -364,7 +369,7 @@ export default function Home() {
                   </Typography>
                 </div>
 
-                <div className={"d-inline-flex flex-row gap-4 mt-5 justify-content-center align-items-center"}>
+                <div id="price_cards" className={`d-inline-flex flex-row row flex-${!isMobile ? 'nowrap' : 'wrap'} gap-4 mt-5 justify-content-center align-items-center`}>
                   <PriceCard
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
@@ -374,7 +379,7 @@ export default function Home() {
                       description: 'Permite criar e gerenciar cursos com ferramentas básicas de avaliação.'
                     }}
                     listchildren={
-                      <List className="d-flex flex-column col gap-3">
+                      <List className={`d-flex flex-column col gap-${!isMobile ? 3 : 1}`}>
                         <ListItem>
                           <CheckCircleIcon htmlColor={'#FE00FE'} className="me-2" />
                           + Tudo do  Plano Grátis
@@ -423,7 +428,7 @@ export default function Home() {
                       description: 'Oferece transmissões ao vivo e maior alcance para suas aulas.'
                     }}
                     listchildren={
-                      <List className="d-flex flex-column col gap-4">
+                      <List className={`d-flex flex-column col gap-${!isMobile ? 4 : 2}`}>
                         <ListItem>
                           <CheckCircleIcon htmlColor={'#FE00FE'} className="me-2" />
                           + Tudo do  Plano Standard
@@ -470,7 +475,7 @@ export default function Home() {
                       description: 'Permite personalizações avançadas e mais controle sobre sua plataforma.'
                     }}
                     listchildren={
-                      <List className="d-flex flex-column col gap-3">
+                      <List className={`d-flex flex-column col gap-${!isMobile ? 3 : 1}`}>
                         <ListItem>
                           <CheckCircleIcon htmlColor={'#FE00FE'} className="me-2" />
                           + Tudo do  Plano Essentials
@@ -505,11 +510,11 @@ export default function Home() {
                   </PriceCard>
                 </div>
 
-                <section className="d-flex flex-row gap-4 flex-nowrap text-center justify-content-center align-items-center my-5">
+                <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center m-5`}>
                   <div className="justify-content-center align-items-center">
                     <Button givenClass="fw-light p-3" rounded>Conheça os outros planos</Button>
                   </div>
-                  <div className="d-flex flex-row text-center justify-content-end align-items-end gap-4">
+                  <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
@@ -526,7 +531,7 @@ export default function Home() {
               <div className={"d-flex flex-column col align-items-center justify-content-center"}>
                 <HeroTextCustom sub={"perguntas mais frequentes"} title={"Respostas às nossas"} titleSize={80} colorMode="light" align="left" />
               </div>
-              <div className={"d-flex flex-row row my-4 gap-5"}>
+              <div className={"d-flex flex-row row my-4 gap-5 m-auto"}>
                 <div className={"d-flex flex-column col my-4 gap-4"}>
                   <AccordionCustom accordionIndex={'1'} title="Quais os diferenciais da EAD Plataforma para a Hotmart?">
                     Assim como na Hotmart, aqui você também pode criar sua conta grátis e já começar a vender! <br /> <br />
@@ -583,7 +588,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="form_container" className={"d-flex flex-row row align-items-center my-4 w-100"}>
+            <section id="form_container" className={"d-flex flex-row row align-items-center my-4 m-auto w-100"}>
               <div className={"d-flex flex-column col align-items-center justify-content-center"}>
                 <DemonstrationCta
                   imagePath="/assets/images/support_team_ead.png"

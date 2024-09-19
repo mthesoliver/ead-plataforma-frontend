@@ -24,3 +24,27 @@
         outline: none;
     }
 }
+
+@media screen and (max-width:960px) {
+    .main_title_size {
+        padding: 1rem !important;
+        line-height: 46px !important;
+        font-size: $fs-xl !important;
+    }
+
+    .placeholder_wrapper {
+        max-width: fit-content;
+        background: #fff;
+        transform: scale(.6);
+        font-size: 20px;
+
+        input {
+            background: none !important;
+            color: $grey-color;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+}

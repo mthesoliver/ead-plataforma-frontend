@@ -8,9 +8,11 @@ import Typography from '@mui/material/Typography';
 
 import { CtaType } from 'Ead/Types/CtaType';
 import { Box } from '@mui/material';
+import useResize from 'Ead/CustomHooks/useResize';
 
 function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children, border }: Readonly<CtaType>) {
     const [imageBackground, setImageBackground] = useState<string>();
+    const { isMobile } = useResize();
 
     useLayoutEffect(() => {
         if (imagePath) {
@@ -22,14 +24,14 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
 
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor, children }: Readonly<CtaType>) => {
         return (
-            <CardContent className={"d-flex flex-column p-2 my-5 w-75 m-auto"} >
-                <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ?? 32, lineHeight: 1.4, color: fontColor ?? '#fff' }} >
+            <CardContent className={`d-flex flex-column p-2 my-5 w-${!isMobile ? 75 : 100} m-auto`} >
+                <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 26 : 32, lineHeight: 1.4, color: fontColor ?? '#fff' }} >
                     {title}
                 </Typography>
-                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 20, lineHeight: 1.6, color: '#fff' }}>
+                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 14, lineHeight: 1.6, color: '#fff' }}>
                     {subTitle}
                 </Typography>
-                <Box className={"d-flex flex-row row gap-3 w-50 m-auto justify-content-center flex-nowrap mt-5"}>
+                <Box className={`d-flex flex-${!isMobile ? 'row' : 'column'} row gap-3 w-${!isMobile ? 50 : 100} m-auto justify-content-center flex-nowrap mt-5`}>
                     {children}
                 </Box>
             </CardContent>

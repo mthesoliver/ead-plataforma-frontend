@@ -9,10 +9,11 @@ import Image from 'next/image';
 import styles from 'Ead/Styles/_demonstration-form.module.scss';
 
 import { CtaType } from 'Ead/Types/CtaType';
-import { Box } from '@mui/material';
+import useResize from 'Ead/CustomHooks/useResize';
 
 function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, children }: Readonly<CtaType>) {
     const [imageBackground, setImageBackground] = useState<string>();
+    const { isMobile } = useResize();
 
     useLayoutEffect(() => {
         if (imagePath) {
@@ -24,14 +25,14 @@ function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, ch
 
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor }: Readonly<CtaType>) => {
         return (
-            <CardContent className={"d-flex flex-column row justify-content-center p-2 w-75 m-auto "} >
-                <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ?? 32, lineHeight: 1.4, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
+            <CardContent className={`d-flex flex-column row justify-content-center p-2 w-${!isMobile ? 75 : 100} m-auto `} >
+                <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 32 : 24, lineHeight: 1.4, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
                     {title}
                 </Typography>
-                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 20, lineHeight: 1.6, color: '#fff' }}>
+                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: 1.6, color: '#fff' }}>
                     {subTitle}
                 </Typography>
-            </CardContent>
+            </CardContent >
         )
     };
 
@@ -40,7 +41,7 @@ function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, ch
             variant="outlined"
             sx={{ borderColor: "none", borderWidth: 0, borderRadius: "24px", backgroundColor: "#1C0237", backgroundSize: "cover", backgroundPosition: "center center", }}>
             <CardContent className={"p-1 mb-2 position-relative"} >
-                <Image src={imageBackground!} alt={imageBackground!} width={540} height={400} loading="lazy" className={styles.top_image_form} />
+                <Image src={imageBackground!} alt={imageBackground!} width={!isMobile ? 540 : 540 / 2} height={!isMobile ? 400 : 400 / 2} loading="lazy" className={styles.top_image_form} />
                 <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
                 </CustomCardContent>
                 {children}

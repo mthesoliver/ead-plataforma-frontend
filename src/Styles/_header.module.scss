@@ -4,7 +4,21 @@
     display: flex;
     flex-direction: row;
     margin: auto !important;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     max-width: $max-width;
+    background: transparent;
+}
+
+@media screen and (max-width:960px) {
+    .header_width {
+        position: fixed;
+        z-index: 99;
+        top: -2rem;
+        max-height: 120px !important;
+        max-width: 100vw !important;
+        padding-top: 2rem !important;
+        background: #1C0237 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); // Adiciona uma sombra sutil
+    }
 }

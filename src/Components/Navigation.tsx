@@ -1,18 +1,35 @@
 'use client'
 
+import { Stack } from '@mui/material';
 import styles from 'Ead/Styles/_navigation.module.scss';
+import Link from 'next/link';
 
-function Navigation() {
+export type NavigationType = {
+    direction?: string
+    open?: boolean;
+}
+
+function Navigation({ direction = 'row', open = false }: Readonly<NavigationType>) {
     return (
-        <nav className={styles.nav_bar}>
-            <ul className={'fw-light ' + styles.nav_list}>
-                <li><a href="/">Vantagens</a></li>
-                <li><a href="/">Integrações</a></li>
-                <li><a href="/">Planos</a></li>
-                <li><a href="/">Blog</a></li>
-                <li><a href="/">Ajuda</a></li>
+        <Stack component={'nav'} className={styles.nav_bar} sx={{ visibility: !open ? 'hidden' : 'visible' }}>
+            <ul className={`fw-light flex-${direction} ` + styles.nav_list + ' ' + (open ? styles.open : styles.closed)}>
+                <Link href="/">
+                    <li>Vantagens</li>
+                </Link>
+                <Link href="/">
+                    <li>Integrações</li>
+                </Link>
+                <Link href="/">
+                    <li>Planos</li>
+                </Link>
+                <Link href="/">
+                    <li>Blog</li>
+                </Link>
+                <Link href="/">
+                    <li>Ajuda</li>
+                </Link>
             </ul>
-        </nav>
+        </Stack >
     )
 }
 
