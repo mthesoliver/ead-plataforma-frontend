@@ -455,7 +455,7 @@ export default function Home() {
                         </ListItem>
                         <ListItem>
                           <CheckCircleIcon htmlColor={'#FE00FE'} className="me-2" />
-                          Marca d'água na aulas
+                          Marca d&aposágua na aulas
                         </ListItem>
                         <ListItem>
                           <CheckCircleIcon htmlColor={'#FE00FE'} className="me-2" />
