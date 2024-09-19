@@ -1,14 +1,17 @@
 import { useState, useEffect, useMemo } from "react";
 
 export default function useResize() {
-    let actualWidth = window.innerWidth;
+
+    let actualWidth = typeof window !== 'undefined' ? window.innerWidth : 1320;
     const [innerWidth, setInnerWidth] = useState<number>(actualWidth);
     const [isMobile, setIsMobile] = useState<boolean>(innerWidth > 960);
 
     useEffect(() => {
         // Função para atualizar a largura da janela
         const handleResize = () => {
-            setInnerWidth(window.innerWidth);
+            if (typeof window !== 'undefined') {
+                setInnerWidth(window.innerWidth);
+            }
         };
 
         // Adiciona um listener de resize
