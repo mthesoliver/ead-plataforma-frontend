@@ -70,8 +70,12 @@ header ul {
 h2 {
   font-size: 44;
   line-height: 1.4rem;
-  text-align: center;
-  font-family: "Rajdhani", sans-serif !important;
+  font-family: $ff-title !important;
+}
+
+h4 {
+  font-size: 20;
+  font-family: $ff-title !important;
 }
 
 @media screen and (max-width:960px) {
@@ -83,14 +87,9 @@ h2 {
     overflow-x: scroll;
   }
 
-  #price_cards {
-    overflow-x: scroll;
-  }
-
   /* Font title styles */
   h2 {
     font-size: 32;
-    line-height: 1.4rem;
-    text-align: center;
+    line-height: 1.6rem;
   }
 }

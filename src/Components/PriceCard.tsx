@@ -17,12 +17,12 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
     return (
         <>
             {plans && (
-                <Typography gutterBottom className='fw-medium mt-3' sx={{ fontSize: 24, lineHeight: 1, color: '#FE00FE' }} >
+                <Typography component={'h5'} gutterBottom className='fw-medium mt-3' sx={{ fontSize: 24, lineHeight: 1, color: '#FE00FE' }} >
                     {plans}
                 </Typography>
             )}
 
-            <Typography gutterBottom className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 80 : 60, lineHeight: !isMobile ? 1.4 : 1., color: color ?? '#1C0237' }} >
+            <Typography component={'h2'} gutterBottom className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 80 : 60, lineHeight: !isMobile ? 1.4 : 1., color: color ?? '#1C0237' }} >
                 {children}
                 {typeOfpay && (
                     <span className='fs-4 fw-regular mb-4'>
@@ -32,13 +32,13 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
             </Typography>
 
             {opts?.smallDescription && (
-                <Typography variant="body2" className='fw-medium mt-3' sx={{ fontSize: !isMobile ? 24 : 18, lineHeight: !isMobile ? 1.6 : 1.4, color: color ?? '#1C0237' }}>
+                <Typography component={'p'} variant="body2" className='fw-medium mt-3' sx={{ fontSize: !isMobile ? 24 : 18, lineHeight: !isMobile ? 1.6 : 1.4, color: color ?? '#1C0237' }}>
                     {opts?.smallDescription}
                 </Typography>
             )}
 
             {opts?.description && (
-                <Typography variant="body2" className='fw-regular' sx={{ fontSize: !isMobile ? 18 : 14, lineHeight: 1.6, color: color ?? '#1C0237', maxWidth: '300px' }}>
+                <Typography component={'p'} variant="body2" className='fw-regular' sx={{ fontSize: !isMobile ? 18 : 14, lineHeight: 1.6, color: color ?? '#1C0237', maxWidth: '300px' }}>
                     {opts?.description}
                 </Typography>
             )}

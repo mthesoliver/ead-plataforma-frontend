@@ -193,7 +193,7 @@ export default function Home() {
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} col gap-4`}>
                 <div className={`justify-content-center align-items-center col-${!isMobile ? 4 : 12} mt-5`}>
                   <HeroTextCustom sub={"do seu jeito!"} title={"Sua plataforma EAD,"} titleSize={80} colorMode={"light"} align="left" />
-                  <Typography component="h2" sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
+                  <Typography component="p" sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
@@ -370,7 +370,7 @@ export default function Home() {
                   </Typography>
                 </div>
 
-                <div id="price_cards" className={`d-inline-flex flex-row row flex-${!isMobile ? 'nowrap' : 'wrap'} gap-4 mt-5 justify-content-center align-items-center`}>
+                <div id="price_cards" className={`d-inline-flex flex-row row gap-4 mt-5 justify-content-center align-items-center flex-${!isMobile ? 'nowrap' : 'wrap'} `}>
                   <PriceCard
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}

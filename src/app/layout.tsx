@@ -5,6 +5,7 @@ import { Rajdhani } from "next/font/google";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
+const rajdhani = Rajdhani({ subsets: ["latin"], weight: "500" });
 
 export const metadata: Metadata = {
   title: "EAD Plataforma - Solução completa para o ensino a distância!",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + ' ' + rajdhani.className}>
         <AppRouterCacheProvider>
           {children}
         </AppRouterCacheProvider>

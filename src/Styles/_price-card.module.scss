@@ -4,7 +4,7 @@
     background: #fff !important;
     max-width: fit-content !important;
     padding: 3rem !important;
-    border-radius: 24px;
+    border-radius: 24px !important;
     border: 1px solid #9A9A9A;
     overflow: visible;
 }
@@ -13,7 +13,7 @@
     background: #1C0237 !important;
     max-width: fit-content !important;
     padding: 3rem !important;
-    border-radius: 24px;
+    border-radius: 24px !important;
     border: 1px solid #9A9A9A;
     overflow: visible;
 }
@@ -45,23 +45,5 @@
     .child_color_light ul li {
         color: #fff;
         font-size: calc($fs-md - 10px);
-    }
-
-    .background_card {
-        background: #fff !important;
-        max-width: fit-content !important;
-        padding: 3rem !important;
-        border-radius: 24px;
-        border: 1px solid #9A9A9A;
-        overflow: visible;
-    }
-
-    .background_card_dark {
-        background: #1C0237 !important;
-        max-width: fit-content !important;
-        padding: 3rem !important;
-        border-radius: 24px;
-        border: 1px solid #9A9A9A;
-        overflow: visible;
     }
 }

@@ -43,7 +43,7 @@ $overlay-color-3: linear-gradient(180deg,
 $box_shadow-1: 12px 12px 24px -6px rgba(0, 0, 0, 0.55);
 
 // Font styles
-$ff-title: "Rajdhani";
+$ff-title: "Rajdhani", sans-serif;
 $fs-xs: clamp(0.5rem, 0.3571rem + 0.2976vw, 0.625rem);
 $fs-sm: clamp(0.75rem, 0.6071rem + 0.2976vw, 0.875rem);
 $fs-md: clamp(1.5rem, 1.2143rem + 0.5952vw, 1.75rem);
