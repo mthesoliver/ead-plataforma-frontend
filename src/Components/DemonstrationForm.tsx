@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { Box, ButtonBase, FormControl, FormHelperText, Input } from '@mui/material';
+import { Box, ButtonBase, FormControl, FormHelperText, Input, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 
 function DemonstrationForm() {
@@ -31,37 +31,39 @@ function DemonstrationForm() {
     }
 
     return (
-        <Box className={`d-flex flex-column col w-${!isMobile ? 50 : 100} m-auto`} component={'form'} onSubmit={(e: any) => handleSubmit(e)}>
-            <FormControl >
-                <Input id="email-field" name="email-field" placeholder="Seu email" type="email" inputMode="email"
-                    aria-describedby='my-helper-text'
-                    fullWidth
-                    className={'mt-3'}
-                    value={email} onChange={e => setEmail(e.target.value)}
-                    required
-                    error={emailError}
-                    disableUnderline
-                    sx={{ background: 'rgba(255,255,255,.1)', padding: '1rem !important', borderRadius: '8px', border: "1px solid rgba(255,255,255,.6)", color: '#ffffff' }} />
-                <FormHelperText id="my-helper-text" sx={{ color: "rgba(255,255,255,.2)" }}>Nós nunca iremos compartilhar seu email </FormHelperText>
-            </FormControl>
+        <StyledEngineProvider injectFirst>
+            <Box className={`d-flex flex-column col w-${!isMobile ? 50 : 100} m-auto`} component={'form'} onSubmit={(e: any) => handleSubmit(e)}>
+                <FormControl >
+                    <Input id="email-field" name="email-field" placeholder="Seu email" type="email" inputMode="email"
+                        aria-describedby='my-helper-text'
+                        fullWidth
+                        className={'mt-3'}
+                        value={email} onChange={e => setEmail(e.target.value)}
+                        required
+                        error={emailError}
+                        disableUnderline
+                        sx={{ background: 'rgba(255,255,255,.1)', padding: '1rem !important', borderRadius: '8px', border: "1px solid rgba(255,255,255,.6)", color: '#ffffff' }} />
+                    <FormHelperText id="my-helper-text" sx={{ color: "rgba(255,255,255,.2)" }}>Nós nunca iremos compartilhar seu email </FormHelperText>
+                </FormControl>
 
-            <FormControl >
-                <Input id="name-field" name="name-field" placeholder="Seu nome" type="text" inputMode="text"
-                    fullWidth
-                    className={'mt-3'}
-                    value={name} onChange={e => setName(e.target.value)}
-                    required
-                    error={nameError}
-                    disableUnderline
-                    sx={{ background: 'rgba(255,255,255,.1)', padding: '1rem !important', borderRadius: '8px', border: "1px solid rgba(255,255,255,.6)", color: '#ffffff' }} />
-            </FormControl>
+                <FormControl >
+                    <Input id="name-field" name="name-field" placeholder="Seu nome" type="text" inputMode="text"
+                        fullWidth
+                        className={'mt-3'}
+                        value={name} onChange={e => setName(e.target.value)}
+                        required
+                        error={nameError}
+                        disableUnderline
+                        sx={{ background: 'rgba(255,255,255,.1)', padding: '1rem !important', borderRadius: '8px', border: "1px solid rgba(255,255,255,.6)", color: '#ffffff' }} />
+                </FormControl>
 
-            <ButtonBase type="submit"
-                className="btn my-3 p-3 fw-bold"
-                sx={{ background: 'rgba(255,255,255,.9)!important', textTransform: 'uppercase' }}>
-                Enviar
-            </ButtonBase>
-        </Box >
+                <ButtonBase type="submit"
+                    className="btn my-3 p-3 fw-bold"
+                    sx={{ background: 'rgba(255,255,255,.9)!important', textTransform: 'uppercase' }}>
+                    Enviar
+                </ButtonBase>
+            </Box >
+        </StyledEngineProvider>
     )
 }
 

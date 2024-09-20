@@ -7,7 +7,7 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 
 import { CtaType } from 'Ead/Types/CtaType';
-import { Box } from '@mui/material';
+import { Box, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 
 function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children, border }: Readonly<CtaType>) {
@@ -30,20 +30,22 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
     };
 
     return (
-        <Card className={"d-flex flex-row p-4 align-items-center justify-content-center text-center"}
-            variant="outlined"
-            sx={
-                {
-                    ...border ? { borderColor: "rgba(255, 255, 255, .2)", borderWidth: 1, borderRadius: "16px", backgroundImage: imagePath ? `url(${imagePath})` : '', backgroundColor: "transparent", backgroundSize: "cover", backgroundPosition: "center center", }
-                        : { borderColor: "none", borderWidth: 0, backgroundImage: imagePath ? `url(${imagePath})` : '', backgroundColor: "transparent", backgroundSize: "cover", backgroundPosition: "center center", }
-                }
-            }>
-            <CardContent className={"p-1 mb-2"} >
-                <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
-                    {children}
-                </CustomCardContent>
-            </CardContent>
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={"d-flex flex-row p-4 align-items-center justify-content-center text-center"}
+                variant="outlined"
+                sx={
+                    {
+                        ...border ? { borderColor: "rgba(255, 255, 255, .2)", borderWidth: 1, borderRadius: "16px", backgroundImage: imagePath ? `url(${imagePath})` : '', backgroundColor: "transparent", backgroundSize: "cover", backgroundPosition: "center center", }
+                            : { borderColor: "none", borderWidth: 0, backgroundImage: imagePath ? `url(${imagePath})` : '', backgroundColor: "transparent", backgroundSize: "cover", backgroundPosition: "center center", }
+                    }
+                }>
+                <CardContent className={"p-1 mb-2"} >
+                    <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
+                        {children}
+                    </CustomCardContent>
+                </CardContent>
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

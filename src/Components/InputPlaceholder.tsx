@@ -4,7 +4,7 @@ import styles from 'Ead/Styles/_your-course-placeholder.module.scss';
 import { useEffect, useState } from 'react';
 import Button from './Button';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { Box, FormHelperText, Stack } from '@mui/material';
+import { Box, FormHelperText, Stack, StyledEngineProvider } from '@mui/material';
 import { sanitizeString } from 'Ead/Helper/StringsHelper';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
@@ -103,88 +103,90 @@ function InputPlaceholder() {
     }
 
     return (
-        <Stack >
-            {isMobile && (
-                <>
-                    <Box className={"m-4 p-2 " + styles.placeholder_wrapper} component={'form'} onSubmit={(e: any) => handleSubmit(e, input)}>
-                        <input
-                            onInput={handleInput}
-                            required
-                            type="text"
-                            className="text-end border-0 pe-0"
-                            placeholder={placeholder}
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                            value={input}
-                        />
-                        <span className="text-start border-0 ps-0 fw-bolder">
-                            .eadplataforma.app
-                        </span>
+        <StyledEngineProvider injectFirst>
+            <Stack >
+                {isMobile && (
+                    <>
+                        <Box className={"m-4 p-2 " + styles.placeholder_wrapper} component={'form'} onSubmit={(e: any) => handleSubmit(e, input)}>
+                            <input
+                                onInput={handleInput}
+                                required
+                                type="text"
+                                className="text-end border-0 pe-0"
+                                placeholder={placeholder}
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                value={input}
+                            />
+                            <span className="text-start border-0 ps-0 fw-bolder">
+                                .eadplataforma.app
+                            </span>
 
-                        {inputValid !== null && (
-                            inputValid ? (
-                                <span>
-                                    <CheckIcon sx={{ color: 'green', fontSize: '32px', marginInline: '10px!important' }} />
-                                </span>
-                            ) : (
-                                <span>
-                                    <CloseIcon sx={{ color: 'red', fontSize: '32px', marginInline: '10px!important' }} />
-                                </span>
-                            )
-                        )}
-
-                        <span className="text-end border-0 p-2 ">
-                            <Button rounded type='submit'>
-                                <span className="fw-bolder">Criar EAD</span>
-                            </Button>
-                        </span>
-                    </Box>
-                    <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '12px', marginTop: '-14px !important', maxWidth: '40%' }} className='m-auto'>
-                        {inputHelper}
-                    </FormHelperText>
-                </>
-            )}
-
-            {!isMobile && (
-                <>
-                    <Box className={"m-4 p-2 " + styles.placeholder_wrapper} component={'form'} onSubmit={(e: any) => handleSubmit(e, input)}>
-                        <input
-                            onInput={handleInput}
-                            required
-                            type="text"
-                            className="text-end border-0 pe-0"
-                            placeholder={placeholder}
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                            value={input}
-                        />
-                        <span className="text-start border-0 ps-0 fw-bolder">
-                            .eadplataforma.app
-                        </span>
-                        <span className="text-end border-0 p-2 ms-4">
                             {inputValid !== null && (
                                 inputValid ? (
                                     <span>
-                                        <CheckIcon sx={{ color: 'green', fontSize: '32px', marginRight: '1rem!important' }} />
+                                        <CheckIcon sx={{ color: 'green', fontSize: '32px', marginInline: '10px!important' }} />
                                     </span>
                                 ) : (
                                     <span>
-                                        <CloseIcon sx={{ color: 'red', fontSize: '32px', marginRight: '1rem!important' }} />
+                                        <CloseIcon sx={{ color: 'red', fontSize: '32px', marginInline: '10px!important' }} />
                                     </span>
                                 )
                             )}
 
-                            <Button givenIcon={PlayArrowIcon} rounded type='submit'>
-                                <span className="fw-bolder">Criar EAD</span>
-                            </Button>
-                        </span>
-                    </Box>
-                    <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '16px', marginTop: '-10px !important' }}>
-                        {inputHelper}
-                    </FormHelperText>
-                </>
-            )}
-        </Stack>
+                            <span className="text-end border-0 p-2 ">
+                                <Button rounded type='submit'>
+                                    <span className="fw-bolder">Criar EAD</span>
+                                </Button>
+                            </span>
+                        </Box>
+                        <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '12px', marginTop: '-14px !important', maxWidth: '40%' }} className='m-auto'>
+                            {inputHelper}
+                        </FormHelperText>
+                    </>
+                )}
+
+                {!isMobile && (
+                    <>
+                        <Box className={"m-4 p-2 " + styles.placeholder_wrapper} component={'form'} onSubmit={(e: any) => handleSubmit(e, input)}>
+                            <input
+                                onInput={handleInput}
+                                required
+                                type="text"
+                                className="text-end border-0 pe-0"
+                                placeholder={placeholder}
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                value={input}
+                            />
+                            <span className="text-start border-0 ps-0 fw-bolder">
+                                .eadplataforma.app
+                            </span>
+                            <span className="text-end border-0 p-2 ms-4">
+                                {inputValid !== null && (
+                                    inputValid ? (
+                                        <span>
+                                            <CheckIcon sx={{ color: 'green', fontSize: '32px', marginRight: '1rem!important' }} />
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            <CloseIcon sx={{ color: 'red', fontSize: '32px', marginRight: '1rem!important' }} />
+                                        </span>
+                                    )
+                                )}
+
+                                <Button givenIcon={PlayArrowIcon} rounded type='submit'>
+                                    <span className="fw-bolder">Criar EAD</span>
+                                </Button>
+                            </span>
+                        </Box>
+                        <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '16px', marginTop: '-10px !important' }}>
+                            {inputHelper}
+                        </FormHelperText>
+                    </>
+                )}
+            </Stack>
+        </StyledEngineProvider>
     );
 }
 

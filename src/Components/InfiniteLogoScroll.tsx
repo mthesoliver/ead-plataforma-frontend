@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 import styles from "Ead/Styles/_infinite-scroll.module.scss";
-import { Box } from '@mui/material';
+import { Box, StyledEngineProvider } from '@mui/material';
 import Image from 'next/image';
 
 function InfiniteLogoScroll() {
@@ -19,15 +19,17 @@ function InfiniteLogoScroll() {
     ]
 
     return (
-        <Box className={"position-relative d-flex flex-row justify-content-center align-items-center py-5 w-100 " + styles.infinite_scroll_container}>
-            <Box className={"position-absolute d-flex justify-content-center left-0 gap-4"}>
-                <Box className={"d-flex align-items-center justify-content-center w-100 " + styles.overlay_images} />
-                {[...images, ...images].map((item, index) => (
-                    <Image key={index} src={item} width={205} height={82} alt={`Logotipo parceiro ${item.split('-').slice(-1)}`} style={{ objectFit: "cover" }}
-                        className={styles.infinite_scroll_animation} />
-                ))}
+        <StyledEngineProvider injectFirst>
+            <Box className={"position-relative d-flex flex-row justify-content-center align-items-center py-5 w-100 " + styles.infinite_scroll_container}>
+                <Box className={"position-absolute d-flex justify-content-center left-0 gap-4"}>
+                    <Box className={"d-flex align-items-center justify-content-center w-100 " + styles.overlay_images} />
+                    {[...images, ...images].map((item, index) => (
+                        <Image key={index} src={item} width={205} height={82} alt={`Logotipo parceiro ${item.split('-').slice(-1)}`} style={{ objectFit: "cover" }}
+                            className={styles.infinite_scroll_animation} />
+                    ))}
+                </Box>
             </Box>
-        </Box>
+        </StyledEngineProvider>
     )
 }
 

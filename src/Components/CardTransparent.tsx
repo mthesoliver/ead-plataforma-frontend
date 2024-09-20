@@ -10,6 +10,7 @@ import styles from "Ead/Styles/_card-transparent.module.scss";
 import { CardSimpleType } from 'Ead/Types/CardSimpleType';
 import Image from 'next/image';
 import useResize from 'Ead/CustomHooks/useResize';
+import { StyledEngineProvider } from '@mui/material';
 
 function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimpleType>) {
     const { isMobile } = useResize();
@@ -26,12 +27,14 @@ function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimp
     );
 
     return (
-        <Card className={`d-flex flex-column col-${size} py-5 align-items-center justify-content-center text-center gap-1 ` + styles.background_card} variant="outlined" >
-            <Image src={imagePath!} alt={imagePath!} width={!isMobile ? 90 : 60} height={!isMobile ? 90 : 60} loading="lazy" />
-            <CardContent className={`px-${!isMobile ? 4 : 1} mb-2`} >
-                {cardContent}
-            </CardContent>
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={`d-flex flex-column col-${size} py-5 align-items-center justify-content-center text-center gap-1 ` + styles.background_card} variant="outlined" >
+                <Image src={imagePath!} alt={imagePath!} width={!isMobile ? 90 : 60} height={!isMobile ? 90 : 60} loading="lazy" />
+                <CardContent className={`px-${!isMobile ? 4 : 1} mb-2`} >
+                    {cardContent}
+                </CardContent>
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

@@ -6,7 +6,7 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import styles from "Ead/Styles/_best-fee.module.scss";
 import { CardFeeContainerType, CardFeeType } from 'Ead/Types/CardFee';
-import { Box } from '@mui/material';
+import { Box, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 
 export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release, size }: Readonly<CardFeeType>) => {
@@ -44,9 +44,11 @@ export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release
 };
 function BestFee({ children, direction = 'row' }: Readonly<CardFeeContainerType>) {
     return (
-        <Card className={`d-flex flex-${direction} py-5 w-100 ` + styles.background_card} variant="outlined" >
-            {children}
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={`d-flex flex-${direction} py-5 w-100 ` + styles.background_card} variant="outlined" >
+                {children}
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

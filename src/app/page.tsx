@@ -11,7 +11,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { List, ListItem, Typography } from "@mui/material";
+import { List, ListItem, StyledEngineProvider, Typography } from "@mui/material";
 import Carousel from "Ead/Components/SliderCustom";
 import HeroTextCustom from "Ead/Components/HeroTextCustom";
 import CardSimple from "Ead/Components/CardSimple";
@@ -45,7 +45,8 @@ export default function Home() {
   }
 
   return (
-    <>
+
+    <StyledEngineProvider injectFirst>
       <header>
         <Header />
       </header>
@@ -609,6 +610,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-    </>
+    </StyledEngineProvider>
   );
 }

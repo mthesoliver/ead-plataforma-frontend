@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 
 import styles from "Ead/Styles/_card-simple.module.scss";
 import { CardSimpleType } from 'Ead/Types/CardSimpleType';
+import { StyledEngineProvider } from '@mui/material';
 
 function CardSimple({ title, subTitle, imagePath, size }: Readonly<CardSimpleType>) {
 
@@ -23,11 +24,13 @@ function CardSimple({ title, subTitle, imagePath, size }: Readonly<CardSimpleTyp
     );
 
     return (
-        <Card className={`d-flex col-${size} ms-auto p-4 align-items-end justify-content-center text-center ` + styles.background_card} variant="outlined" sx={{ backgroundImage: `url(${imagePath})` }}>
-            <CardContent className={"p-1 mb-2"} >
-                {cardContent}
-            </CardContent>
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={`d-flex col-${size} ms-auto p-4 align-items-end justify-content-center text-center ` + styles.background_card} variant="outlined" sx={{ backgroundImage: `url(${imagePath})` }}>
+                <CardContent className={"p-1 mb-2"} >
+                    {cardContent}
+                </CardContent>
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

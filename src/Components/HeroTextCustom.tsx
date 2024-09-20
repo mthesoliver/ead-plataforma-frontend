@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Typography } from "@mui/material";
+import { Box, StyledEngineProvider, Typography } from "@mui/material";
 import useResize from "Ead/CustomHooks/useResize";
 import styles from "Ead/Styles/_hero-text.module.scss";
 import { ColorMode, HeroTextType } from "Ead/Types/HeroTextType";
@@ -25,14 +25,16 @@ function HeroTextCustom({ title, sub, titleSize, colorMode, align }: Readonly<He
     }
 
     return (
-        <Box className="my-4 d-flex justify-content-evenly flex-column">
-            <Typography gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: !isMobile ? 36 : 22, lineHeight: '1.6rem !important', textAlign: align ?? "center" }}>
-                {title}
-            </Typography>
-            <Typography gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ? isMobile ? 44 : titleSize : 56, textAlign: align ?? "center", lineHeight: 1 }}>
-                {sub}
-            </Typography>
-        </Box>
+        <StyledEngineProvider injectFirst>
+            <Box className="my-4 d-flex justify-content-evenly flex-column">
+                <Typography gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: !isMobile ? 36 : 22, lineHeight: '1.6rem !important', textAlign: align ?? "center" }}>
+                    {title}
+                </Typography>
+                <Typography gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ? isMobile ? 44 : titleSize : 56, textAlign: align ?? "center", lineHeight: 1 }}>
+                    {sub}
+                </Typography>
+            </Box>
+        </StyledEngineProvider>
     )
 }
 

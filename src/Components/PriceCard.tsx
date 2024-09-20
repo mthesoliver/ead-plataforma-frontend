@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import styles from "Ead/Styles/_price-card.module.scss";
 import { PriceType } from 'Ead/Types/PriceType';
 import Button from './Button';
-import { Badge } from '@mui/material';
+import { Badge, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 
 export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readonly<PriceType>) => {
@@ -60,23 +60,25 @@ function PriceCard({ plans, opts, color, children, column, listchildren, btnText
     const isColumn = column ? 'flex-column col' : 'flex-row row';
 
     return (
-        <Card className={`d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
-            {badge && (
-                <Badge sx={{ color: "#fff", padding: '.6rem 1.5rem !important', borderRadius: '120px' }} className={styles.badge_wrapper}>
-                    {badge}
-                </Badge>
-            )}
-            <CardContent className={"px-4 mb-2 d-flex flex-column col " + (column ? 'col-12' : 'col-6')} >
-                <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay}>
-                    {children}
-                </PriceContent>
-            </CardContent>
-            <CardContent className={"px-4 mb-2 d-flex flex-column col " + ' ' + (column ? 'col-12 mt-5 m-auto' : 'col-5') + ' ' + (color ? styles.child_color_light : styles.child_color_dark)} >
-                <PriceListAdvantages opts={opts} plans={plans} color={color} btnText={btnText} >
-                    {listchildren}
-                </PriceListAdvantages>
-            </CardContent>
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={`d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
+                {badge && (
+                    <Badge sx={{ color: "#fff", padding: '.6rem 1.5rem !important', borderRadius: '120px' }} className={styles.badge_wrapper}>
+                        {badge}
+                    </Badge>
+                )}
+                <CardContent className={"px-4 mb-2 d-flex flex-column col " + (column ? 'col-12' : 'col-6')} >
+                    <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay}>
+                        {children}
+                    </PriceContent>
+                </CardContent>
+                <CardContent className={"px-4 mb-2 d-flex flex-column col " + ' ' + (column ? 'col-12 mt-5 m-auto' : 'col-5') + ' ' + (color ? styles.child_color_light : styles.child_color_dark)} >
+                    <PriceListAdvantages opts={opts} plans={plans} color={color} btnText={btnText} >
+                        {listchildren}
+                    </PriceListAdvantages>
+                </CardContent>
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

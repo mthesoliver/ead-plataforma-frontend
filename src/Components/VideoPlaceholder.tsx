@@ -1,6 +1,6 @@
 'use client'
 
-import { Box } from '@mui/material';
+import { Box, StyledEngineProvider } from '@mui/material';
 import styles from 'Ead/Styles/_video-placeholder.module.scss';
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 
@@ -20,9 +20,12 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     }
 
     return (
-        <Box className={"text-center " + stylesClass}>
-            <YouTube videoId={props.videoId} options={opts} id={styles.video_content} onReady={handleOnReady} />
-        </Box>
+
+        <StyledEngineProvider injectFirst>
+            <Box className={"text-center " + stylesClass}>
+                <YouTube videoId={props.videoId} options={opts} id={styles.video_content} onReady={handleOnReady} />
+            </Box>
+        </StyledEngineProvider>
     )
 }
 

@@ -7,7 +7,7 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import styles from "Ead/Styles/_header.module.scss";
 import Link from "next/link";
 import useResize from "Ead/CustomHooks/useResize";
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, StyledEngineProvider } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { Close } from "@mui/icons-material";
@@ -23,7 +23,7 @@ function Header() {
     }
 
     return (
-        <>
+        <StyledEngineProvider injectFirst>
             {isMobile && (
                 <section className={"container mt-4 d-flex flex-row row m-auto " + styles.header_width}>
                     <div className={'d-flex flex-row justify-content-evenly align-items-center m-auto '}>
@@ -62,7 +62,7 @@ function Header() {
                     </Button>
                 </section>
             )}
-        </>
+        </StyledEngineProvider>
     )
 }
 

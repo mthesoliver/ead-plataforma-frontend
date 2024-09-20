@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import { Card, Hidden, IconButton } from "@mui/material";
+import { Card, Hidden, IconButton, StyledEngineProvider } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Slide from "@mui/material/Slide";
@@ -52,67 +52,69 @@ function Carousel({ children }: any) {
 
     return (
         //  outer box that holds the carousel and the buttons
-        <Box
-            sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                alignContent: "center",
-                justifyContent: "center",
-                height: "400px",
-                width: "100%",
-                marginTop: "40px",
-            }}
-        >
-            <IconButton
-                onClick={handlePrevPage}
-                sx={{ margin: 2, color: "white" }}
-                disabled={currentPage === 0}
+        <StyledEngineProvider injectFirst>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    alignContent: "center",
+                    justifyContent: "center",
+                    height: "400px",
+                    width: "100%",
+                    marginTop: "40px",
+                }}
             >
-                {/* this is the button that will go to the previous page you can change these icons to whatever you wish*/}
-                <NavigateBeforeIcon sx={{ fontSize: 56 }} />
-            </IconButton>
-            <Box sx={{ width: `${containerWidth}px`, height: "100%", overflow: "visible" }}>
-                {/* this is the box that holds the cards and the slide animation,
+                <IconButton
+                    onClick={handlePrevPage}
+                    sx={{ margin: 2, color: "white" }}
+                    disabled={currentPage === 0}
+                >
+                    {/* this is the button that will go to the previous page you can change these icons to whatever you wish*/}
+                    <NavigateBeforeIcon sx={{ fontSize: 56 }} />
+                </IconButton>
+                <Box sx={{ width: `${containerWidth}px`, height: "100%", overflow: "visible" }}>
+                    {/* this is the box that holds the cards and the slide animation,
         in this implementation the card is already constructed but in later versions you will see how the
         items you wish to use will be dynamically created with the map method*/}
-                {cards.map((card: React.ReactElement, index: number) => (
-                    <Box
-                        key={`card-${index}`}
-                        sx={{
-                            width: "100%",
-                            height: "100%",
-                            display: currentPage === index ? "block" : "none",
-                        }}
-                    >
-                        {/* this is the slide animation that will be used to slide the cards in and out*/}
-                        <Slide direction={slideDirection} in={currentPage === index}>
-                            <Stack
-                                spacing={3}
-                                direction="row"
-                                alignContent="center"
-                                justifyContent="center"
-                                sx={{ width: "100%", height: "fit-content", gap: 3 }}
-                            >
-                                {children.slice(
-                                    index * cardsPerPage,
-                                    index * cardsPerPage + cardsPerPage
-                                )}
-                            </Stack>
-                        </Slide>
-                    </Box>
-                ))}
+                    {cards.map((card: React.ReactElement, index: number) => (
+                        <Box
+                            key={`card-${index}`}
+                            sx={{
+                                width: "100%",
+                                height: "100%",
+                                display: currentPage === index ? "block" : "none",
+                            }}
+                        >
+                            {/* this is the slide animation that will be used to slide the cards in and out*/}
+                            <Slide direction={slideDirection} in={currentPage === index}>
+                                <Stack
+                                    spacing={3}
+                                    direction="row"
+                                    alignContent="center"
+                                    justifyContent="center"
+                                    sx={{ width: "100%", height: "fit-content", gap: 3 }}
+                                >
+                                    {children.slice(
+                                        index * cardsPerPage,
+                                        index * cardsPerPage + cardsPerPage
+                                    )}
+                                </Stack>
+                            </Slide>
+                        </Box>
+                    ))}
+                </Box>
+                <IconButton
+                    onClick={handleNextPage}
+                    sx={{ margin: 1, color: "white" }}
+                    disabled={
+                        currentPage >= Math.ceil((cards.length || 0) / cardsPerPage) - 1
+                    }
+                >
+                    <NavigateNextIcon sx={{ fontSize: 56 }} />
+                </IconButton>
             </Box>
-            <IconButton
-                onClick={handleNextPage}
-                sx={{ margin: 1, color: "white" }}
-                disabled={
-                    currentPage >= Math.ceil((cards.length || 0) / cardsPerPage) - 1
-                }
-            >
-                <NavigateNextIcon sx={{ fontSize: 56 }} />
-            </IconButton>
-        </Box>
+        </StyledEngineProvider>
     );
 }
 
