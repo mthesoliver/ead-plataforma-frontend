@@ -1,4 +1,5 @@
 @import './_theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 
 // Aplique o tema escuro por padrão
@@ -65,6 +66,14 @@ header ul {
   margin-inline: 0 !important;
 }
 
+/* Font title styles */
+h2 {
+  font-size: 44;
+  line-height: 1.4rem;
+  text-align: center;
+  font-family: "Rajdhani", sans-serif !important;
+}
+
 @media screen and (max-width:960px) {
   footer {
     margin-top: -6rem !important;
@@ -76,5 +85,12 @@ header ul {
 
   #price_cards {
     overflow-x: scroll;
+  }
+
+  /* Font title styles */
+  h2 {
+    font-size: 32;
+    line-height: 1.4rem;
+    text-align: center;
   }
 }

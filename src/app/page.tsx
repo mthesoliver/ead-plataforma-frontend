@@ -63,7 +63,7 @@ export default function Home() {
 
         <section id="carousel_container" className="container d-flex flex-row row my-3 w-100">
           <div className="container d-flex flex-column col">
-            <Typography gutterBottom className='fw-semibold mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani" }} >
+            <Typography component="h2" gutterBottom className='fw-semibold mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani" }} >
               Veja as possibilidades com a EAD Plataforma
             </Typography>
             <div className={"z3 position-relative"}>
@@ -116,10 +116,10 @@ export default function Home() {
                 <Button givenClass="fw-light p-3" rounded>Confira todas as funcionalidades</Button>
               </div>
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
-                <Typography gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
+                <Typography component="h4" gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
                   ou
                 </Typography>
-                <Typography gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani" }} >
+                <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani" }} >
                   Crie sua plataforma agora mesmo
                 </Typography>
               </div>
@@ -164,7 +164,7 @@ export default function Home() {
           <div className={" d-flex flex-column col mt-5 " + styles.inner_contents}>
             <section id="clients_feedback_container" className={"d-flex flex-row row align-items-center"}>
               <div className={"d-flex flex-column col"}>
-                <Typography gutterBottom className='fw-bolder mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: !isMobile ? 1.4 : 1, textAlign: 'center', fontFamily: "Rajdhani", color: "#7C038E" }} >
+                <Typography component="h2" gutterBottom className='fw-bolder mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: !isMobile ? 1.4 : 1, textAlign: 'center', fontFamily: "Rajdhani", color: "#7C038E" }} >
                   Veja o que nossos cliente falam sobre nós
                 </Typography>
                 <div className={`d-inline-flex flex-${!isMobile ? 'row' : 'column'} gap-4 justify-content-center align-items-center`}>
@@ -177,10 +177,10 @@ export default function Home() {
                     <Button givenClass="fw-light p-3" rounded>Quero vender como eles!</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
-                    <Typography gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>
@@ -192,7 +192,7 @@ export default function Home() {
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} col gap-4`}>
                 <div className={`justify-content-center align-items-center col-${!isMobile ? 4 : 12} mt-5`}>
                   <HeroTextCustom sub={"do seu jeito!"} title={"Sua plataforma EAD,"} titleSize={80} colorMode={"light"} align="left" />
-                  <Typography sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
+                  <Typography component="h2" sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
@@ -364,7 +364,7 @@ export default function Home() {
                 </div>
 
                 <div className={"d-inline-flex flex-row gap-4 justify-content-center align-items-center"}>
-                  <Typography gutterBottom className='fw-semibold my-3 z3 position-relative ' sx={{ fontSize: 44, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani", color: '#000' }} >
+                  <Typography component="h2" gutterBottom className='fw-semibold my-3 z3 position-relative ' sx={{ fontSize: 44, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani", color: '#000' }} >
                     Anual / Mensal
                   </Typography>
                 </div>
@@ -515,10 +515,10 @@ export default function Home() {
                     <Button givenClass="fw-light p-3" rounded>Conheça os outros planos</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
-                    <Typography gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>
