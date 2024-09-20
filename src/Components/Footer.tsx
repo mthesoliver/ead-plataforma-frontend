@@ -175,82 +175,84 @@ function Footer() {
 
                     </div>
 
-                    <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
-                        <List className="d-flex flex-column col gap-2">
-                            <ListItem>
-                                <Typography className="fw-bolder">
-                                    EAD DOCS
-                                </Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://eadplataforma.com/eadplayer'}>
-                                    EAD Player
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/docs/ead-checkout'}>
-                                    EAD Checkout
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/docs/aulas-ao-vivo'}>
-                                    EAD Live
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/docs/ead-store'}>
-                                    EAD Store
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/docs/api'}>
-                                    API
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/docs/webhooks'}>
-                                    Webhooks
-                                </Link>
-                            </ListItem>
-                        </List>
-                    </div>
+                    <div className={`d-flex flex-row row align-items-start justify-content-center`}>
+                        <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
+                            <List className="d-flex flex-column col gap-2">
+                                <ListItem>
+                                    <Typography className="fw-bolder">
+                                        EAD DOCS
+                                    </Typography>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://eadplataforma.com/eadplayer'}>
+                                        EAD Player
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/docs/ead-checkout'}>
+                                        EAD Checkout
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/docs/aulas-ao-vivo'}>
+                                        EAD Live
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/docs/ead-store'}>
+                                        EAD Store
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/docs/api'}>
+                                        API
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/docs/webhooks'}>
+                                        Webhooks
+                                    </Link>
+                                </ListItem>
+                            </List>
+                        </div>
 
-                    <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
-                        <List className="d-flex flex-column col gap-2">
-                            <ListItem>
-                                <Typography className="fw-bolder">
-                                    SUPORTE
-                                </Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://eadplataforma.com/contact'}>
-                                    Fale conosco
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://docs.eadplataforma.com/'}>
-                                    Central de ajuda
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'http://bit.ly/eadplataforma-contrato'}>
-                                    Termos de uso
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href={'https://eadplataforma.com/privacy'}>
-                                    Política de privacidade
-                                </Link>
-                            </ListItem>
-                        </List>
+                        <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
+                            <List className="d-flex flex-column col gap-2">
+                                <ListItem>
+                                    <Typography className="fw-bolder">
+                                        SUPORTE
+                                    </Typography>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://eadplataforma.com/contact'}>
+                                        Fale conosco
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://docs.eadplataforma.com/'}>
+                                        Central de ajuda
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'http://bit.ly/eadplataforma-contrato'}>
+                                        Termos de uso
+                                    </Link>
+                                </ListItem>
+                                <ListItem>
+                                    <Link href={'https://eadplataforma.com/privacy'}>
+                                        Política de privacidade
+                                    </Link>
+                                </ListItem>
+                            </List>
+                        </div>
                     </div>
 
                     <div className={`d-flex flex-row align-items-center col col-$12 gap-2 justify-content-center gap-4 mt-5 `}>
                         <Image src={'/assets/images/amazon_logo.png'}
-                            alt='Logotipo da amazon' width={100 / 1.6} height={75 / 1.6} loading="eager"
+                            alt='Logotipo da amazon' width={100 / 1.2} height={75 / 1.2} loading="eager"
                             placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
                         <Image src={'/assets/images/GPTW_logo.png'}
-                            alt='Logotipo do Great Place to Work' width={100 / 2} height={166 / 2} loading="eager"
+                            alt='Logotipo do Great Place to Work' width={100 / 1.3} height={166 / 1.3} loading="eager"
                             placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
                     </div>
                 </section >
