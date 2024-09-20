@@ -43,7 +43,7 @@ function DemonstrationForm() {
                         error={emailError}
                         disableUnderline
                         sx={{ background: 'rgba(255,255,255,.1)', padding: '1rem !important', borderRadius: '8px', border: "1px solid rgba(255,255,255,.6)", color: '#ffffff' }} />
-                    <FormHelperText id="my-helper-text" sx={{ color: "rgba(255,255,255,.2)" }}>Nós nunca iremos compartilhar seu email </FormHelperText>
+                    <FormHelperText id="my-helper-text" sx={{ color: "rgba(255,255,255,.2)", fontSize: "12px!important", lineHeight: "16px!important" }}>Nós nunca iremos compartilhar seu email </FormHelperText>
                 </FormControl>
 
                 <FormControl >

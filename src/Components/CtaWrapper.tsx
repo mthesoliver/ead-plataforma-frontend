@@ -16,10 +16,10 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor, children }: Readonly<CtaType>) => {
         return (
             <CardContent className={`d-flex flex-column p-2 my-5 w-${!isMobile ? 75 : 100} m-auto`} >
-                <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 26 : 32, lineHeight: 1.4, color: fontColor ?? '#fff' }} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 26 : 32, lineHeight: "1.8rem !important", color: fontColor ?? '#fff' }} >
                     {title}
                 </Typography>
-                <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 14, lineHeight: 1.6, color: '#fff' }}>
+                <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 14, lineHeight: "1.6rem !important", color: '#fff' }}>
                     {subTitle}
                 </Typography>
                 <Box className={`d-flex flex-${!isMobile ? 'row' : 'column'} row gap-3 w-${!isMobile ? 50 : 100} m-auto justify-content-center flex-nowrap mt-5`}>

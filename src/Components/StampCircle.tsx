@@ -12,7 +12,7 @@ function StampCircle({ children }: any) {
         <StyledEngineProvider injectFirst>
             <Box className={"m-2 d-flex flex-row align-itens-center justify-content-center position-relative p-2 z-3 " + styles.back_circle}>
                 <Box className={styles.main_circle}>
-                    <Typography sx={{ maxWidth: 120, textAlign: 'center', fontWeight: 800, fontSize: !isMobile ? 14 : 12, lineHeight: 1.2 }}
+                    <Typography sx={{ maxWidth: 120, textAlign: 'center', fontWeight: 800, fontSize: !isMobile ? 14 : 12, lineHeight: "1.2rem!important" }}
                         className="position-relative top-50 start-50 translate-middle">
                         {children}
                     </Typography>

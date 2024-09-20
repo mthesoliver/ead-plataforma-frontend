@@ -22,13 +22,13 @@ function AccordionCustom({ children, title, accordionIndex }: Readonly<Accordion
                     aria-controls={`tab-content`}
                     id={accordionIndex}
                 >
-                    <Typography sx={{ color: '#1C0237', fontSize: !isMobile ? 18 : 16 }} className="fw-bold ">
+                    <Typography component={'h5'} sx={{ color: '#1C0237', fontSize: !isMobile ? 18 : 16 }} className="fw-bold ">
                         {title}
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails
                     className={styles.accordion_summary_wrapper}>
-                    <Typography sx={{ color: '#1C0237', fontSize: !isMobile ? 16 : 13 }} className="fw-regular py-4">
+                    <Typography component={'p'} sx={{ color: '#1C0237', fontSize: !isMobile ? 16 : 13 }} className="fw-regular py-4">
                         {children}
                     </Typography>
                 </AccordionDetails>
