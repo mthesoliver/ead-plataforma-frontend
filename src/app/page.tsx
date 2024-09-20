@@ -202,7 +202,7 @@ export default function Home() {
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
-                    <Button givenClass="fw-light p-4 fs-6" rounded>Comece agora mesmo</Button>
+                    <Button givenClass="fw-light p-4 fs-6" rounded link="https://eadplataforma.com/trial">Comece agora mesmo</Button>
                   </div>
                 </div>
 

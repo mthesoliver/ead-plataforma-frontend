@@ -3,13 +3,13 @@
 .sub_title_dark_mode {
     color: #fff !important;
     font-size: calc($fs-lg + 4px);
-    font-family: $ff-title;
+    font-family: $ff-title !important;
     line-height: 1rem;
 }
 
 .sub_title_light_mode {
     color: #7C038E !important;
     font-size: calc($fs-lg + 4px);
-    font-family: $ff-title;
+    font-family: $ff-title !important;
     line-height: 1rem;
 }

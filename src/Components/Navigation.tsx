@@ -14,19 +14,19 @@ function Navigation({ direction = 'row', open = false }: Readonly<NavigationType
         <StyledEngineProvider injectFirst>
             <Stack id={'nav_container'} component={'nav'} className={styles.nav_bar} sx={{ visibility: !open ? 'hidden' : 'visible' }}>
                 <ul className={`fw-light flex-${direction} ` + styles.nav_list + ' ' + (open ? styles.open : styles.closed)}>
-                    <Link href="/">
-                        <li>Vantagens</li>
+                    <Link href="/#best_fee_container">
+                        <li>Taxas</li>
                     </Link>
-                    <Link href="/">
+                    <Link href="/#features_container">
+                        <li>Recursos</li>
+                    </Link>
+                    <Link href="/#integrations_container">
                         <li>Integrações</li>
                     </Link>
-                    <Link href="/">
+                    <Link href="/#price_container">
                         <li>Planos</li>
                     </Link>
-                    <Link href="/">
-                        <li>Blog</li>
-                    </Link>
-                    <Link href="/">
+                    <Link href="/#form_container">
                         <li>Ajuda</li>
                     </Link>
                 </ul>
