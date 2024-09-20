@@ -6,6 +6,7 @@ export type PriceType = {
     typeOfpay?: string;
     listchildren?: ReactNode
     btnText?: string;
+    btnLink?: string;
     plans?: string;
     color?: string;
     column?: boolean;

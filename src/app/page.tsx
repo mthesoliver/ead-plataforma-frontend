@@ -34,6 +34,7 @@ import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
+import Link from "next/link";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -97,30 +98,34 @@ export default function Home() {
             <HeroTextCustom sub={"da nossa plataforma?"} title={"Quais são os principais recursos"} titleSize={80} />
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="EAD Live"
+                link="https://docs.eadplataforma.com/docs/aulas-ao-vivo"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
                 imagePath="/assets/images/bg_card_image_2.png" size={!isMobile ? 7 : 12} />
               <CardSimple title="EAD Player"
+                link="https://eadplataforma.com/eadplayer"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
                 imagePath="/assets/images/bg_card_image_1.png" size={!isMobile ? 5 : 12} />
             </div>
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="Provas e Certificados"
+                link="https://docs.eadplataforma.com/docs/certificados-emitidos"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
                 imagePath="/assets/images/bg_card_image_4.png" size={!isMobile ? 5 : 12} />
               <CardSimple title="EAD Checkout"
+                link="https://docs.eadplataforma.com/docs/ead-checkout"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
                 imagePath="/assets/images/bg_card_image_3.png" size={!isMobile ? 7 : 12} />
             </div>
 
             <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center`}>
               <div className="justify-content-center align-items-center">
-                <Button givenClass="fw-light p-3" rounded>Confira todas as funcionalidades</Button>
+                <Button givenClass="fw-light p-3" rounded link="https://docs.eadplataforma.com/docs/ead-store">Confira todas as funcionalidades</Button>
               </div>
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                 <Typography component="h4" gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
                   ou
                 </Typography>
-                <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani" }} >
+                <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani" }} href="https://eadplataforma.com/criar-conta">
                   Crie sua plataforma agora mesmo
                 </Typography>
               </div>
@@ -175,13 +180,13 @@ export default function Home() {
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center my-5`}>
                   <div className="justify-content-center align-items-center">
-                    <Button givenClass="fw-light p-3" rounded>Quero vender como eles!</Button>
+                    <Button givenClass="fw-light p-3" rounded link="https://eadplataforma.com/demonstracao">Quero vender como eles!</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important" }} href="https://eadplataforma.com/criar-conta" >
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>
@@ -293,8 +298,8 @@ export default function Home() {
               titleSize={42}
               title="Precisa de um parceiro?"
               subTitle="Amplie suas oportunidades com uma série de benefícios! Gere receita recorrente, conecte-se com novos clientes, acesse recursos específicos de parceiros e seja descoberto por suas habilidades.">
-              <Button givenClass="p-3 fw-bold"> Pesquisar parceiros</Button>
-              <Button givenClass="p-3 fw-bold" btnColor={'light'}> Quero ser parceiro</Button>
+              <Button givenClass="p-3 fw-bold" link="https://eadplataforma.com/parceiros"> Pesquisar parceiros</Button>
+              <Button givenClass="p-3 fw-bold" btnColor={'light'} link="https://eadplataforma.com/seja-parceiro"> Quero ser parceiro</Button>
             </CtaWrapper>
           </div>
         </section>
@@ -305,7 +310,7 @@ export default function Home() {
               titleSize={56}
               title="Mais de 50 integrações para você em um só lugar"
               subTitle="Explore um universo de integrações que só a EAD Store pode te oferecer. Potencialize suas vendas com gateways de pagamentos, emita NFs, amplie seu marketing, integre chats, CRM, análise de dados, acesso a nossa API e muito mais!">
-              <Button givenClass="p-3 fw-bold" rounded>Conheça todas as integrações!</Button>
+              <Button givenClass="p-3 fw-bold" rounded link="https://docs.eadplataforma.com/docs/ead-store">Conheça todas as integrações!</Button>
             </CtaWrapper>
           </div>
           <div className={"container d-flex flex-row row justify-content-center " + styles.integrations_bg}>
@@ -324,6 +329,7 @@ export default function Home() {
                   <PriceCard column={isMobile ?? true}
                     plans={'Grátis'}
                     btnText={'Comece hoje mesmo'}
+                    btnLink="https://eadplataforma.com/trial"
                     opts={{
                       smallDescription: 'De graça para sempre',
                       description: 'Para começar sua escola online hoje com custo zero!'
@@ -370,10 +376,11 @@ export default function Home() {
                   </Typography>
                 </div>
 
-                <div id="price_cards" className={`d-inline-flex flex-row row gap-4 mt-5 justify-content-center align-items-center flex-${!isMobile ? 'nowrap' : 'wrap'} `}>
+                <div id="price_cards" className={`d-inline-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
                   <PriceCard
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
+                    btnLink="https://eadplataforma.com/trial"
                     typeOfpay="/mês"
                     column
                     opts={{
@@ -421,6 +428,7 @@ export default function Home() {
                   <PriceCard
                     plans={'Essencials'}
                     btnText={'Comece hoje mesmo'}
+                    btnLink="https://eadplataforma.com/trial"
                     badge="Mais popular"
                     color="#fff"
                     typeOfpay="/mês"
@@ -470,6 +478,7 @@ export default function Home() {
                   <PriceCard
                     plans={'Premium'}
                     btnText={'Comece hoje mesmo'}
+                    btnLink="https://eadplataforma.com/trial"
                     typeOfpay="/mês"
                     column
                     opts={{
@@ -513,13 +522,13 @@ export default function Home() {
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center m-5`}>
                   <div className="justify-content-center align-items-center">
-                    <Button givenClass="fw-light p-3" rounded>Conheça os outros planos</Button>
+                    <Button givenClass="fw-light p-3" rounded link="https://bit.ly/planos-ead">Conheça os outros planos</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography component="h2" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237" }} >
+                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important" }} href="https://eadplataforma.com/criar-conta">
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>

@@ -13,4 +13,5 @@ export interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
     givenClass?: string,
     btnColor?: ButtonColor | string;
     rounded?: boolean;
+    link?: string;
 }

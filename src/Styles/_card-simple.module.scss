@@ -7,5 +7,17 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 350px;
-    border-radius: 24px;
+    border-radius: 24px !important;
+    transition: .6s linear;
+}
+
+.background_card:hover {
+    position: relative;
+    background-color: transparent !important;
+    background-position: center 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    border-radius: 24px !important;
+    transition: .6s linear;
 }

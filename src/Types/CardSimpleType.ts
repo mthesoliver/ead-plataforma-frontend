@@ -3,4 +3,5 @@ export type CardSimpleType = {
     subTitle: string;
     imagePath?: string;
     size?: number;
+    link?: string
 }

@@ -5,7 +5,7 @@ import { Rajdhani } from "next/font/google";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
-const rajdhani = Rajdhani({ subsets: ["latin"], weight: "500" });
+const rajdhani = Rajdhani({ subsets: ["latin"], weight: "500", display: "optional" });
 
 export const metadata: Metadata = {
   title: "EAD Plataforma - Solução completa para o ensino a distância!",

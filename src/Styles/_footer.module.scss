@@ -2,6 +2,7 @@
 
 .footer_width {
     position: relative;
+    top: -5rem;
     max-height: 600px !important;
     height: 320px !important;
     display: flex;
@@ -17,7 +18,7 @@
     background: $primary-glow-dark;
     width: 600px;
     height: 400px;
-    bottom: -60%;
+    bottom: -100%;
     left: -20%;
     z-index: -1;
     border-radius: 50%;
@@ -30,7 +31,7 @@
     background: $primary-glow-dark;
     width: 600px;
     height: 400px;
-    bottom: -60%;
+    bottom: -120%;
     right: -20%;
     z-index: -1;
     border-radius: 50%;
@@ -40,6 +41,7 @@
 @media screen and (max-width:960px) {
     .footer_width {
         position: relative;
+        top: 0rem;
         max-height: fit-content !important;
         height: fit-content !important;
         display: flex;

@@ -66,6 +66,12 @@ header ul {
   margin-inline: 0 !important;
 }
 
+#nav_container * {
+  box-sizing: border-box !important;
+  padding: 2px !important;
+  margin: 0 !important;
+}
+
 /* Font title styles */
 h2 {
   font-size: 44;

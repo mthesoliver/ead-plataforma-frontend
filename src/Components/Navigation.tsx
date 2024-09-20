@@ -12,7 +12,7 @@ export type NavigationType = {
 function Navigation({ direction = 'row', open = false }: Readonly<NavigationType>) {
     return (
         <StyledEngineProvider injectFirst>
-            <Stack component={'nav'} className={styles.nav_bar} sx={{ visibility: !open ? 'hidden' : 'visible' }}>
+            <Stack id={'nav_container'} component={'nav'} className={styles.nav_bar} sx={{ visibility: !open ? 'hidden' : 'visible' }}>
                 <ul className={`fw-light flex-${direction} ` + styles.nav_list + ' ' + (open ? styles.open : styles.closed)}>
                     <Link href="/">
                         <li>Vantagens</li>

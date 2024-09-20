@@ -46,17 +46,17 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
     )
 };
 
-export const PriceListAdvantages = ({ children, btnText, color }: Readonly<PriceType>) => {
+export const PriceListAdvantages = ({ children, btnText, color, btnLink }: Readonly<PriceType>) => {
     return (
         <>
             {children}
-            <Button rounded givenClass='p-3 mt-5 fw-bolder ' btnColor={color ? 'light' : ''}>{btnText}</Button>
+            <Button rounded givenClass='p-3 mt-5 fw-bolder ' btnColor={color ? 'light' : ''} link={btnLink}>{btnText}</Button>
         </>
     )
 };
 
 
-function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge }: Readonly<PriceType>) {
+function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink }: Readonly<PriceType>) {
     const isColumn = column ? 'flex-column col' : 'flex-row row';
 
     return (
@@ -68,12 +68,12 @@ function PriceCard({ plans, opts, color, children, column, listchildren, btnText
                     </Badge>
                 )}
                 <CardContent className={"px-4 mb-2 d-flex flex-column col " + (column ? 'col-12' : 'col-6')} >
-                    <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay}>
+                    <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay} btnLink={btnLink}>
                         {children}
                     </PriceContent>
                 </CardContent>
                 <CardContent className={"px-4 mb-2 d-flex flex-column col " + ' ' + (column ? 'col-12 mt-5 m-auto' : 'col-5') + ' ' + (color ? styles.child_color_light : styles.child_color_dark)} >
-                    <PriceListAdvantages opts={opts} plans={plans} color={color} btnText={btnText} >
+                    <PriceListAdvantages opts={opts} plans={plans} color={color} btnText={btnText} btnLink={btnLink}>
                         {listchildren}
                     </PriceListAdvantages>
                 </CardContent>

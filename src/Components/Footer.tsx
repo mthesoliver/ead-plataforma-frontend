@@ -17,27 +17,29 @@ function Footer() {
         <StyledEngineProvider injectFirst>
             <section id="footer_container" className={"my-5 py-5 align-items-start container d-flex flex-row row " + styles.footer_width}>
                 <div className={`d-flex flex-column align-items-${!isMobile ? 'start' : 'center'} col col-${!isMobile ? 5 : 12} gap-2 ` + (isMobile ? 'justify-content-center gap-3 mb-5' : '')}>
-                    <Image src={'/assets/images/ead_horizontal_footer_logo.png'}
-                        alt='Logotipo da empresa Ead Plataforma' width={307} height={65} loading="eager"
-                        placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                    <Link href={'/'}>
+                        <Image src={'/assets/images/ead_horizontal_footer_logo.png'}
+                            alt='Logotipo da empresa Ead Plataforma' width={307} height={65} loading="eager"
+                            placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                    </Link>
                     <Stack direction={'row'} useFlexGap spacing={2} className={"mt-3 ms-2"}>
                         <Box>
-                            <Link href={'#'}>
+                            <Link href={'https://www.facebook.com/eadplataforma'}>
                                 <FacebookIcon />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href={'#'}>
+                            <Link href={'https://www.linkedin.com/company/ead-plataforma/'}>
                                 <InstagramIcon />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href={'#'}>
+                            <Link href={'https://www.linkedin.com/company/ead-plataforma/ '}>
                                 <LinkedInIcon />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href={'#'}>
+                            <Link href={'https://blog.eadplataforma.com/'}>
                                 <PublicIcon />
                             </Link>
                         </Box>
@@ -59,27 +61,32 @@ function Footer() {
                             </Typography>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://eadplataforma.com/eadplayer'}>
+                                EAD Player
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href={'https://docs.eadplataforma.com/docs/ead-checkout'}>
                                 EAD Checkout
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://docs.eadplataforma.com/docs/aulas-ao-vivo'}>
                                 EAD Live
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://docs.eadplataforma.com/docs/ead-store'}>
                                 EAD Store
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://docs.eadplataforma.com/docs/api'}>
                                 API
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://docs.eadplataforma.com/docs/webhooks'}>
                                 Webhooks
                             </Link>
                         </ListItem>
@@ -94,22 +101,22 @@ function Footer() {
                             </Typography>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://eadplataforma.com/contact'}>
                                 Fale conosco
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://docs.eadplataforma.com/'}>
                                 Central de ajuda
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'http://bit.ly/eadplataforma-contrato'}>
                                 Termos de uso
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href={'#'}>
+                            <Link href={'https://eadplataforma.com/privacy'}>
                                 Política de privacidade
                             </Link>
                         </ListItem>
@@ -125,7 +132,7 @@ function Footer() {
                         placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
                 </div>
             </section >
-        </StyledEngineProvider>
+        </StyledEngineProvider >
     )
 }
 
