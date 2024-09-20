@@ -177,7 +177,7 @@ function Footer() {
 
                     <div className={`d-flex flex-row row align-items-start justify-content-center`}>
                         <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
-                            <List className="d-flex flex-column col gap-2">
+                            <List className="d-flex flex-column col">
                                 <ListItem>
                                     <Typography className="fw-bolder">
                                         EAD DOCS
@@ -217,7 +217,7 @@ function Footer() {
                         </div>
 
                         <div className={`d-flex flex-column align-items-start col col-5 gap-2`}>
-                            <List className="d-flex flex-column col gap-2">
+                            <List className="d-flex flex-column col">
                                 <ListItem>
                                     <Typography className="fw-bolder">
                                         SUPORTE

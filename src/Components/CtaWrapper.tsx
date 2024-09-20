@@ -16,7 +16,7 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor, children }: Readonly<CtaType>) => {
         return (
             <CardContent className={`d-flex flex-column p-2 my-5 w-${!isMobile ? 75 : 100} m-auto`} >
-                <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 26 : 32, lineHeight: "52px !important", color: fontColor ?? '#fff' }} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : "26px!important" : "32px!important", lineHeight: `${!isMobile ? titleSize : "28"}px !important`, color: fontColor ?? '#fff' }} >
                     {title}
                 </Typography>
                 <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 14, lineHeight: "1.6rem !important", color: '#fff' }}>

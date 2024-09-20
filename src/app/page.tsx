@@ -58,7 +58,7 @@ export default function Home() {
           <div className="container d-flex flex-column col w-100">
             <YourCoursePlaceholder />
             <div>
-              <VideoPlaceholder videoId="0yrJU7b09Oc" />
+              <VideoPlaceholder videoId="OnH8go5IKEc" />
             </div>
           </div>
         </section>
@@ -136,10 +136,10 @@ export default function Home() {
 
             <div className={"d-flex flex-row row gap-1"}>
               <BestFee direction={!isMobile ? 'row' : 'column'} >
-                <CardFeeContent title="Pix" feeValues="R$1,00 + 5,99%" release="Imediatamente" givenIcon={PixIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$1,00 + 5,99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$1,00 + 6,29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Boleto" feeValues="R$2,50 + 5,99%" release="1 dia útil" givenIcon={ReceiptIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="Pix" feeValues="R$0,00 + 1.89%" release="Imediatamente" givenIcon={PixIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$0,10 + 4.29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$0,10 + 4.99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
+                <CardFeeContent title="Boleto" feeValues="R$1,85 + 3.79%" release="1 dia útil" givenIcon={ReceiptIcon} size={!isMobile ? 3 : 12} />
               </BestFee>
             </div>
 
@@ -168,8 +168,8 @@ export default function Home() {
                   Veja o que nossos cliente falam sobre nós
                 </Typography>
                 <div className={`d-inline-flex flex-${!isMobile ? 'row' : 'column'} gap-4 justify-content-center align-items-center`}>
-                  <YouTube videoId={'0yrJU7b09Oc'} className={styles.round_border_video} />
-                  <YouTube videoId={'0yrJU7b09Oc'} className={styles.round_border_video} />
+                  <YouTube videoId={'YNDLz591K1g'} className={styles.round_border_video} />
+                  <YouTube videoId={'92Cyo_axj2w'} className={styles.round_border_video} />
                 </div>
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center my-5`}>
@@ -190,7 +190,7 @@ export default function Home() {
 
             <section id="customize_container" className={" d-flex flex-row row gap-4"}>
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} col gap-4`}>
-                <div className={`justify-content-center align-items-center col-${!isMobile ? 4 : 12} mt-5`}>
+                <div className={`justify-content-center align-items-center col-${!isMobile ? 5 : 12} mt-5`}>
                   <HeroTextCustom sub={"do seu jeito!"} title={"Sua plataforma EAD,"} titleSize={80} colorMode={"light"} align="left" />
                   <Typography component="p" sx={{ color: "#3F3F3F", fontSize: !isMobile ? 26 : 22 }}>
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
@@ -292,8 +292,8 @@ export default function Home() {
               titleSize={42}
               title="Precisa de um parceiro?"
               subTitle="Amplie suas oportunidades com uma série de benefícios! Gere receita recorrente, conecte-se com novos clientes, acesse recursos específicos de parceiros e seja descoberto por suas habilidades.">
-              <Button givenClass="p-3 fw-bold w-100" link="https://eadplataforma.com/parceiros"> Pesquisar parceiros</Button>
-              <Button givenClass="p-3 fw-bold w-100" btnColor={'light'} link="https://eadplataforma.com/seja-parceiro"> Quero ser parceiro</Button>
+              <Button givenClass="p-3 fw-bold w-100 fs-5" link="https://eadplataforma.com/parceiros"> Pesquisar parceiros</Button>
+              <Button givenClass="p-3 fw-bold w-100 fs-5" btnColor={'light'} link="https://eadplataforma.com/seja-parceiro"> Quero ser parceiro</Button>
             </CtaWrapper>
           </div>
         </section>
@@ -597,6 +597,7 @@ export default function Home() {
                 <DemonstrationCta
                   imagePath="/assets/images/support_team_ead.png"
                   title="Agende uma demonstração gratuita com nosso time de especialistas"
+                  titleSize={44}
                   subTitle="Veja o que a EAD Plataforma é capaz de fazer por você!">
 
                   <DemonstrationForm />

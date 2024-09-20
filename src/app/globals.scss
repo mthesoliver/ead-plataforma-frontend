@@ -75,6 +75,10 @@ header ul {
 
 #customize_container {
   margin-bottom: -16rem;
+
+  figure {
+    margin-left: -80px !important;
+  }
 }
 
 /* Font title styles */
@@ -118,5 +122,9 @@ h4 {
   h4 {
     font-size: 24px !important;
     line-height: 24px !important;
+  }
+
+  #customize_container {
+    margin-bottom: -12rem !important;
   }
 }

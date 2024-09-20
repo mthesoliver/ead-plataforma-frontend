@@ -26,30 +26,30 @@ function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, ch
 
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor }: Readonly<CtaType>) => {
         return (
-            <StyledEngineProvider injectFirst>
-                <CardContent className={`d-flex flex-column row justify-content-center p-2 w-${!isMobile ? 75 : 100} m-auto `} >
-                    <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 32 : 24, lineHeight: 1.4, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
-                        {title}
-                    </Typography>
-                    <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: 1.6, color: '#fff' }}>
-                        {subTitle}
-                    </Typography>
-                </CardContent >
-            </StyledEngineProvider>
+            <CardContent className={`d-flex flex-column row justify-content-center p-1 w-${!isMobile ? 75 : 100} m-auto ` + styles.content_wrapper} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : "26px !important" : "24px!important", lineHeight: `${!isMobile ? titleSize : "26"}px !important`, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
+                    {title}
+                </Typography>
+                <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: 1.6, color: '#fff' }}>
+                    {subTitle}
+                </Typography>
+            </CardContent >
         )
     };
 
     return (
-        <Card className={"d-flex flex-row p-4 align-items-center justify-content-center text-center " + styles.demonstration_wrapper}
-            variant="outlined"
-            sx={{ borderColor: "none", borderWidth: 0, borderRadius: "24px", backgroundColor: "#1C0237", backgroundSize: "cover", backgroundPosition: "center center", }}>
-            <CardContent className={"p-1 mb-2 position-relative"} >
-                <Image src={imageBackground!} alt={imageBackground!} width={!isMobile ? 540 : 540 / 2} height={!isMobile ? 400 : 400 / 2} loading="lazy" className={styles.top_image_form} />
-                <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
-                </CustomCardContent>
-                {children}
-            </CardContent>
-        </Card >
+        <StyledEngineProvider injectFirst>
+            <Card className={"d-flex flex-row p-3 align-items-center justify-content-center text-center " + styles.demonstration_wrapper}
+                variant="outlined"
+                sx={{ borderColor: "none", borderWidth: 0, borderRadius: "24px", backgroundColor: "#1C0237", backgroundSize: "cover", backgroundPosition: "center center", }}>
+                <CardContent className={"p-1 mb-2 position-relative"} >
+                    <Image src={imageBackground!} alt={imageBackground!} width={!isMobile ? 540 : 540 / 2} height={!isMobile ? 400 : 400 / 2} loading="lazy" className={styles.top_image_form} />
+                    <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
+                    </CustomCardContent>
+                    {children}
+                </CardContent>
+            </Card >
+        </StyledEngineProvider>
     )
 }
 

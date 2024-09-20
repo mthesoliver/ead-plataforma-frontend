@@ -6,11 +6,16 @@
     margin-top: 5rem !important;
 }
 
+.content_wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
 .top_image_form {
     position: relative;
     top: -140px !important;
-    z-index: 20;
-    margin-bottom: -10rem !important;
+    z-index: 1 !important;
+    margin-bottom: -13rem !important;
 }
 
 @media screen and (max-width:960px) {
