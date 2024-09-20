@@ -32,9 +32,9 @@
 
 .badge_wrapper {
     background: $primary-color;
-    position: absolute;
+    position: absolute !important;
     font-size: calc($fs-sm + 2px);
-    top: -20px;
+    top: -20px !important;
     z-index: 5 !important;
 }
 
