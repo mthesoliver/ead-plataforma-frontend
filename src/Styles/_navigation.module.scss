@@ -60,14 +60,27 @@
 
     .nav_list {
         display: flex;
+        position: relative !important;
+        top: 5px !important;
         padding-bottom: 1rem !important;
-        gap: 2em;
+        gap: 1.6em;
 
         li {
             list-style: none !important;
-            font-size: $fs-sm;
+            font-size: calc($fs-sm + 8px) !important;
+            font-weight: 500 !important;
             padding-bottom: 1rem !important;
             border-bottom: 1px solid #20033e;
+        }
+
+        a:focus {
+            color: #fff !important;
+            border: 1px solid #50139199 !important;
+            border-radius: 6px !important;
+        }
+
+        a:focus li {
+            border: none !important;
         }
     }
 }
