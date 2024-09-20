@@ -16,7 +16,7 @@
     "bootstrap": "^5.3.3",
     "ead-plataforma-front": "file:",
     "gsap": "^3.12.5",
-    "next": "14.2.7",
+    "next": "^14.2.12",
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^6.26.1",

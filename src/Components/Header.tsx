@@ -26,7 +26,7 @@ function Header() {
         <>
             {isMobile && (
                 <section className={"container mt-4 d-flex flex-row row m-auto " + styles.header_width}>
-                    <Stack direction={'row'} className={'d-flex flex-row justify-content-evenly align-items-center m-auto '}>
+                    <div className={'d-flex flex-row justify-content-evenly align-items-center m-auto '}>
                         <Box className={'col-3 text-center'}>
                             {!togle ? (
                                 <MenuIcon sx={{ fontSize: 42 }} onClick={handleTogle} />
@@ -44,7 +44,7 @@ function Header() {
                                 </Link>
                             </Button>
                         </Box>
-                    </Stack>
+                    </div>
                     <Stack direction={'column'} className="mt-5">
                         <Navigation direction="column" open={togle ?? true} />
                     </Stack>
