@@ -36,11 +36,12 @@ body {
 a {
   color: inherit !important;
   text-decoration: none !important;
+  font-family: $ff-title !important;
 }
 
 footer {
+  margin-top: -60px;
   max-width: 100vw !important;
-  max-height: 100vh !important;
   overflow: hidden !important;
 }
 

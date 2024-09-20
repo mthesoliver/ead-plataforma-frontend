@@ -2,8 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 
 export default function useResize() {
 
-    let actualWidth = typeof window !== 'undefined' ? window.innerWidth : 1320;
-    const [innerWidth, setInnerWidth] = useState<number>(actualWidth);
+    const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
     const [isMobile, setIsMobile] = useState<boolean>(innerWidth > 960);
 
     useEffect(() => {

@@ -298,8 +298,8 @@ export default function Home() {
               titleSize={42}
               title="Precisa de um parceiro?"
               subTitle="Amplie suas oportunidades com uma série de benefícios! Gere receita recorrente, conecte-se com novos clientes, acesse recursos específicos de parceiros e seja descoberto por suas habilidades.">
-              <Button givenClass="p-3 fw-bold" link="https://eadplataforma.com/parceiros"> Pesquisar parceiros</Button>
-              <Button givenClass="p-3 fw-bold" btnColor={'light'} link="https://eadplataforma.com/seja-parceiro"> Quero ser parceiro</Button>
+              <Button givenClass="p-3 fw-bold w-100" link="https://eadplataforma.com/parceiros"> Pesquisar parceiros</Button>
+              <Button givenClass="p-3 fw-bold w-100" btnColor={'light'} link="https://eadplataforma.com/seja-parceiro"> Quero ser parceiro</Button>
             </CtaWrapper>
           </div>
         </section>

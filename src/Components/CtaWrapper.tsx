@@ -22,7 +22,7 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
                 <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 14, lineHeight: 1.6, color: '#fff' }}>
                     {subTitle}
                 </Typography>
-                <Box className={`d-flex flex-${!isMobile ? 'row' : 'column'} row gap-3 w-${!isMobile ? 50 : 100} m-auto justify-content-center flex-nowrap mt-5`}>
+                <Box className={`d-flex flex-${!isMobile ? 'row' : 'column'} row gap-3 w-${!isMobile ? 25 : 100} m-auto justify-content-center flex-nowrap mt-5`}>
                     {children}
                 </Box>
             </CardContent>
