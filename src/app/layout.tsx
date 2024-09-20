@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + ' ' + rajdhani.style.fontFamily}>
+      <body className={inter.className + ' ' + rajdhani.className}>
         <AppRouterCacheProvider>
           {children}
         </AppRouterCacheProvider>
