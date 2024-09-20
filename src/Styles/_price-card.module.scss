@@ -1,6 +1,7 @@
 @import '../app/_theme.scss';
 
 .background_card {
+    position: relative;
     background: #fff !important;
     max-width: fit-content !important;
     padding: 3rem !important;
@@ -10,6 +11,7 @@
 }
 
 .background_card_dark {
+    position: relative;
     background: #1C0237 !important;
     max-width: fit-content !important;
     padding: 3rem !important;
