@@ -19,12 +19,12 @@ export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release
                         <GivenIcon sx={{ color: '#fff', fontSize: '42px' }} />
                     </span>
                 )}
-                <Typography gutterBottom className='fw-bolder ' sx={{ fontSize: 20, lineHeight: 1.4, color: '#fff' }} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder ' sx={{ fontSize: 20, lineHeight: 1.4, color: '#fff' }} >
                     {title}
                 </Typography>
             </Box>
             <Box className={'d-flex flex-row row justify-content-start my-2 text-start'}>
-                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 12, lineHeight: 1.6, color: '#fff' }}>
+                <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: 12, lineHeight: 1.6, color: '#fff' }}>
                     Taxas
                 </Typography>
                 <Typography gutterBottom className='fw-bolder' sx={{ fontSize: 22, lineHeight: 1.4, color: '#fff' }} >
@@ -32,10 +32,10 @@ export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release
                 </Typography>
             </Box>
             <Box className={'d-flex flex-row row justify-content-start my-2 text-start'}>
-                <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 12, lineHeight: 1.6, color: '#fff' }}>
+                <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: 12, lineHeight: 1.6, color: '#fff' }}>
                     Prazo para liberação
                 </Typography>
-                <Typography gutterBottom className='fw-bolder' sx={{ fontSize: 22, lineHeight: 1.4, color: '#fff' }} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder' sx={{ fontSize: 22, lineHeight: 1.4, color: '#fff' }} >
                     {release}
                 </Typography>
             </Box>

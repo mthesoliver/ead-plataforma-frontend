@@ -14,10 +14,10 @@ function CardSimple({ title, subTitle, imagePath, size }: Readonly<CardSimpleTyp
 
     const cardContent = (
         <>
-            <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: 24, lineHeight: 1.4, color: '#fff' }} >
+            <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: 24, lineHeight: 1.4, color: '#fff' }} >
                 {title}
             </Typography>
-            <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: 16, lineHeight: 1.4, color: '#fff', maxWidth: 400 }}>
+            <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: 16, lineHeight: 1.4, color: '#fff', maxWidth: 400 }}>
                 {subTitle}
             </Typography>
         </>

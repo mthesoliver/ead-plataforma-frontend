@@ -28,10 +28,10 @@ function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, ch
         return (
             <StyledEngineProvider injectFirst>
                 <CardContent className={`d-flex flex-column row justify-content-center p-2 w-${!isMobile ? 75 : 100} m-auto `} >
-                    <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 32 : 24, lineHeight: 1.4, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
+                    <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: titleSize ? !isMobile ? titleSize : 32 : 24, lineHeight: 1.4, color: fontColor ?? '#fff', fontFamily: "Rajdhani" }} >
                         {title}
                     </Typography>
-                    <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: 1.6, color: '#fff' }}>
+                    <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: 1.6, color: '#fff' }}>
                         {subTitle}
                     </Typography>
                 </CardContent >

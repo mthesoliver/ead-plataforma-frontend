@@ -29,10 +29,10 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content }: Readonly<Car
             <Card className={"p-4 " + styles.card_custom} variant="outlined" >
                 {iconPlaceholder}
                 <CardContent className={"p-1"} >
-                    <Typography gutterBottom className='fw-bolder mt-3' sx={{ fontSize: !isMobile ? 24 : 20, lineHeight: 1.4 }} >
+                    <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: !isMobile ? 24 : 20, lineHeight: 1.4 }} >
                         {title}
                     </Typography>
-                    <Typography variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 16 : 14, lineHeight: 1.4 }}>
+                    <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 16 : 14, lineHeight: 1.4 }}>
                         {content}
                     </Typography>
                 </CardContent>
