@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import { Card, Hidden, IconButton, StyledEngineProvider } from "@mui/material";
+import { Card, IconButton, StyledEngineProvider } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Slide from "@mui/material/Slide";
@@ -19,7 +19,7 @@ function Carousel({ children }: any) {
 
     // cardsPerPage is the number of cards that will be displayed per page
     // you can modify for your needs
-    const cardsPerPage = isMobile ? 1 : 3;
+    const cardsPerPage = isMobile ? 1 : 2;
     // this is just a dummy array of cards it uses the MUI card demo and repeats it 10 times
     const duplicateCards: React.ReactElement[] = Array.from(
         { length: children.length },

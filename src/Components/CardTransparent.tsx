@@ -20,7 +20,7 @@ function CardTransparent({ title, subTitle, imagePath, size }: Readonly<CardSimp
             <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: !isMobile ? 26 : 18, lineHeight: 1.4, color: '#fff' }} >
                 {title}
             </Typography>
-            <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 14 : 12, lineHeight: 1.6, color: '#fff' }}>
+            <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: !isMobile ? 16 : 14, lineHeight: "26px!important", color: '#fff' }}>
                 {subTitle}
             </Typography>
         </>

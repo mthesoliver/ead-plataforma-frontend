@@ -27,7 +27,7 @@ function HeroTextCustom({ title, sub, titleSize, colorMode, align }: Readonly<He
     return (
         <StyledEngineProvider injectFirst>
             <Box className="my-4 d-flex justify-content-evenly flex-column">
-                <Typography component={'h4'} gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: !isMobile ? 36 : 22, lineHeight: '1.6rem !important', textAlign: align ?? "center" }}>
+                <Typography component={'h4'} gutterBottom className={'fw-semibold ' + mode[1]} sx={{ fontSize: !isMobile ? 36 : 22, lineHeight: '2.2rem !important', textAlign: align ?? "center" }}>
                     {title}
                 </Typography>
                 <Typography component={'h5'} gutterBottom className={'fw-bolder ' + mode[0]} sx={{ fontSize: titleSize ? isMobile ? 44 : titleSize : 56, textAlign: align ?? "center", lineHeight: 1 }}>

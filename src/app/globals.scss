@@ -73,17 +73,32 @@ header ul {
   margin: 0 !important;
 }
 
+#customize_container {
+  margin-bottom: -16rem;
+}
+
 /* Font title styles */
+p {
+  line-height: 32px !important;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 46px !important;
+  font-family: $ff-title !important;
+}
+
 h2 {
-  font-size: 44;
-  line-height: 1.4rem;
+  font-size: 44px;
   font-family: $ff-title !important;
 }
 
 h4 {
-  font-size: 20;
+  font-size: 20px;
+  line-height: 24px !important;
   font-family: $ff-title !important;
 }
+
 
 @media screen and (max-width:960px) {
   footer {
@@ -96,7 +111,12 @@ h4 {
 
   /* Font title styles */
   h2 {
-    font-size: 32;
-    line-height: 1.6rem;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  h4 {
+    font-size: 24px !important;
+    line-height: 24px !important;
   }
 }

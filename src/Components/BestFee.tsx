@@ -19,7 +19,7 @@ export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release
                         <GivenIcon sx={{ color: '#fff', fontSize: '42px' }} />
                     </span>
                 )}
-                <Typography component={'h2'} gutterBottom className='fw-bolder ' sx={{ fontSize: 20, lineHeight: 1.4, color: '#fff' }} >
+                <Typography component={'h4'} gutterBottom className='fw-bolder ' sx={{ fontSize: 20, lineHeight: 1.4, color: '#fff' }} >
                     {title}
                 </Typography>
             </Box>
@@ -35,7 +35,7 @@ export const CardFeeContent = ({ title, givenIcon: GivenIcon, feeValues, release
                 <Typography component={'p'} variant="body2" className='fw-light mt-3' sx={{ fontSize: 12, lineHeight: 1.6, color: '#fff' }}>
                     Prazo para liberação
                 </Typography>
-                <Typography component={'h2'} gutterBottom className='fw-bolder' sx={{ fontSize: 22, lineHeight: 1.4, color: '#fff' }} >
+                <Typography component={'h4'} gutterBottom className='fw-bolder' sx={{ fontSize: 22, lineHeight: 1.4, color: '#fff' }} >
                     {release}
                 </Typography>
             </Box>

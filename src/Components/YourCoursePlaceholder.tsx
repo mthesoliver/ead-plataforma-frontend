@@ -13,10 +13,10 @@ function YourCoursePlaceholder() {
         <StyledEngineProvider injectFirst>
             {isMobile && (
                 <Box className="text-center m-1 mt-5 pt-5 ">
-                    <Typography component={'h2'} gutterBottom className={'fw-bolder ' + styles.main_tittle_color + ' ' + styles.main_title_size} sx={{ lineHeight: '32px !important' }}>
+                    <Typography component={'h1'} gutterBottom className={'fw-bolder ' + styles.main_tittle_color + ' ' + styles.main_title_size} sx={{ lineHeight: '32px !important' }}>
                         Crie seu curso online agora
                     </Typography>
-                    <Typography component={'h5'} gutterBottom className={'fw-light'} sx={{ fontSize: 16, lineHeight: 1.4 }}>
+                    <Typography component={'p'} gutterBottom className={'fw-light'} sx={{ fontSize: 16, lineHeight: 1.4 }}>
                         Experimente os melhores recursos, comece agora.
                     </Typography>
                     <Box className="d-flex flex-row justify-content-center text-center mx-3">
@@ -27,10 +27,10 @@ function YourCoursePlaceholder() {
 
             {!isMobile && (
                 <Box className="text-center m-5">
-                    <Typography component={'h2'} gutterBottom className={'fw-bolder ' + styles.main_tittle_color + ' ' + styles.main_title_size}>
+                    <Typography component={'h1'} gutterBottom className={'fw-bolder p-2 ' + styles.main_tittle_color + ' ' + styles.main_title_size}>
                         Crie seu curso online agora
                     </Typography>
-                    <Typography component={'h5'} gutterBottom className={'fw-light '} sx={{ fontSize: 22, lineHeight: 1.4 }}>
+                    <Typography component={'p'} gutterBottom className={'fw-light '} sx={{ fontSize: 26, lineHeight: 1.4 }}>
                         Experimente os melhores recursos, comece agora.
                     </Typography>
                     <Box className="d-flex flex-row justify-content-center text-center m-5">

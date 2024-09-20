@@ -10,7 +10,7 @@
     color: #000;
     display: flex !important;
     flex-direction: row;
-    font-size: $fs-md;
+    font-size: $fs-md !important;
     justify-content: end;
     align-items: center !important;
     border-radius: 120px 120px 120px 120px;

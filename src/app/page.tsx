@@ -72,22 +72,16 @@ export default function Home() {
               <Carousel>
                 <CardCustomBorder givenIcon={ImportantDevicesIcon}
                   title="Venda seus cursos em nossa vitrine"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
+                  content="Com nossa plataforma, você pode criar, gerenciar e vender infoprodutos de forma fácil e eficaz." />
                 <CardCustomBorder givenIcon={Diversity3Icon}
                   title="Criação de cursos coorporativos"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
+                  content="Nossa plataforma oferece tudo o que você precisa para criar uma escola de cursos online completa." />
                 <CardCustomBorder givenIcon={DashboardCustomizeIcon}
                   title="Transforme sua plataforma para seu nicho"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
+                  content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
                 <CardCustomBorder givenIcon={ImportantDevicesIcon}
                   title="Venda seus cursos em nossa vitrine"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
-                <CardCustomBorder givenIcon={Diversity3Icon}
-                  title="Criação de cursos coorporativos"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
-                <CardCustomBorder givenIcon={DashboardCustomizeIcon}
-                  title="Transforme sua plataforma para seu nicho"
-                  content="Lorem ipsum dolor sit amet consectetur. Ipsum dolor facilisi eget nibh proin est dictum sit. Placerat." />
+                  content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
               </Carousel>
             </div>
           </div>
@@ -99,7 +93,7 @@ export default function Home() {
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="EAD Live"
                 link="https://docs.eadplataforma.com/docs/aulas-ao-vivo"
-                subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
+                subTitle="Deixe seus alunos mais engajados criando aulas ao vivo. Você pode disponibilizar um chat em tempo real para comunicação."
                 imagePath="/assets/images/bg_card_image_2.png" size={!isMobile ? 7 : 12} />
               <CardSimple title="EAD Player"
                 link="https://eadplataforma.com/eadplayer"
@@ -109,17 +103,17 @@ export default function Home() {
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="Provas e Certificados"
                 link="https://docs.eadplataforma.com/docs/certificados-emitidos"
-                subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
+                subTitle="Insira provas entre aulas e módulos, torne a prova requisito, programe a liberação com data fixa ou flexível, área de boletim."
                 imagePath="/assets/images/bg_card_image_4.png" size={!isMobile ? 5 : 12} />
               <CardSimple title="EAD Checkout"
                 link="https://docs.eadplataforma.com/docs/ead-checkout"
-                subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
+                subTitle="Ofereça opções customizadas de pagamentos, configure parcelamento, juros e vencimento do boleto por curso."
                 imagePath="/assets/images/bg_card_image_3.png" size={!isMobile ? 7 : 12} />
             </div>
 
             <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center`}>
               <div className="justify-content-center align-items-center">
-                <Button givenClass="fw-light p-3" rounded link="https://docs.eadplataforma.com/docs/ead-store">Confira todas as funcionalidades</Button>
+                <Button givenClass="fw-regular p-3 fs-6" rounded link="https://docs.eadplataforma.com/docs/ead-store">Confira todas as funcionalidades</Button>
               </div>
               <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                 <Typography component="h4" gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
@@ -180,7 +174,7 @@ export default function Home() {
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center my-5`}>
                   <div className="justify-content-center align-items-center">
-                    <Button givenClass="fw-light p-3" rounded link="https://eadplataforma.com/demonstracao">Quero vender como eles!</Button>
+                    <Button givenClass="fw-regular p-3 fs-6" rounded link="https://eadplataforma.com/demonstracao">Quero vender como eles!</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
@@ -202,7 +196,7 @@ export default function Home() {
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
-                    <Button givenClass="fw-light p-4 fs-6" rounded link="https://eadplataforma.com/trial">Comece agora mesmo</Button>
+                    <Button givenClass="fw-bold p-4 fs-5" rounded link="https://eadplataforma.com/trial">Comece agora mesmo</Button>
                   </div>
                 </div>
 
@@ -237,7 +231,7 @@ export default function Home() {
                   subTitle="Integre seu EAD com sistemas externos, automatize processos de cadastro do aluno, matrículas e outros."
                   imagePath="/assets/images/card_icons/API_Webhooks.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="EAD Store"
-                  subTitle="Lorem ipsum dolor sit amet consectetur. Vitae diam."
+                  subTitle="Aqui você tem a possibilidade de integrar ferramentas de terceiros que auxiliam todo o processo de vendas"
                   imagePath="/assets/images/card_icons/EAD_Store.png" size={!isMobile ? 3 : 8} />
                 <CardTransparent title="Assinatura e recorrência"
                   subTitle="Seu EAD como um Netflix! Crie planos de assinatura com cobranças mensais, trimestrais, semestrais ou anuais."
@@ -310,7 +304,7 @@ export default function Home() {
               titleSize={56}
               title="Mais de 50 integrações para você em um só lugar"
               subTitle="Explore um universo de integrações que só a EAD Store pode te oferecer. Potencialize suas vendas com gateways de pagamentos, emita NFs, amplie seu marketing, integre chats, CRM, análise de dados, acesso a nossa API e muito mais!">
-              <Button givenClass="p-3 fw-bold" rounded link="https://docs.eadplataforma.com/docs/ead-store">Conheça todas as integrações!</Button>
+              <Button givenClass="p-3 fw-bold fs-6" rounded link="https://docs.eadplataforma.com/docs/ead-store">Conheça todas as integrações!</Button>
             </CtaWrapper>
           </div>
           <div className={"container d-flex flex-row row justify-content-center " + styles.integrations_bg}>
@@ -522,7 +516,7 @@ export default function Home() {
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center m-5`}>
                   <div className="justify-content-center align-items-center">
-                    <Button givenClass="fw-light p-3" rounded link="https://bit.ly/planos-ead">Conheça os outros planos</Button>
+                    <Button givenClass="fw-regular p-3 fs-6" rounded link="https://bit.ly/planos-ead">Conheça os outros planos</Button>
                   </div>
                   <div className={`d-flex flex-${!isMobile ? 'row' : 'column'} text-center justify-content-${!isMobile ? 'end' : 'center'} align-items-${!isMobile ? 'end' : 'center'} gap-${!isMobile ? '4' : '1'}`}>
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
