@@ -1,23 +1,23 @@
 @import '../app/_theme.scss';
 
 .background_card {
-    position: relative;
+    position: relative !important;
     background: #fff !important;
     max-width: fit-content !important;
     padding: 3rem !important;
     border-radius: 24px !important;
     border: 1px solid #9A9A9A !important;
-    overflow: visible;
+    overflow: visible !important;
 }
 
 .background_card_dark {
-    position: relative;
+    position: relative !important;
     background: #1C0237 !important;
     max-width: fit-content !important;
     padding: 3rem !important;
     border-radius: 24px !important;
     border: 1px solid #9A9A9A !important;
-    overflow: visible;
+    overflow: visible !important;
 }
 
 .child_color_dark ul li {
