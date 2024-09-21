@@ -88,8 +88,11 @@ function InputPlaceholder() {
                     console.log(err.message);
                 });
                 if (text === 'ok') {
-                    setInputHelper('Ótimo! O nome está disponível e pronto para ser criado');
+                    setInputHelper('Ótimo! O nome está disponível! Você será redirecionado para nosso formulário.');
                     setInputValid(true);
+                    setTimeout(() => {
+                        window.location.href = 'https://eadplataforma.com/trial';
+                    }, 3000);
                 } else {
                     setInputHelper('Ops! Esse nome não está mais disponível. Que tal tentar outro?');
                     setInputValid(false);
