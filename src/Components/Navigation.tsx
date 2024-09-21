@@ -13,7 +13,7 @@ function Navigation({ direction = 'row', open = false }: Readonly<NavigationType
     return (
         <StyledEngineProvider injectFirst>
             <Stack id={'nav_container'} component={'nav'} className={styles.nav_bar} sx={{ visibility: !open ? 'hidden' : 'visible' }}>
-                <ul className={`fw-light flex-${direction} ` + styles.nav_list + ' ' + (open ? styles.open : styles.closed)}>
+                <ul className={`fw-medium flex-${direction} ` + styles.nav_list + ' ' + (open ? styles.open : styles.closed)}>
                     <Link href="/#best_fee_container">
                         <li>Taxas</li>
                     </Link>

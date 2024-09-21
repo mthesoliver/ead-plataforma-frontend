@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 export default function useResize() {
 
     const [innerWidth, setInnerWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1320);
-    const [isMobile, setIsMobile] = useState<boolean>(innerWidth > 960);
+    const [isMobile, setIsMobile] = useState<boolean>(innerWidth > 760);
 
     useEffect(() => {
         // Função para atualizar a largura da janela
@@ -24,7 +24,7 @@ export default function useResize() {
 
     useMemo(() => {
         // Atualiza o estado 'isMobile' com base na largura da janela
-        setIsMobile(innerWidth <= 960);
+        setIsMobile(innerWidth <= 760);
     }, [innerWidth]);
 
     return { innerWidth, isMobile };

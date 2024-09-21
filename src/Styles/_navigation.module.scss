@@ -6,7 +6,7 @@
 
     li {
         list-style: none !important;
-        font-size: $fs-sm;
+        font-size: calc($fs-sm + 2px);
     }
 }
 
@@ -22,7 +22,7 @@
     padding: .8rem 1.5rem !important;
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width:760px) {
     .nav_bar {
         position: relative;
         top: -20px;
