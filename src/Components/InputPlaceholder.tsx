@@ -140,7 +140,7 @@ function InputPlaceholder() {
                                 </Button>
                             </span>
                         </Box>
-                        <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '12px', marginTop: '-14px !important', maxWidth: '40%' }} className='m-auto'>
+                        <FormHelperText sx={{ color: inputValid ? '#4BFF0C' : '#FF0C37', textAlign: 'center', fontSize: '12px', lineHeight: '16px!important', marginTop: '-20px !important', marginBottom: '14px !important', marginInline: "auto!important", maxWidth: '40%' }} >
                             {inputHelper}
                         </FormHelperText>
                     </>
