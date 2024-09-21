@@ -5,4 +5,5 @@ export type CardCustomType = {
     givenIcon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> | null;
     title: string;
     content: string;
+    size?: number;
 }

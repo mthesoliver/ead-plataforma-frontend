@@ -31,7 +31,7 @@ function Footer() {
                                 </Link>
                             </Box>
                             <Box>
-                                <Link href={'https://www.linkedin.com/company/ead-plataforma/'}>
+                                <Link href={'https://www.instagram.com/eadplataforma/'}>
                                     <InstagramIcon />
                                 </Link>
                             </Box>

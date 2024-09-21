@@ -59,7 +59,7 @@ function DemonstrationForm() {
 
                 <ButtonBase type="submit"
                     className="btn my-3 p-3 fw-bold"
-                    sx={{ background: 'rgba(255,255,255,.9)!important', textTransform: 'uppercase' }}>
+                    sx={{ background: 'rgba(255,255,255,.9)!important', textTransform: 'uppercase', borderRadius: "8px!important" }}>
                     Enviar
                 </ButtonBase>
             </Box >

@@ -12,7 +12,6 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { List, ListItem, StyledEngineProvider, Typography } from "@mui/material";
-import Carousel from "Ead/Components/SliderCustom";
 import HeroTextCustom from "Ead/Components/HeroTextCustom";
 import CardSimple from "Ead/Components/CardSimple";
 import Button from "Ead/Components/Button";
@@ -34,16 +33,33 @@ import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
-import Link from "next/link";
 
 export default function Home() {
   const { isMobile } = useResize();
   const [oveflowCard, setOverflowCard] = useState<boolean>(false);
 
+  const [switchPay, setSwitchPay] = useState<boolean>(true);
+  const [typeOfPay, setTypeOfPay] = useState<string>('mensal');
+
   const handleOverflow = (e: any) => {
     e.preventDefault();
     setOverflowCard(!oveflowCard);
   }
+
+  const handleSwitch = (selectedPay: string) => {
+    if (typeOfPay === selectedPay) {
+      return; // Não faz nada se o botão clicado já estiver ativo
+    }
+
+    // Muda o estado apenas se o botão clicado for diferente do atual
+    if (selectedPay === 'mensal') {
+      setSwitchPay(true);
+      setTypeOfPay('mensal');
+    } else if (selectedPay === 'anual') {
+      setSwitchPay(false);
+      setTypeOfPay('anual');
+    }
+  };
 
   return (
 
@@ -55,7 +71,7 @@ export default function Home() {
       <main className={"container " + styles.main}>
 
         <section id="video_container" className="container d-flex flex-row row mb-5 w-100">
-          <div className="container d-flex flex-column col w-100">
+          <div id="placeholder_wrapper" className="container d-flex flex-column col w-100">
             <YourCoursePlaceholder />
             <div>
               <VideoPlaceholder videoId="OnH8go5IKEc" />
@@ -63,26 +79,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="carousel_container" className="container d-flex flex-row row my-3 w-100">
+        <section id="carousel_container" className="container d-flex flex-row row my-5 w-100">
           <div className="container d-flex flex-column col">
             <Typography component="h2" gutterBottom className='fw-semibold mb-3 z3 position-relative ' sx={{ fontSize: !isMobile ? 44 : 32, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani" }} >
               Veja as possibilidades com a EAD Plataforma
             </Typography>
-            <div className={"z3 position-relative"}>
-              <Carousel>
-                <CardCustomBorder givenIcon={ImportantDevicesIcon}
-                  title="Venda seus cursos em nossa vitrine"
-                  content="Com nossa plataforma, você pode criar, gerenciar e vender infoprodutos de forma fácil e eficaz." />
-                <CardCustomBorder givenIcon={Diversity3Icon}
-                  title="Criação de cursos coorporativos"
-                  content="Nossa plataforma oferece tudo o que você precisa para criar uma escola de cursos online completa." />
-                <CardCustomBorder givenIcon={DashboardCustomizeIcon}
-                  title="Transforme sua plataforma para seu nicho"
-                  content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
-                <CardCustomBorder givenIcon={ImportantDevicesIcon}
-                  title="Venda seus cursos em nossa vitrine"
-                  content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
-              </Carousel>
+            <div id="carousel_cards" className={`d-flex flex-row justify-content-${!isMobile ? 'center' : 'start'} z3 position-relative gap-4 `}>
+              <CardCustomBorder givenIcon={ImportantDevicesIcon}
+                size={!isMobile ? 3 : 6}
+                title="Venda seus cursos em nossa vitrine"
+                content="Com nossa plataforma, você pode criar, gerenciar e vender infoprodutos de forma fácil e eficaz." />
+              <CardCustomBorder givenIcon={Diversity3Icon}
+                size={!isMobile ? 3 : 6}
+                title="Criação de cursos coorporativos"
+                content="Nossa plataforma oferece tudo o que você precisa para criar uma escola de cursos online completa." />
+              <CardCustomBorder givenIcon={DashboardCustomizeIcon}
+                size={!isMobile ? 3 : 6}
+                title="Transforme sua plataforma para seu nicho"
+                content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
+              <CardCustomBorder givenIcon={ImportantDevicesIcon}
+                size={!isMobile ? 3 : 6}
+                title="Venda seus cursos em nossa vitrine"
+                content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
             </div>
           </div>
         </section>
@@ -97,7 +115,7 @@ export default function Home() {
                 imagePath="/assets/images/bg_card_image_2.png" size={!isMobile ? 7 : 12} />
               <CardSimple title="EAD Player"
                 link="https://eadplataforma.com/eadplayer"
-                subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim"
+                subTitle="Nosso player oferece os recursos mais utilizados pelos players tradicionais, reunidos em um só."
                 imagePath="/assets/images/bg_card_image_1.png" size={!isMobile ? 5 : 12} />
             </div>
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
@@ -365,9 +383,14 @@ export default function Home() {
                 </div>
 
                 <div className={"d-inline-flex flex-row gap-4 justify-content-center align-items-center"}>
-                  <Typography component="h2" gutterBottom className='fw-semibold my-3 z3 position-relative ' sx={{ fontSize: 44, lineHeight: 1.4, textAlign: 'center', fontFamily: "Rajdhani", color: '#000' }} >
-                    Anual / Mensal
-                  </Typography>
+                  <div className={styles.switch_wrapper}>
+                    <Typography component="h5" gutterBottom className={'fw-semibold my-3 ' + (typeOfPay === 'mensal' ? styles.switch_active : '')} onClick={() => handleSwitch('mensal')}>
+                      Mensal
+                    </Typography>
+                    <Typography component="h5" gutterBottom className={'fw-semibold my-3 ' + (typeOfPay === 'anual' ? styles.switch_active : '')} onClick={() => handleSwitch('anual')}>
+                      Anual
+                    </Typography>
+                  </div>
                 </div>
 
                 <div id="price_cards" className={`d-inline-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
@@ -375,7 +398,7 @@ export default function Home() {
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="https://eadplataforma.com/trial"
-                    typeOfpay="/mês"
+                    typeOfpay={typeOfPay}
                     column
                     opts={{
                       description: 'Permite criar e gerenciar cursos com ferramentas básicas de avaliação.'
@@ -425,7 +448,7 @@ export default function Home() {
                     btnLink="https://eadplataforma.com/trial"
                     badge="Mais popular"
                     color="#fff"
-                    typeOfpay="/mês"
+                    typeOfpay={typeOfPay}
                     column
                     opts={{
                       description: 'Oferece transmissões ao vivo e maior alcance para suas aulas.'
@@ -473,7 +496,7 @@ export default function Home() {
                     plans={'Premium'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="https://eadplataforma.com/trial"
-                    typeOfpay="/mês"
+                    typeOfpay={typeOfPay}
                     column
                     opts={{
                       description: 'Permite personalizações avançadas e mais controle sobre sua plataforma.'
@@ -614,6 +637,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-    </StyledEngineProvider>
+    </StyledEngineProvider >
   );
 }

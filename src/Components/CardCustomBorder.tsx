@@ -10,7 +10,7 @@ import styles from "Ead/Styles/_card-custom-border.module.scss";
 import { CardCustomType } from 'Ead/Types/CardCustomBorderType';
 import useResize from 'Ead/CustomHooks/useResize';
 
-function CardCustomBorder({ givenIcon: GivenIcon, title, content }: Readonly<CardCustomType>) {
+function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12 }: Readonly<CardCustomType>) {
     const { isMobile } = useResize();
 
     const iconPlaceholder = (
@@ -26,7 +26,7 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content }: Readonly<Car
 
     return (
         <StyledEngineProvider injectFirst>
-            <Card className={"p-4 " + styles.card_custom} variant="outlined" >
+            <Card className={`p-4 col-${size} ` + styles.card_custom} variant="outlined" >
                 {iconPlaceholder}
                 <CardContent className={"p-1"} >
                     <Typography component={'h2'} gutterBottom className='fw-bolder mt-3' sx={{ fontSize: !isMobile ? 24 : 20, lineHeight: 1.4 }} >

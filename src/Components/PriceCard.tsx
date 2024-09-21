@@ -25,8 +25,8 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
             <Typography component={'h2'} gutterBottom className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 80 : 60, lineHeight: !isMobile ? 1.4 : 1., color: color ?? '#1C0237' }} >
                 {children}
                 {typeOfpay && (
-                    <span className='fs-4 fw-regular mb-4'>
-                        {typeOfpay}
+                    <span className='fs-6 fw-regular mb-4'>
+                        {typeOfpay === 'mensal' ? 'Cobrado mensalmente no cartão de crédito, pix ou boleto' : 'Parcelado no cartão ou 3.999 anualmente à vista no pix ou boleto'}
                     </span>
                 )}
             </Typography>
@@ -69,7 +69,15 @@ function PriceCard({ plans, opts, color, children, column, listchildren, btnText
                 )}
                 <CardContent className={"px-4 mb-2 d-flex flex-column col " + (column ? 'col-12' : 'col-6')} >
                     <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay} btnLink={btnLink}>
-                        {children}
+                        <div className='d-flex flex-row align-items-end justify-content-center'>
+                            {typeOfpay === 'anual' && (
+                                <Typography sx={{ fontSize: "20px !important", paddingBottom: "25px!important", paddingRight: "10px!important" }} className='fw-bold'>
+                                    10x
+                                </Typography>
+                            )}
+
+                            {children}
+                        </div>
                     </PriceContent>
                 </CardContent>
                 <CardContent className={"px-4 mb-2 d-flex flex-column col " + ' ' + (column ? 'col-12 mt-5 m-auto' : 'col-5') + ' ' + (color ? styles.child_color_light : styles.child_color_dark)} >
