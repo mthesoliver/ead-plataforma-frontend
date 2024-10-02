@@ -11,7 +11,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { List, ListItem, StyledEngineProvider, Typography } from "@mui/material";
+import { ButtonBase, List, ListItem, StyledEngineProvider, Typography } from "@mui/material";
 import HeroTextCustom from "Ead/Components/HeroTextCustom";
 import CardSimple from "Ead/Components/CardSimple";
 import Button from "Ead/Components/Button";
@@ -624,7 +624,12 @@ export default function Home() {
                   titleSize={44}
                   subTitle="Veja o que a EAD Plataforma é capaz de fazer por você!">
 
-                  <DemonstrationForm />
+                  <ButtonBase
+                    href="https://eadplataforma.com/demo"
+                    className="btn my-3 p-3 fw-bold"
+                    sx={{ background: 'rgba(255,255,255,.9)!important', textTransform: 'uppercase', borderRadius: "8px!important", minWidth: "300px!important" }}>
+                    Agendar demonstração!
+                  </ButtonBase>
 
                 </DemonstrationCta>
               </div>
