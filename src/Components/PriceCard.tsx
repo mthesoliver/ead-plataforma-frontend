@@ -61,7 +61,7 @@ function PriceCard({ plans, opts, color, children, column, listchildren, btnText
 
     return (
         <StyledEngineProvider injectFirst>
-            <Card className={`d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
+            <Card component={'div'} className={`d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
                 {badge && (
                     <Badge sx={{ color: "#fff", padding: '.6rem 1.5rem !important', borderRadius: '120px' }} className={styles.badge_wrapper}>
                         {badge}
