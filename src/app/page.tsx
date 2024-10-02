@@ -33,6 +33,7 @@ import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
+import SliderBestFee from "Ead/Components/SliderBestFee";
 
 export default function Home() {
   const { isMobile } = useResize();

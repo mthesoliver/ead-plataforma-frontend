@@ -3,10 +3,10 @@ import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { ReactNode } from "react";
 
 export type CardFeeType = {
-    title: string;
+    title?: string;
     givenIcon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> | null,
-    feeValues: string;
-    release: string;
+    feeValues?: string;
+    release?: string;
     size?: number;
 }
 

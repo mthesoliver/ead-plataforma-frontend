@@ -25,10 +25,10 @@
 
 @keyframes infiniteScroll {
     0% {
-        transform: translateX(-600px);
+        transform: translateX(800px);
     }
 
     100% {
-        transform: translateX(800px);
+        transform: translateX(-600px);
     }
 }

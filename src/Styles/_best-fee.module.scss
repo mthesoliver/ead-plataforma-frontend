@@ -7,3 +7,11 @@
     border-radius: 24px !important;
     border: 1px solid #989898 !important;
 }
+
+.card_item {
+    background: $transparent-color !important;
+    min-height: fit-content;
+    border-radius: 24px !important;
+    border: 1px solid #989898 !important;
+    max-width: calc((100% / 4) - 1rem) !important;
+}
