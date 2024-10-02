@@ -394,7 +394,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div id="price_cards" className={`d-inline-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
+                <div id="price_cards" className={`d-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
                   <PriceCard
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}

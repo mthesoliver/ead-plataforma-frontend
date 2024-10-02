@@ -46,7 +46,7 @@ function Header() {
                         </Box>
                     </div>
                     <Stack direction={'column'} className="mt-5">
-                        <Navigation direction="column" open={togle ?? true} />
+                        <Navigation direction="column" open={togle ?? true} handleClick={handleTogle} />
                     </Stack>
                 </section>
             )}

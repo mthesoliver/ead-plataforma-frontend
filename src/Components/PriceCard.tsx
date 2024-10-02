@@ -57,7 +57,7 @@ export const PriceListAdvantages = ({ children, btnText, color, btnLink }: Reado
 
 
 function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink }: Readonly<PriceType>) {
-    const isColumn = column ? 'flex-column col' : 'flex-row row';
+    const isColumn = column ? 'flex-column' : 'flex-row';
 
     return (
         <StyledEngineProvider injectFirst>
