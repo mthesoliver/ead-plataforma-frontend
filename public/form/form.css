@@ -156,3 +156,13 @@ h6 {
         font-size: 12px !important;
     }
 }
+
+@media screen and (max-width:1200px) {
+    .form_arrow {
+        position: absolute;
+        top: 6rem;
+        right: 1rem;
+        width: 100px;
+        transform: rotate(12deg);
+    }
+}
