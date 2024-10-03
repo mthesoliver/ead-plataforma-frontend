@@ -34,6 +34,7 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
 import SliderBestFee from "Ead/Components/SliderBestFee";
+import IframeForm from "Ead/Components/IframeForm";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -72,8 +73,11 @@ export default function Home() {
       <main className={"container " + styles.main}>
 
         <section id="video_container" className="container d-flex flex-row row mb-5 w-100">
+
           <div id="placeholder_wrapper" className="container d-flex flex-column col w-100">
-            <YourCoursePlaceholder />
+
+            <IframeForm />
+
             <div>
               <VideoPlaceholder videoId="OnH8go5IKEc" />
             </div>

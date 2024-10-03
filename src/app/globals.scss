@@ -14,12 +14,6 @@
   @include dark-theme;
 }
 
-// * {
-//   box-sizing: border-box !important;
-//   padding: 0 !important;
-//   margin-inline: 0 !important;
-// }
-
 html,
 body {
   max-width: 100vw !important;
@@ -52,6 +46,10 @@ header ul {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark !important;
+  }
+
+  iframe {
+    color-scheme: none !important;
   }
 }
 
@@ -167,6 +165,14 @@ h5 {
     max-width: 80vw !important;
     padding: 20px !important;
     min-height: 100vh !important
+  }
+
+  #form_frame {
+    position: relative;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    margin-left: -33px !important;
+    padding: 0 !important;
   }
 
   /* Font title styles */
