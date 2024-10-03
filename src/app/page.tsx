@@ -4,7 +4,6 @@ import CardCustomBorder from "Ead/Components/CardCustomBorder";
 import styles from "./page.module.scss";
 import Header from "Ead/Components/Header";
 import VideoPlaceholder from "Ead/Components/VideoPlaceholder";
-import YourCoursePlaceholder from "Ead/Components/YourCoursePlaceholder";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
@@ -27,7 +26,6 @@ import AccordionCustom from "Ead/Components/AccordionCustom";
 import Footer from "Ead/Components/Footer";
 import { useState } from "react";
 import DemonstrationCta from "Ead/Components/DemonstrationCta";
-import DemonstrationForm from "Ead/Components/DemonstrationForm";
 import BestFee, { CardFeeContent } from "Ead/Components/BestFee";
 import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';

@@ -72,6 +72,14 @@ h6 {
     outline: none;
 }
 
+.form_arrow {
+    position: absolute;
+    top: 6rem;
+    right: 9rem;
+    width: 120px;
+    transform: rotate(12deg);
+}
+
 /* button styles */
 .btn_color_primary {
     font-family: "Rajdhani", sans-serif;
@@ -110,6 +118,10 @@ h6 {
     main {
         margin-top: 50px !important;
         overflow: hidden !important;
+    }
+
+    .form_arrow {
+        display: none;
     }
 
     #btn_icon {

@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import styles from "Ead/Styles/_best-fee.module.scss";
-import { CardFeeContainerType, CardFeeType } from 'Ead/Types/CardFee';
+import { CardFeeContainerType } from 'Ead/Types/CardFee';
 import { Box, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 import PixIcon from '@mui/icons-material/Pix';
@@ -14,7 +14,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import Image from 'next/image';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const CardFeeContentEad = ({ title, givenIcon: GivenIcon, feeValues, release, size }: Readonly<CardFeeType>) => {
+const CardFeeContentEad = () => {
     const { isMobile } = useResize();
     return (
         <CardContent className={`d-flex flex-row row align-items-center justify-content-center col-6 `}>
@@ -55,7 +55,7 @@ const CardFeeContentEad = ({ title, givenIcon: GivenIcon, feeValues, release, si
         </CardContent>
     )
 };
-function SliderBestFee({ children, direction = 'row' }: Readonly<CardFeeContainerType>) {
+function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
     return (
         <StyledEngineProvider injectFirst>
             <Box className={`d-flex flex-row row w-100 m-auto mb-3 gap-3 `}>
