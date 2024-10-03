@@ -73,11 +73,8 @@ export default function Home() {
       <main className={"container " + styles.main}>
 
         <section id="video_container" className="container d-flex flex-row row mb-5 w-100">
-
           <div id="placeholder_wrapper" className="container d-flex flex-column col w-100">
-
             <IframeForm />
-
             <div>
               <VideoPlaceholder videoId="OnH8go5IKEc" />
             </div>
@@ -219,7 +216,7 @@ export default function Home() {
                     Na EAD você também pode personalizar sua plataforma em estilo Netflix!
                   </Typography>
                   <div className="mt-5">
-                    <Button givenClass="fw-bold p-4 fs-5" rounded link="https://eadplataforma.com/trial">Comece agora mesmo</Button>
+                    <Button givenClass="fw-bold p-4 fs-5" rounded link="#video_container">Comece agora mesmo</Button>
                   </div>
                 </div>
 
@@ -346,7 +343,7 @@ export default function Home() {
                   <PriceCard column={isMobile ?? true}
                     plans={'Grátis'}
                     btnText={'Comece hoje mesmo'}
-                    btnLink="https://eadplataforma.com/trial"
+                    btnLink="#video_container"
                     opts={{
                       smallDescription: 'De graça para sempre',
                       description: 'Para começar sua escola online hoje com custo zero!'
@@ -402,7 +399,7 @@ export default function Home() {
                   <PriceCard
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
-                    btnLink="https://eadplataforma.com/trial"
+                    btnLink="#video_container"
                     typeOfpay={typeOfPay}
                     column
                     opts={{
@@ -450,7 +447,7 @@ export default function Home() {
                   <PriceCard
                     plans={'Essencials'}
                     btnText={'Comece hoje mesmo'}
-                    btnLink="https://eadplataforma.com/trial"
+                    btnLink="#video_container"
                     badge="Mais popular"
                     color="#fff"
                     typeOfpay={typeOfPay}
@@ -500,7 +497,7 @@ export default function Home() {
                   <PriceCard
                     plans={'Premium'}
                     btnText={'Comece hoje mesmo'}
-                    btnLink="https://eadplataforma.com/trial"
+                    btnLink="#video_container"
                     typeOfpay={typeOfPay}
                     column
                     opts={{
