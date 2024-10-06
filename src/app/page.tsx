@@ -33,6 +33,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
 import SliderBestFee from "Ead/Components/SliderBestFee";
 import IframeForm from "Ead/Components/IframeForm";
+import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -67,6 +68,8 @@ export default function Home() {
       <header>
         <Header />
       </header>
+
+      <ScheduleFixButton />
 
       <main className={"container " + styles.main}>
 

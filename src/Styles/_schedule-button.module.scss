@@ -1,0 +1,32 @@
+.img_wrapper {
+    transform: scale(1);
+    transition: all .2s linear;
+    animation: enterButton 1s ease-in-out .1s;
+}
+
+.img_wrapper:hover {
+    transition: all .2s linear;
+    animation: hoverButton .5s linear .1s infinite alternate;
+}
+
+@keyframes enterButton {
+    from {
+        transform: translate(-500px);
+    }
+
+    to {
+        transform: translate(0);
+    }
+
+}
+
+@keyframes hoverButton {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.03);
+    }
+
+}
