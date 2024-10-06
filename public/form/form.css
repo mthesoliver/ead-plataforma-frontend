@@ -19,6 +19,18 @@ main {
     width: 100vw !important;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #858585 !important;
+    /* Mantém o texto visível */
+    transition: background-color 5000s ease-in-out 0s;
+    /* Evita que o fundo seja alterado */
+}
+
 h1,
 h2,
 h3,
@@ -70,7 +82,10 @@ h6 {
 
 .placeholder_wrapper input:focus {
     outline: none;
+    background: none !important;
 }
+
+
 
 .form_arrow {
     position: absolute;

@@ -13,10 +13,8 @@ const mainSubtitle = document.getElementById('main_subtitle');
 const stepOneForm = document.getElementById('step_one_form');
 const stepTwoForm = document.getElementById('step_two_form');
 const stepThreeForm = document.getElementById('step_three_form');
-const loaderOne = document.getElementById('loader_1');
-const loaderTwo = document.getElementById('loader_2');
-const mainIconTwo = document.getElementById('btn_icon_2');
-const mainIconThree = document.getElementById('btn_icon_3');
+const loaderOne = document.getElementById('loader');
+const mainIconTwo = document.getElementById('btn_icon_1');
 
 
 const placeholders = [
@@ -119,29 +117,9 @@ function handleSubmitStepTwo(event) {
     mainIconTwo.classList.add('hidden');
     loaderOne.classList.remove('hidden');
     setTimeout(() => {
+        window.open("https://eadplataforma.com/thanks", '_blank');
         loaderOne.classList.add('hidden')
         mainIconTwo.classList.remove('hidden');
-        stepTwoForm.classList.add('hidden');
-        stepThreeForm.classList.remove('hidden');
-
-
-        handleCtaTest(stepTwoForm, 'Quase pronto!', 'Qual seu objetivo?');
-    }, 5000);
-}
-
-async function handleSubmitStepThree(event) {
-    event.preventDefault();
-    mainIconThree.classList.add('hidden');
-    loaderTwo.classList.remove('hidden');
-    setTimeout(() => {
-        window.open("https://eadplataforma.com/thanks", '_blank');
-        loaderTwo.classList.add('hidden')
-        mainIconThree.classList.remove('hidden');
-
-        stepOneForm.classList.remove('hidden');
-        stepTwoForm.classList.add('hidden');
-        stepThreeForm.classList.add('hidden');
-
         window.location.reload();
-    }, 2000);
+    }, 5000);
 }
