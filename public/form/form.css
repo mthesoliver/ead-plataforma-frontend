@@ -78,6 +78,19 @@ h6 {
     right: 9rem;
     width: 120px;
     transform: rotate(12deg);
+    transition: all .2s linear;
+}
+
+#step_two_form .placeholder_wrapper,
+#step_three_form .placeholder_wrapper {
+    max-width: 400px;
+    width: 400px;
+    justify-content: start;
+    font-size: 20px !important;
+}
+
+#step_three_form select {
+    border-radius: 60px;
 }
 
 /* button styles */
@@ -164,5 +177,20 @@ h6 {
         right: 1rem;
         width: 100px;
         transform: rotate(12deg);
+        transition: all .2s linear;
+    }
+}
+
+svg.loader {
+    animation: loader 2s linear .2s infinite;
+}
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+
+    from {
+        transform: rotate(0deg);
     }
 }

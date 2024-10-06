@@ -1,10 +1,23 @@
-/* variables */
+// variables 
 let inputValue = document.getElementById('input_course').value;
 const inputElement = document.getElementById('input_course');
+// helper variables
 const helperIconClose = document.getElementById('helper_icon_close');
 const helperTextClose = document.getElementById('helper_text_close');
 const helperIconOpen = document.getElementById('helper_icon_okay');
 const helperTextOpen = document.getElementById('helper_text_okay');
+// title variables & form
+let inputValuePhone = document.getElementById('input_phone').value;
+const mainTitle = document.getElementById('main_title');
+const mainSubtitle = document.getElementById('main_subtitle');
+const stepOneForm = document.getElementById('step_one_form');
+const stepTwoForm = document.getElementById('step_two_form');
+const stepThreeForm = document.getElementById('step_three_form');
+const loaderOne = document.getElementById('loader_1');
+const loaderTwo = document.getElementById('loader_2');
+const mainIconTwo = document.getElementById('btn_icon_2');
+const mainIconThree = document.getElementById('btn_icon_3');
+
 
 const placeholders = [
     'sua-empresa',
@@ -12,49 +25,52 @@ const placeholders = [
     'sua-escola',
 ];
 
-// Elementos de controle
-let wordIndex = 0;  // Índice da palavra atual
-let charIndex = 0;   // Índice da letra dentro da palavra
-let isDeleting = false;  // Indicador se estamos deletando ou adicionando letras
-let delay = 200;  // Velocidade inicial de digitação
+// control elements
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let delay = 200;
 
-// Função principal de digitação e remoção
+// typing main function
 function handleTyping() {
     const currentWord = placeholders[wordIndex];  // Pega a palavra atual
 
     if (!isDeleting) {
-        // Adiciona uma letra por vez
         inputElement.placeholder = currentWord.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex === currentWord.length) {
-            // Pausa quando a palavra está completamente digitada
             setTimeout(() => isDeleting = true, 1000);
         }
     } else {
-        // Remove uma letra por vez
         inputElement.placeholder = currentWord.substring(0, charIndex - 1);
         charIndex--;
 
         if (charIndex === 0) {
-            // Passa para a próxima palavra quando a atual for completamente removida
             isDeleting = false;
             wordIndex = (wordIndex + 1) % placeholders.length;
         }
     }
 
-    // Define o tempo para a próxima iteração de digitação ou remoção
     const nextDelay = isDeleting ? 100 : 200;
     setTimeout(handleTyping, nextDelay);
 }
 
-// Inicializa o processo de digitação
+// initialize typing function
 setTimeout(handleTyping, delay);
 
-/* main functions */
+// main functions
 function handleInput(event) {
     inputValue = sanitizeString(event.target.value);
     event.target.value = inputValue;
+}
+
+
+function handleCtaTest(formSection, title, subtitle) {
+    if (formSection.classList.contains('hidden')) {
+        mainTitle.innerText = title;
+        mainSubtitle.innerText = subtitle;
+    }
 }
 
 async function handleSubmit(event) {
@@ -72,7 +88,13 @@ async function handleSubmit(event) {
                 helperIconClose.classList.add('hidden');
                 helperTextClose.classList.add('hidden');
 
-                removeStyle([helperIconOpen, helperTextOpen, helperIconClose, helperTextClose], 10000);
+                setTimeout(() => {
+                    stepOneForm.classList.add('hidden');
+                    stepTwoForm.classList.remove('hidden');
+
+                    handleCtaTest(stepOneForm, 'Boa escolha!', 'Vamos enviar o seu acesso. Qual o seu melhor email?');
+                }, 4000)
+                removeStyle([helperIconOpen, helperTextOpen, helperIconClose, helperTextClose], 4000);
             } else {
                 helperIconClose.classList.remove('hidden');
                 helperTextClose.classList.remove('hidden');
@@ -85,4 +107,41 @@ async function handleSubmit(event) {
             return ''
         }
     }
+}
+
+function handleInputPhone(event) {
+    inputValuePhone = sanitizeStringToNumbers(event.target.value);
+    event.target.value = inputValuePhone;
+}
+
+function handleSubmitStepTwo(event) {
+    event.preventDefault();
+    mainIconTwo.classList.add('hidden');
+    loaderOne.classList.remove('hidden');
+    setTimeout(() => {
+        loaderOne.classList.add('hidden')
+        mainIconTwo.classList.remove('hidden');
+        stepTwoForm.classList.add('hidden');
+        stepThreeForm.classList.remove('hidden');
+
+
+        handleCtaTest(stepTwoForm, 'Quase pronto!', 'Qual seu objetivo?');
+    }, 5000);
+}
+
+async function handleSubmitStepThree(event) {
+    event.preventDefault();
+    mainIconThree.classList.add('hidden');
+    loaderTwo.classList.remove('hidden');
+    setTimeout(() => {
+        window.open("https://eadplataforma.com/thanks", '_blank');
+        loaderTwo.classList.add('hidden')
+        mainIconThree.classList.remove('hidden');
+
+        stepOneForm.classList.remove('hidden');
+        stepTwoForm.classList.add('hidden');
+        stepThreeForm.classList.add('hidden');
+
+        window.location.reload();
+    }, 2000);
 }

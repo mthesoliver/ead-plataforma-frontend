@@ -8,7 +8,7 @@ function IframeForm() {
 
     return (
         <iframe id='form_frame' src="/form/form.html" title="Crie seu curso online agora" allowFullScreen
-            height={isMobile ? 500 : 400} style={{ marginTop: isMobile ? 50 : 10, minWidth: "400px!important" }}>
+            height={isMobile ? 550 : 500} style={{ marginTop: isMobile ? 50 : 10, minWidth: "500px!important" }}>
         </iframe>
     )
 }
