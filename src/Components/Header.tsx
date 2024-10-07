@@ -35,7 +35,7 @@ function Header() {
                             )}
                         </Box>
                         <Box className={'col-6 text-center'}>
-                            <Image src={'/assets/ead_main_logo.png'} alt='Logotipo da empresa Ead Plataforma' width={160 / 1.5} height={90 / 1.5} loading="eager" placeholder="blur" blurDataURL="/assets/ead_main_logo.png"></Image>
+                            <img src={'/assets/images/ead_main_logo.png'} alt='Logotipo da empresa Ead Plataforma' width={160 / 1.5} height={90 / 1.5}></img>
                         </Box>
                         <Box className={'col-3 text-center'}>
                             <Button givenClass={"fw-light"} rounded>
@@ -53,7 +53,7 @@ function Header() {
 
             {!isMobile && (
                 <section className={"my-4 container d-flex " + styles.header_width}>
-                    <Image src={'/assets/ead_main_logo.png'} alt='Logotipo da empresa Ead Plataforma' width={160} height={90} loading="eager" placeholder="blur" blurDataURL="/assets/ead_main_logo.png"></Image>
+                    <img src={'/assets/images/ead_main_logo.png'} alt='Logotipo da empresa Ead Plataforma' width={160} height={90} ></img>
                     <Navigation open={true} />
                     <Button givenIcon={LocalPhoneOutlinedIcon} givenClass={"fw-light fs-6"} rounded>
                         <Link href={`tel:+${phoneNumberLink}`} className="fw-light">

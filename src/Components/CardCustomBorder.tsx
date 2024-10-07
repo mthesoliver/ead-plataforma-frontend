@@ -22,8 +22,6 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12 }: R
 
     );
 
-
-
     return (
         <StyledEngineProvider injectFirst>
             <Card className={`p-4 col-${size} ` + styles.card_custom} variant="outlined" >

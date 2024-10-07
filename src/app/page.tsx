@@ -14,7 +14,6 @@ import { ButtonBase, List, ListItem, StyledEngineProvider, Typography } from "@m
 import HeroTextCustom from "Ead/Components/HeroTextCustom";
 import CardSimple from "Ead/Components/CardSimple";
 import Button from "Ead/Components/Button";
-import Image from "next/image";
 import StampCircle from "Ead/Components/StampCircle";
 import InfiniteLogoScroll from "Ead/Components/InfiniteLogoScroll";
 import YouTube from "react-youtube";
@@ -31,7 +30,6 @@ import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
-import SliderBestFee from "Ead/Components/SliderBestFee";
 import IframeForm from "Ead/Components/IframeForm";
 import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
 
@@ -171,8 +169,8 @@ export default function Home() {
           <div className="container d-flex flex-column col gap-4">
             <HeroTextCustom sub={"Sucesso com nossa plataforma EAD"} title={"Quem confia em nós!"} titleSize={60} />
             <figure>
-              <Image src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
-                className="position-relative top-0 start-50 translate-middle-x" placeholder="blur" blurDataURL="/assets/images/trust_us_image.png" loading="lazy" />
+              <img src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
+                className="position-relative top-0 start-50 translate-middle-x"></img>
             </figure>
             <section className="text-center my-2 py-2">
               <StampCircle>Mais de 1.600 escolas confiam em nós</StampCircle>
@@ -222,7 +220,7 @@ export default function Home() {
                 </div>
 
                 <figure className="justify-content-center align-items-center">
-                  <Image src={"/assets/images/customize/custom_dark_purp.png"} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" />
+                  <img src={"/assets/images/customize/custom_dark_purp.png"} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" />
                 </figure>
               </div>
             </section>

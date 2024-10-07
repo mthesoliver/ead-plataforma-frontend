@@ -20,7 +20,7 @@ function IntegrationsImageCols() {
                 <Box className={"position-absolute d-flex justify-content-center"}>
                     <Box className={"d-flex align-items-center justify-content-center " + styles.overlay_images} />
                     {[...images].map((item, index) => (
-                        <Image key={index} src={item} width={200} height={400} alt={`Logotipo parceiro ${item.split('-').slice(-1)}`} style={{ objectFit: "contain" }}
+                        <img key={index} src={item} width={200} height={400} alt={`Logotipo parceiro ${item.split('-').slice(-1)}`} style={{ objectFit: "contain" }}
                             className={index % 2 === 0 ? `mt-5 ${styles.even_animation}` : `mb-5 ${styles.odd_animation}`} />
                     ))}
                 </Box>

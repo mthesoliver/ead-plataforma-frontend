@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+    output: 'export',
+    skipTrailingSlashRedirect: true,
+    trailingSlash: true,
+
     swcMinify: false,
-    sassOptions: {
-        includePaths: ['./src/app', './src/Styles'],
-    },
     experimental: {
         cssChunking: 'strict',
         useLightningcss: false,

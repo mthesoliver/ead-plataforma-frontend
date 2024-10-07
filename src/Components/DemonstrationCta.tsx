@@ -43,7 +43,7 @@ function DemonstrationCta({ title, titleSize, subTitle, imagePath, fontColor, ch
                 variant="outlined"
                 sx={{ borderColor: "none", borderWidth: 0, borderRadius: "24px", backgroundColor: "#1C0237", backgroundSize: "cover", backgroundPosition: "center center", }}>
                 <CardContent className={"p-1 mb-2 position-relative"} >
-                    <Image src={imageBackground!} alt={imageBackground!} width={!isMobile ? 540 : 540 / 2} height={!isMobile ? 400 : 400 / 2} loading="lazy" className={styles.top_image_form} />
+                    <img src={imageBackground!} alt={imageBackground!} width={!isMobile ? 540 : 540 / 2} height={!isMobile ? 400 : 400 / 2} loading="lazy" className={styles.top_image_form} />
                     <CustomCardContent title={title} subTitle={subTitle} titleSize={titleSize} fontColor={fontColor}>
                     </CustomCardContent>
                     {children}

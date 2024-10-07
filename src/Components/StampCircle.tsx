@@ -2,7 +2,6 @@
 
 import styles from 'Ead/Styles/_stamp.module.scss';
 import { Box, StyledEngineProvider, Typography } from '@mui/material';
-import Image from 'next/image';
 import useResize from 'Ead/CustomHooks/useResize';
 
 function StampCircle({ children }: any) {
@@ -16,7 +15,7 @@ function StampCircle({ children }: any) {
                         className="position-relative top-50 start-50 translate-middle">
                         {children}
                     </Typography>
-                    <Image src="/assets/images/svg/text_on_circle.svg"
+                    <img src="/assets/images/svg/text_on_circle.svg"
                         alt="Crie a plataforma perfeita para seu curso"
                         width={!isMobile ? 235 : 185} height={!isMobile ? 235 : 185}
                         className={"animation_rotate " + styles.animation_rotate} />

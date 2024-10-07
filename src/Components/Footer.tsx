@@ -20,9 +20,8 @@ function Footer() {
                 <section id="footer_container" className={"my-5 py-5 align-items-start container d-flex flex-row row " + styles.footer_width}>
                     <div className={`d-flex flex-column align-items-start col col-5 gap-2 `}>
                         <Link href={'/'}>
-                            <Image src={'/assets/images/ead_horizontal_footer_logo.png'}
-                                alt='Logotipo da empresa Ead Plataforma' width={307} height={65} loading="eager"
-                                placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                            <img src={'/assets/images/ead_horizontal_footer_logo.png'}
+                                alt='Logotipo da empresa Ead Plataforma' width={307} height={65} />
                         </Link>
                         <Stack direction={'row'} useFlexGap spacing={2} className={"mt-3 ms-2"}>
                             <Box>
@@ -126,12 +125,10 @@ function Footer() {
                     </div>
 
                     <div className={`d-flex flex-column align-items-start col col-1 gap-2 `}>
-                        <Image src={'/assets/images/amazon_logo.png'}
-                            alt='Logotipo da amazon' width={100} height={75} loading="eager"
-                            placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
-                        <Image src={'/assets/images/GPTW_logo.png'}
-                            alt='Logotipo do Great Place to Work' width={100} height={166} loading="eager"
-                            placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                        <img src={'/assets/images/amazon_logo.png'}
+                            alt='Logotipo da amazon' width={100} height={75} />
+                        <img src={'/assets/images/GPTW_logo.png'}
+                            alt='Logotipo do Great Place to Work' width={100} height={166} />
                     </div>
                 </section >
             )}
@@ -140,9 +137,8 @@ function Footer() {
                 <section id="footer_container" className={"my-5 py-5 align-items-start container d-flex flex-row row " + styles.footer_width}>
                     <div className={`d-flex flex-column align-items-center col col12 gap-2 justify-content-center gap-3 mb-5 `}>
                         <Link href={'/'}>
-                            <Image src={'/assets/images/ead_horizontal_footer_logo.png'}
-                                alt='Logotipo da empresa Ead Plataforma' width={307} height={65} loading="eager"
-                                placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                            <img src={'/assets/images/ead_horizontal_footer_logo.png'}
+                                alt='Logotipo da empresa Ead Plataforma' width={307} height={65} />
                         </Link>
                         <Stack direction={'row'} useFlexGap spacing={2} className={"mt-3 ms-2"}>
                             <Box>
@@ -248,12 +244,10 @@ function Footer() {
                     </div>
 
                     <div className={`d-flex flex-row align-items-center col col-$12 gap-2 justify-content-center gap-4 mt-5 `}>
-                        <Image src={'/assets/images/amazon_logo.png'}
-                            alt='Logotipo da amazon' width={100 / 1.2} height={75 / 1.2} loading="eager"
-                            placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
-                        <Image src={'/assets/images/GPTW_logo.png'}
-                            alt='Logotipo do Great Place to Work' width={100 / 1.3} height={166 / 1.3} loading="eager"
-                            placeholder="blur" blurDataURL="/assets/images/ead_horizontal_footer_logo.png" />
+                        <img src={'/assets/images/amazon_logo.png'}
+                            alt='Logotipo da amazon' width={100 / 1.2} height={75 / 1.2} />
+                        <img src={'/assets/images/GPTW_logo.png'}
+                            alt='Logotipo do Great Place to Work' width={100 / 1.3} height={166 / 1.3} />
                     </div>
                 </section >
             )}
