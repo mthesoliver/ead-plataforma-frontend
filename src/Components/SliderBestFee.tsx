@@ -119,7 +119,7 @@ const CardFeeContentOthers = ({ currentValue, fee, aditional = '0.00' }: CardFee
                     <Box component={'span'} sx={{ fontSize: 40, color: '#D12C38' }}>
                         R$
                     </Box>
-                    {formatCurrency(parseFloat(finalValue))}
+                    {finalValue}
                 </Typography>
 
                 <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: 20, lineHeight: "24px !important", color: '#fff' }}>
