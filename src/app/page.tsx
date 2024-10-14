@@ -158,12 +158,6 @@ export default function Home() {
 
               <SliderBestFee > </SliderBestFee>
 
-              <BestFee direction={!isMobile ? 'row' : 'column'} >
-                <CardFeeContent title="Pix" feeValues="R$0,00 + 1.89%" release="Imediatamente" givenIcon={PixIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$0,10 + 4.29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$0,10 + 4.99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Boleto" feeValues="R$1,85 + 3.79%" release="1 dia útil" givenIcon={ReceiptIcon} size={!isMobile ? 3 : 12} />
-              </BestFee>
             </div>
 
           </div>
