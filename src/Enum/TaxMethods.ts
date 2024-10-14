@@ -4,3 +4,9 @@ export enum TaxMethod {
     'CREDIT_CARD_INSTALLMENT' = 4.99,
     'BOLETO' = 3.79
 }
+
+export enum OtherTaxes {
+    'KIWIFY' = 8.99,
+    'HOTMART' = 9.99,
+    'TICTO' = 6.99
+}
