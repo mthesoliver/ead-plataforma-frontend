@@ -21,3 +21,9 @@ export type CardFeeInner = {
     fee?: TaxMethod;
     aditional?: string;
 }
+
+export type CardFeeInnerOthers = {
+    currentValue: string;
+    fee?: TaxMethod;
+    aditional?: string;
+}
