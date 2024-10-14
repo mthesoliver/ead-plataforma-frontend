@@ -32,6 +32,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import useResize from "Ead/CustomHooks/useResize";
 import IframeForm from "Ead/Components/IframeForm";
 import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
+import SliderBestFee from "Ead/Components/SliderBestFee";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -154,12 +155,9 @@ export default function Home() {
             </div>
 
             <div className={"d-flex flex-row row gap-1"}>
-              <BestFee direction={!isMobile ? 'row' : 'column'} >
-                <CardFeeContent title="Pix" feeValues="R$0,00 + 1.89%" release="Imediatamente" givenIcon={PixIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Cartão de crédito à vista" feeValues="R$0,10 + 4.29%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="12x Cartão de crédito a prazo" feeValues="R$0,10 + 4.99%" release="7 dias corridos" givenIcon={CreditCardIcon} size={!isMobile ? 3 : 12} />
-                <CardFeeContent title="Boleto" feeValues="R$1,85 + 3.79%" release="1 dia útil" givenIcon={ReceiptIcon} size={!isMobile ? 3 : 12} />
-              </BestFee>
+
+              <SliderBestFee > </SliderBestFee>
+
             </div>
 
           </div>
