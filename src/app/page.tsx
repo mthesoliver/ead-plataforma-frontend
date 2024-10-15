@@ -156,7 +156,7 @@ export default function Home() {
 
             <div className={"d-flex flex-row row gap-1"}>
 
-              <SliderBestFee > </SliderBestFee>
+              <SliderBestFee direction={!isMobile ? 'row' : 'column'} />
 
             </div>
 
