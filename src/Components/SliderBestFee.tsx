@@ -166,7 +166,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
     });
 
     useEffect(() => {
-        let baseValue = parseFloat(currentValue);
+        let baseValue = parseFloat(currentValue.replaceAll('.', ''));
 
         let finalValue = taxesCalc(baseValue, (taxMethod / 100), parseFloat(additionalTaxes));
         setFinalValue(finalValue);
@@ -211,36 +211,36 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
     return (
         <StyledEngineProvider injectFirst>
             <Box className={`d-flex flex-row row w-100 m-auto mb-3 gap-3 `}>
-                <Card component={'button'} className={`d-flex flex-col ps-3  py-5 align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='pix' onClick={handleMethod}>
+                <Card component={'button'} className={`d-flex flex-col ps-3  py-3 align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='pix' onClick={handleMethod}>
                     <span className="me-2">
-                        <PixIcon sx={{ color: '#fff', fontSize: '42px' }} />
+                        <PixIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 32, lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 26, lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
                         Pix
                     </Typography>
                 </Card >
 
-                <Card component={'button'} className={`d-flex flex-col ps-3 py-5 align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='credito_vista' onClick={handleMethod}>
+                <Card component={'button'} className={`d-flex flex-col ps-3  py-3  align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='credito_vista' onClick={handleMethod}>
                     <span className="me-2">
-                        <CreditCardIcon sx={{ color: '#fff', fontSize: '42px' }} />
+                        <CreditCardIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 20, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 16, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
                         Cartão de crédito à vista
                     </Typography>
                 </Card >
 
-                <Card component={'button'} className={`d-flex flex-col ps-3  py-5  align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='credito_prazo' onClick={handleMethod}>
+                <Card component={'button'} className={`d-flex flex-col ps-3  py-3   align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='credito_prazo' onClick={handleMethod}>
                     <span className="me-2">
-                        <CreditCardIcon sx={{ color: '#fff', fontSize: '42px' }} />
+                        <CreditCardIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 20, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 16, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
                         12x Cartão de crédito a prazo
                     </Typography>
                 </Card >
 
-                <Card component={'button'} className={`d-flex flex-col ps-3  py-5 align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='boleto' onClick={handleMethod}>
+                <Card component={'button'} className={`d-flex flex-col ps-3  py-3  align-items-center justify-content-center ` + styles.card_item} variant="outlined" name='boleto' onClick={handleMethod}>
                     <span className="me-2">
-                        <ReceiptIcon sx={{ color: '#fff', fontSize: '42px' }} />
+                        <ReceiptIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
                     <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 26, lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
                         Boleto
