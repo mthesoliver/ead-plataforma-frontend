@@ -9,6 +9,7 @@ import { CardFeeContainerType, CardFeeInner, CardFeeInnerOthers } from 'Ead/Type
 import { Box, Slider, Stack, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
 import PixIcon from '@mui/icons-material/Pix';
+import CancelIcon from '@mui/icons-material/Cancel';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -166,7 +167,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
 
                 <Typography component={'p'} gutterBottom className='fw-light mt-3 m-auto d-flex flex-column' sx={{ fontSize: 16, lineHeight: "24px !important", color: '#fff', maxWidth: '320px!important' }} >
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
-                        <CheckCircleIcon className={'me-1'} sx={{ color: '#fff', fontSize: '18px' }} />
+                        <CancelIcon className={'me-1'} sx={{ color: '#fff', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
                             Juros de parcelamento
                         </Typography>
