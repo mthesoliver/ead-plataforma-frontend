@@ -12,7 +12,7 @@ import PixIcon from '@mui/icons-material/Pix';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { formatCurrency, taxesCalc, taxesCalcFixed } from 'Ead/Helper/ValueHelper';
+import { formatCurrency, taxesCalc } from 'Ead/Helper/ValueHelper';
 import { OtherTaxes, TaxMethod } from 'Ead/Enum/TaxMethods';
 
 const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) => {
@@ -32,7 +32,7 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
                     <Box component={'span'} sx={{ fontSize: 40, color: '#23CF5C' }}>
                         R$
                     </Box>
-                    {children}
+                    {children === '0' ? '0.00' : children}
                 </Typography>
 
                 <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: 20, lineHeight: "24px !important", color: '#fff' }}>
@@ -57,7 +57,7 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
     )
 };
 
-const CardFeeContentOthers = ({ currentValue, fee, aditional = '0.00' }: CardFeeInnerOthers) => {
+const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
     const { isMobile } = useResize();
     const [taxMethod, setTaxMethod] = useState(OtherTaxes.HOTMART);
 
@@ -75,8 +75,13 @@ const CardFeeContentOthers = ({ currentValue, fee, aditional = '0.00' }: CardFee
     });
 
     useEffect(() => {
-        let finalValue = formatCurrency(parseFloat(currentValue))
-        setFinalValue(taxesCalcFixed(parseFloat(finalValue), (taxMethod / 100), parseFloat(additionalTaxes)));
+        let current = currentValue.replaceAll('.', '');
+        if (currentValue === '1.000.000') {
+            current = '1000000'
+        }
+        let finalWithdraw = taxesCalc(parseFloat(current), (taxMethod / 100), parseFloat(additionalTaxes));
+        setFinalValue(formatCurrency(parseInt(finalWithdraw)));
+
     }, [currentValue, mainImage])
 
     const handleClick = (event: any) => {
@@ -119,7 +124,7 @@ const CardFeeContentOthers = ({ currentValue, fee, aditional = '0.00' }: CardFee
                     <Box component={'span'} sx={{ fontSize: 40, color: '#D12C38' }}>
                         R$
                     </Box>
-                    {finalValue}
+                    {finalValue === '0' ? '0.00' : finalValue}
                 </Typography>
 
                 <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: 20, lineHeight: "24px !important", color: '#fff' }}>
@@ -163,7 +168,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
     useEffect(() => {
         let baseValue = parseFloat(currentValue);
 
-        let finalValue = taxesCalcFixed(baseValue, (taxMethod / 100), parseFloat(additionalTaxes));
+        let finalValue = taxesCalc(baseValue, (taxMethod / 100), parseFloat(additionalTaxes));
         setFinalValue(finalValue);
 
     }, [taxMethod])
@@ -245,7 +250,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
             <Card className={`d-flex flex-column py-5 ` + styles.background_card} variant="outlined" >
                 <Box className={`d-flex flex-row row m-auto w-100`}>
                     <Box>
-                        <Slider className={styles.slider_color} color='secondary' defaultValue={parseFloat(currentValue)} min={0} max={1000000} aria-label="Value slider" onChange={handleInputValues} step={50}></Slider>
+                        <Slider className={styles.slider_color} color='secondary' defaultValue={parseFloat(currentValue)} min={0} max={1000000} aria-label="Value slider" onChange={handleInputValues} step={100}></Slider>
                     </Box>
                     <Typography component={'p'} variant="body2" className='fw-light mt-3 text-center' sx={{ fontSize: '16px', lineHeight: '1.6rem', color: '#fff' }}>
                         Arraste e veja os valores em vendas:
@@ -256,7 +261,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                 </Box>
                 <Box className={`d-flex flex-${direction} py-5 w-100 `}>
                     <CardFeeContentEad fee={taxMethod} aditional={additionalTaxes}>
-                        {formatCurrency(parseFloat(finalValue))}
+                        {formatCurrency(parseInt(finalValue))}
                     </CardFeeContentEad>
 
                     <CardFeeContentOthers fee={taxMethod} currentValue={currentValue}>
