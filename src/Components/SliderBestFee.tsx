@@ -19,9 +19,9 @@ import { OtherTaxes, TaxMethod } from 'Ead/Enum/TaxMethods';
 const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) => {
     const { isMobile } = useResize();
     return (
-        <CardContent className={`d-flex flex-row row align-items-center justify-content-center col-6 `}>
+        <CardContent className={`d-flex flex-row row align-items-center justify-content-center ` + (!isMobile ? 'col-6' : 'col-12')}>
             <Box className={`d-flex flex-row align-items-center justify-content-center`}>
-                <img src={'/assets/images/ead_horizontal_footer_logo.png'} alt='Logotipo da Ead Plataforma' width={290} height={60} />
+                <img src={'/assets/images/ead_horizontal_footer_logo.png'} alt='Logotipo da Ead Plataforma' width={!isMobile ? 290 : 290 / 2} height={!isMobile ? 60 : 60 / 2} />
             </Box>
 
             <Box className={'d-flex flex-column row text-center'}>
@@ -29,21 +29,21 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
                     Valor de saque final:
                 </Typography>
 
-                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 92, lineHeight: "80px !important", color: '#23CF5C' }} >
-                    <Box component={'span'} sx={{ fontSize: 40, color: '#23CF5C' }}>
+                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 92 : 48, lineHeight: "80px !important", color: '#23CF5C' }} >
+                    <Box component={'span'} sx={{ fontSize: !isMobile ? 40 : 24, color: '#23CF5C' }}>
                         R$
                     </Box>
                     {children === '0' ? '0.00' : children}
                 </Typography>
 
-                <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: 20, lineHeight: "24px !important", color: '#fff' }}>
+                <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: "24px !important", color: '#fff' }}>
                     <Box component={'span'} className='fw-light' sx={{ fontSize: 16, color: '#fff' }}>
                         Taxas
                     </Box>
                     R${aditional !== '0' ? aditional : '0.00'} + {fee}%
                 </Typography>
 
-                <Typography component={'p'} gutterBottom className='fw-light mt-2 m-auto d-flex flex-column' sx={{ fontSize: 16, lineHeight: "24px !important", color: '#fff', maxWidth: '320px!important' }} >
+                <Typography component={'p'} gutterBottom className='fw-light mt-2 m-auto d-flex flex-column' sx={{ fontSize: !isMobile ? 16 : 12, lineHeight: !isMobile ? "24px !important" : "18px !important", color: '#fff', maxWidth: '320px!important' }} >
                     Oferecemos taxas mais competitivas que a concorrência. Compare e comprove!
 
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
@@ -133,9 +133,9 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
     }
 
     return (
-        <CardContent className={`d-flex flex-row row align-items-center justify-content-center col-6 `}>
+        <CardContent className={`d-flex flex-row row align-items-center justify-content-center ` + (!isMobile ? 'col-6' : 'col-12')}>
             <Box className={`d-flex flex-row align-items-center justify-content-center`}>
-                <img src={mainImage} alt='Logotipo da Ead Plataforma' width={237} height={75} />
+                <img src={mainImage} alt='Logotipo da Ead Plataforma' width={!isMobile ? 237 : 237 / 2} height={!isMobile ? 75 : 75 / 2} />
             </Box>
 
             <Box className={'d-flex flex-column row text-center'}>
@@ -143,8 +143,8 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                     Valor de saque final:
                 </Typography>
 
-                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 86, lineHeight: "80px !important", color: '#D12C38' }} >
-                    <Box component={'span'} sx={{ fontSize: 40, color: '#D12C38' }}>
+                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 86 : 44, lineHeight: "80px !important", color: '#D12C38' }} >
+                    <Box component={'span'} sx={{ fontSize: !isMobile ? 40 : 24, color: '#D12C38' }}>
                         R$
                     </Box>
                     {finalValue === '0' ? '0.00' : finalValue}
@@ -158,10 +158,10 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                 </Typography>
 
                 <Box component={'div'} className='d-flex flex-row m-auto align-items-center mt-2'>
-                    <Stack component={'div'} className={`d-flex flex-row row`}>
-                        <img ref={imgHotmart} src={'/assets/images/concorrentes/Com bg/Botton_rates_hotmart.png '} alt="Hotmart" className={`d-flex flex-column col-4 ` + styles.active} onClick={handleClick} style={{ cursor: 'pointer' }} />
-                        <img ref={imgKiwify} src={'/assets/images/concorrentes/Com bg/Botton_rates_kiwify.png '} alt="Kiwify" className={`d-flex flex-column col-4 ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
-                        <img ref={imgTicto} src={'/assets/images/concorrentes/Com bg/Botton_rates_ticto.png '} alt="Ticto" className={`d-flex flex-column col-4 ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
+                    <Stack component={'div'} className={`d-flex flex-row row ${!isMobile ? '' : 'justify-content-center align-items-center'}`}>
+                        <img ref={imgHotmart} src={'/assets/images/concorrentes/Com bg/Botton_rates_hotmart.png '} alt="Hotmart" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-2'} ` + styles.active} onClick={handleClick} style={{ cursor: 'pointer' }} />
+                        <img ref={imgKiwify} src={'/assets/images/concorrentes/Com bg/Botton_rates_kiwify.png '} alt="Kiwify" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-3'} ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
+                        <img ref={imgTicto} src={'/assets/images/concorrentes/Com bg/Botton_rates_ticto.png '} alt="Ticto" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-3'} ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
                     </Stack>
                 </Box>
 
@@ -178,6 +178,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
     )
 };
 function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
+    const { isMobile } = useResize();
     const additionalTaxesValues: number[] = [0.00, 0.10, 1.85]
     const [taxMethod, setTaxMethod] = useState(TaxMethod.PIX);
     const [additionalTaxes, setAdditionalTaxes] = useState<string>(additionalTaxesValues[0].toString());
@@ -262,7 +263,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                     <span className="me-2">
                         <PixIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 26, lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 26 : "20px !important", lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
                         Pix
                     </Typography>
                 </Card >
@@ -271,7 +272,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                     <span className="me-2">
                         <CreditCardIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 16, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 16 : "12px !important", lineHeight: !isMobile ? '20px!important' : '16px!important', color: '#fff', textAlign: 'left' }} >
                         Cartão de crédito à vista
                     </Typography>
                 </Card >
@@ -280,7 +281,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                     <span className="me-2">
                         <CreditCardIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 16, lineHeight: '20px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 16 : "12px !important", lineHeight: !isMobile ? '20px!important' : '16px!important', color: '#fff', textAlign: 'left' }} >
                         12x Cartão de crédito a prazo
                     </Typography>
                 </Card >
@@ -289,7 +290,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                     <span className="me-2">
                         <ReceiptIcon sx={{ color: '#fff', fontSize: '32px' }} />
                     </span>
-                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 26, lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
+                    <Typography component={'h4'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: !isMobile ? 26 : "20px !important", lineHeight: '32px!important', color: '#fff', textAlign: 'left' }} >
                         Boleto
                     </Typography>
                 </Card >
@@ -306,7 +307,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                         R$ {currentValue},00
                     </Typography>
                 </Box>
-                <Box className={`d-flex flex-${direction} py-5 w-100 `}>
+                <Box className={`d-flex flex-${direction} py-${!isMobile ? '5' : '2'} w-100  justify-content-center align-items-center`}>
                     <CardFeeContentEad fee={taxMethod} aditional={additionalTaxes}>
                         {formatCurrency(parseInt(finalValue))}
                     </CardFeeContentEad>

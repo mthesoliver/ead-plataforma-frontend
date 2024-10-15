@@ -12,7 +12,7 @@ export type CardFeeType = {
 }
 
 export type CardFeeContainerType = {
-    children: ReactNode;
+    children?: ReactNode;
     direction?: string;
 }
 
