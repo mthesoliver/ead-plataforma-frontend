@@ -120,7 +120,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                     Valor de saque final:
                 </Typography>
 
-                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 92, lineHeight: "80px !important", color: '#D12C38' }} >
+                <Typography component={'h2'} gutterBottom className='fw-bolder m-0' sx={{ fontSize: 86, lineHeight: "80px !important", color: '#D12C38' }} >
                     <Box component={'span'} sx={{ fontSize: 40, color: '#D12C38' }}>
                         R$
                     </Box>
