@@ -11,10 +11,28 @@
 .card_item {
     background: $transparent-color !important;
     min-height: fit-content;
-    border-radius: 24px !important;
+    border-radius: 14px !important;
     border: 1px solid #989898 !important;
     max-width: calc((100% / 4) - 1rem) !important;
 }
 .slider_color {
     color: #fff !important;
+}
+.not_active {
+    opacity: .6;
+    transition: .2s linear;
+}
+
+.active {
+    opacity: 1;
+    transition: .2s linear;
+    transform: scale(1.15);
+}
+
+.selected {
+    background: linear-gradient(90deg,
+            rgba(28, 1, 36, .6),
+            rgba(73, 33, 116, 0.5)) !important;
+    transition: .2s linear;
+    box-shadow: 2px 2px 16px rgba(124, 9, 142, 0.6) !important;
 }
