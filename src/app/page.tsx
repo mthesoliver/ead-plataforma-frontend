@@ -25,14 +25,12 @@ import AccordionCustom from "Ead/Components/AccordionCustom";
 import Footer from "Ead/Components/Footer";
 import { useState } from "react";
 import DemonstrationCta from "Ead/Components/DemonstrationCta";
-import BestFee, { CardFeeContent } from "Ead/Components/BestFee";
-import PixIcon from '@mui/icons-material/Pix';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import ReceiptIcon from '@mui/icons-material/Receipt';
+import GroupIcon from '@mui/icons-material/Group';
 import useResize from "Ead/CustomHooks/useResize";
 import IframeForm from "Ead/Components/IframeForm";
 import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
 import SliderBestFee from "Ead/Components/SliderBestFee";
+import WhatsAppFixButton from "Ead/Components/WhatsAppFixButton";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -69,6 +67,7 @@ export default function Home() {
       </header>
 
       <ScheduleFixButton />
+      <WhatsAppFixButton />
 
       <main className={"container " + styles.main}>
 
@@ -99,9 +98,9 @@ export default function Home() {
                 size={!isMobile ? 3 : 10}
                 title="Transforme sua plataforma para seu nicho"
                 content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
-              <CardCustomBorder givenIcon={ImportantDevicesIcon}
+              <CardCustomBorder givenIcon={GroupIcon}
                 size={!isMobile ? 3 : 10}
-                title="Venda seus cursos em nossa vitrine"
+                title="Crie a sua própria área de membros"
                 content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
             </div>
           </div>
@@ -139,7 +138,7 @@ export default function Home() {
                 <Typography component="h4" gutterBottom className='fw-light mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani" }} >
                   ou
                 </Typography>
-                <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani" }} href="https://eadplataforma.com/criar-conta">
+                <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", marginBottom: "0!important" }} href="https://eadplataforma.com/criar-conta">
                   Crie sua plataforma agora mesmo
                 </Typography>
               </div>
@@ -197,7 +196,7 @@ export default function Home() {
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important" }} href="https://eadplataforma.com/criar-conta" >
+                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important", marginBottom: "0!important" }} href="https://eadplataforma.com/criar-conta" >
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>
@@ -544,7 +543,7 @@ export default function Home() {
                     <Typography component="h4" gutterBottom className='fw-semibold mb-2' sx={{ fontSize: 20, fontFamily: "Rajdhani", color: "#1C0237" }} >
                       ou
                     </Typography>
-                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important" }} href="https://eadplataforma.com/criar-conta">
+                    <Typography component="a" gutterBottom className='fw-bold' sx={{ fontSize: 26, fontFamily: "Rajdhani", color: "#1C0237!important", marginBottom: "0!important" }} href="https://eadplataforma.com/criar-conta">
                       Crie sua conta gratuitamente
                     </Typography>
                   </div>

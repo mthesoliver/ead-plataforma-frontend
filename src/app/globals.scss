@@ -99,6 +99,28 @@ header ul {
   animation-duration: 16s;
 }
 
+#best_fee_container {
+  position: relative !important;
+}
+
+#best_fee_container::before {
+  content: '';
+  position: absolute !important;
+  background: $primary-glow-dark !important;
+  width: 760px;
+  height: 400px;
+  top: 25%;
+  left: 25%;
+  z-index: -1;
+  border-radius: 28% 72% 74% 26% / 36% 40% 60% 64%;
+  opacity: .8 !important;
+  filter: blur(30px);
+  animation: borderFluid;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-duration: 12s;
+}
 #customize_container {
   margin-bottom: -16rem;
 

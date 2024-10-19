@@ -25,7 +25,7 @@ function InfiniteLogoScroll() {
                     <Box className={"d-flex align-items-center justify-content-center w-100 " + styles.overlay_images} />
                     {[...images, ...images].map((item, index) => (
                         <img key={index} src={item} width={205} height={82} alt={`Logotipo parceiro ${item.split('-').slice(-1)}`} style={{ objectFit: "cover" }}
-                            className={styles.infinite_scroll_animation} />
+                            className={styles.infinite_scroll_animation + ' ' + styles.color_filter} />
                     ))}
                 </Box>
             </Box>

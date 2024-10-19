@@ -59,6 +59,7 @@ $font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
         "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
         "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+        
 // Colors
 $primary-color: linear-gradient(to bottom right,
                 rgba(254, 0, 254, 1),
@@ -93,7 +94,6 @@ $overlay-color-3: linear-gradient(180deg,
                 rgba(32, 2, 56, 1) 90%);
 
 $box_shadow-1: 12px 12px 24px -6px rgba(0, 0, 0, 0.55);
-
 // Font styles
 $ff-title: 'Rajdhani', sans-serif;
 $fs-xs: clamp(0.5rem, 0.3571rem + 0.2976vw, 0.625rem);

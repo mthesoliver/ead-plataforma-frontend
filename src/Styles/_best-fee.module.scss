@@ -6,6 +6,7 @@
     max-width: $max-width;
     border-radius: 24px !important;
     border: 1px solid #989898 !important;
+    box-shadow: inset 3px 5px 60px 1px rgba($color: #e68bff, $alpha: .25);
 }
 
 .card_item {
@@ -19,29 +20,30 @@
     color: #fff !important;
 }
 .not_active {
-    opacity: .6;
+    opacity: .3;
     transition: .2s linear;
+    transform: scale(.85);
+        filter: grayscale(1);
 }
 
 .active {
     opacity: 1;
     transition: .2s linear;
-    transform: scale(1.15);
+    transform: scale(1);
 }
 
 .selected {
     background: linear-gradient(90deg,
-            rgba(28, 1, 36, .6),
-            rgba(73, 33, 116, 0.5)) !important;
+            rgba(59, 3, 75, 0.6),
+                rgba(103, 38, 172, 0.9)) !important;
     transition: .2s linear;
     box-shadow: 2px 2px 16px rgba(124, 9, 142, 0.6) !important;
 }
+.card_item.selected {
+    border: 1px solid #ffffff !important;
+}
 @media screen and (max-width:768px) {
     .card_item {
-        background: $transparent-color !important;
-        min-height: fit-content;
-        border-radius: 14px !important;
-        border: 1px solid #989898 !important;
         max-width: calc((100% / 2) - .5rem) !important;
     }
 }
