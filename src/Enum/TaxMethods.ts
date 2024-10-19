@@ -8,5 +8,4 @@ export enum TaxMethod {
 export enum OtherTaxes {
     'KIWIFY' = 8.99,
     'HOTMART' = 9.99,
-    'TICTO' = 6.99
 }

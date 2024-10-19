@@ -47,9 +47,9 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
                     Oferecemos taxas mais competitivas que a concorrência. Compare e comprove!
 
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
-                        <CheckCircleIcon className={'me-1'} sx={{ color: '#fff', fontSize: '18px' }} />
+                        <CheckCircleIcon className={'me-1'} sx={{ color: '#23CF5C', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
-                            Juros de parcelamento
+                            Juros de parcelamento é seu
                         </Typography>
                     </Box>
                 </Typography>
@@ -63,14 +63,13 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
     const [taxMethod, setTaxMethod] = useState(OtherTaxes.HOTMART);
     const imgHotmart = useRef<HTMLImageElement>(null);
     const imgKiwify = useRef<HTMLImageElement>(null);
-    const imgTicto = useRef<HTMLImageElement>(null);
+    const [currentConcurrent, setCurrentConcurrent] = useState('Hotmart');
 
     const additionalTaxesValues: number[] = [2.49, 1.00];
     const [additionalTaxes, setAdditionalTaxes] = useState<string>(additionalTaxesValues[0].toString());
     const imagesUrlPath = [
         '/assets/images/concorrentes/Sem bg/logo_rates_hotmart.png',
         '/assets/images/concorrentes/Sem bg/logo_rates_kiwify.png',
-        '/assets/images/concorrentes/Sem bg/logo_rates_ticto.png',
     ];
     const [mainImage, setMainImage] = useState(imagesUrlPath[0]);
     const [finalValue, setFinalValue] = useState<string>(() => {
@@ -97,22 +96,17 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                 setMainImage(imagesUrlPath[0]);
                 setTaxMethod(OtherTaxes.HOTMART);
                 setAdditionalTaxes(additionalTaxesValues[1].toString());
+                setCurrentConcurrent(imgHotmart.current!.alt);
 
-                handleActive(imgHotmart, true, [imgKiwify, imgTicto]);
+                handleActive(imgHotmart, true, [imgKiwify]);
                 break;
             case 'Kiwify':
                 setMainImage(imagesUrlPath[1]);
                 setTaxMethod(OtherTaxes.KIWIFY);
                 setAdditionalTaxes(additionalTaxesValues[0].toString());
+                setCurrentConcurrent(imgKiwify.current!.alt);
 
-                handleActive(imgKiwify, true, [imgHotmart, imgTicto]);
-                break;
-            case 'Ticto':
-                setMainImage(imagesUrlPath[2]);
-                setTaxMethod(OtherTaxes.TICTO);
-                setAdditionalTaxes(additionalTaxesValues[0].toString());
-
-                handleActive(imgTicto, true, [imgHotmart, imgKiwify]);
+                handleActive(imgKiwify, true, [imgHotmart]);
                 break;
             default:
                 setMainImage(imagesUrlPath[0]);
@@ -159,17 +153,16 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
 
                 <Box component={'div'} className='d-flex flex-row m-auto align-items-center mt-2'>
                     <Stack component={'div'} className={`d-flex flex-row row ${!isMobile ? '' : 'justify-content-center align-items-center'}`}>
-                        <img ref={imgHotmart} src={'/assets/images/concorrentes/Com bg/Botton_rates_hotmart.png '} alt="Hotmart" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-2'} ` + styles.active} onClick={handleClick} style={{ cursor: 'pointer' }} />
-                        <img ref={imgKiwify} src={'/assets/images/concorrentes/Com bg/Botton_rates_kiwify.png '} alt="Kiwify" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-3'} ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
-                        <img ref={imgTicto} src={'/assets/images/concorrentes/Com bg/Botton_rates_ticto.png '} alt="Ticto" className={`d-flex flex-column col-${!isMobile ? '4' : '8 mt-3'} ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
+                        <img ref={imgHotmart} src={'/assets/images/concorrentes/Com bg/Botton_rates_hotmart.png '} alt="Hotmart" className={`d-flex flex-column col-${!isMobile ? '6' : '8 mt-2'} ` + styles.active} onClick={handleClick} style={{ cursor: 'pointer' }} />
+                        <img ref={imgKiwify} src={'/assets/images/concorrentes/Com bg/Botton_rates_kiwify.png '} alt="Kiwify" className={`d-flex flex-column col-${!isMobile ? '6' : '8 mt-3'} ` + styles.not_active} onClick={handleClick} style={{ cursor: 'pointer' }} />
                     </Stack>
                 </Box>
 
                 <Typography component={'p'} gutterBottom className='fw-light mt-3 m-auto d-flex flex-column' sx={{ fontSize: 16, lineHeight: "24px !important", color: '#fff', maxWidth: '320px!important' }} >
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
-                        <CancelIcon className={'me-1'} sx={{ color: '#fff', fontSize: '18px' }} />
+                        <CancelIcon className={'me-1'} sx={{ color: '#D12C38', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
-                            Juros de parcelamento
+                            Juros de parcelamento <b>{currentConcurrent}</b>
                         </Typography>
                     </Box>
                 </Typography>

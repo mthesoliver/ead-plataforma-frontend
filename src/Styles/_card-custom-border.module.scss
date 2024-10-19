@@ -26,6 +26,30 @@
     right: 0;
 }
 
+.card_custom:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .1) !important;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    transform: skew(-5deg) !important;
+    filter: blur(10px);
+}
+
+.card_custom:hover:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .2) !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 110%;
+    transition: .3s linear;
+    transform: skew(-5deg) !important;
+    filter: blur(25px);
+}
 .icon_container {
     background: linear-gradient(135deg,
             #160528 0%,
