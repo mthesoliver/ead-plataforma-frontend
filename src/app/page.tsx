@@ -31,6 +31,7 @@ import IframeForm from "Ead/Components/IframeForm";
 import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
 import SliderBestFee from "Ead/Components/SliderBestFee";
 import WhatsAppFixButton from "Ead/Components/WhatsAppFixButton";
+import PersonalizePlataform from "Ead/Components/PersonalizePlataform";
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -216,9 +217,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <figure className="justify-content-center align-items-center">
-                  <img src={"/assets/images/customize/custom_dark_purp.png"} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" />
-                </figure>
+                <PersonalizePlataform />
+
               </div>
             </section>
           </div>
