@@ -38,6 +38,12 @@
                 rgba(103, 38, 172, 0.9)) !important;
     transition: .2s linear;
     box-shadow: 2px 2px 16px rgba(124, 9, 142, 0.6) !important;
+    transform: scale(1.05);
+    }
+    
+    .card_item:not(.selected) {
+        transform: scale(.95);
+        transition: .3s linear;
 }
 .card_item.selected {
     border: 1px solid #ffffff !important;
