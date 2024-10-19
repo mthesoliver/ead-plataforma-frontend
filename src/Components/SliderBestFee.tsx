@@ -158,7 +158,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                     </Stack>
                 </Box>
 
-                <Typography component={'p'} gutterBottom className='fw-light mt-3 m-auto d-flex flex-column' sx={{ fontSize: 16, lineHeight: "24px !important", color: '#fff', maxWidth: '320px!important' }} >
+                <Typography component={'p'} gutterBottom className='fw-light mt-3 m-auto d-flex flex-column' sx={{ fontSize: 16, lineHeight: "24px !important", color: '#fff', maxWidth: '360px!important' }} >
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
                         <CancelIcon className={'me-1'} sx={{ color: '#D12C38', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
