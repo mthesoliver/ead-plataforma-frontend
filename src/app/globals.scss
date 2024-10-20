@@ -228,3 +228,29 @@ h5 {
     filter: blur(30px);
   }
 }
+/* Switch style */
+.MuiSwitch-thumb {
+  color: #fff !important;
+}
+
+.MuiSwitch-track {
+  background-color: #D9D9D9 !important;
+}
+
+#color_dot_1 span>svg {
+  background-color: #7C038E !important;
+  border-radius: 50%;
+  fill: #fff;
+}
+
+#color_dot_2 span>svg {
+  background-color: #3BC9BB !important;
+  border-radius: 50%;
+  fill: #fff;
+}
+
+#color_dot_3 span>svg {
+  background-color: #00722D !important;
+  border-radius: 50%;
+  fill: #fff;
+}
