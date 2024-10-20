@@ -254,3 +254,12 @@ h5 {
   border-radius: 50%;
   fill: #fff;
 }
+@media screen and (max-width: 768px) {
+  .MuiSwitch-thumb {
+    color: #1C0237 !important;
+  }
+
+  .MuiSwitch-track {
+    background-color: #6b6b6b !important;
+  }
+}

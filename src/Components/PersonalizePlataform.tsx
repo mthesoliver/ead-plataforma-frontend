@@ -46,6 +46,7 @@ function PersonalizePlataform() {
     return (
         <StyledEngineProvider injectFirst>
             <Box className={`d-flex flex-row position-relative `}>
+                <img src="../assets/images/arrow/arrow_curve_banner.svg" className={'position-absolute ' + styles.arrow}></img>
                 {!isMobile ? (
                     <Stack component={'div'} className={`d-flex flex-row row  `}>
                         <FormControl className={`d-flex flex-row gap-${!isMobile ? 4 : 1} position-absolute ` + styles.controls_wrapper}>
@@ -81,7 +82,7 @@ function PersonalizePlataform() {
                 )}
 
             <figure className="justify-content-center align-items-center">
-                <img src={currentImg} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" />
+                    <img src={currentImg} width={!isMobile ? 1276 : 1276 / 3} height={!isMobile ? 830 : 830 / 3} alt="Layout personalizado" className={styles.screen} />
             </figure>
             </Box>
         </StyledEngineProvider>

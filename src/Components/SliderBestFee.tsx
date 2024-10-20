@@ -182,7 +182,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
     const btnCreditPrazo = useRef<HTMLButtonElement>(null);
     const btnBoleto = useRef<HTMLButtonElement>(null);
 
-    const [currentValue, setCurrentValue] = useState<string>('500000');
+    const [currentValue, setCurrentValue] = useState<string>(formatCurrency(parseFloat('500000.00')));
     const [finalValue, setFinalValue] = useState<string>(() => {
         let baseValue = parseFloat(currentValue);
         return taxesCalc(baseValue, (TaxMethod.PIX / 100), parseFloat(additionalTaxes));
@@ -291,7 +291,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
             <Card className={`d-flex flex-column py-3 ` + styles.background_card} variant="outlined" >
                 <Box className={`d-flex flex-row row m-auto w-100`}>
                     <Box>
-                        <Slider className={`mt-3 ` + styles.slider_color} color='secondary' defaultValue={parseFloat(currentValue)} min={0} max={1000000} aria-label="Value slider" onChange={handleInputValues} step={100}></Slider>
+                        <Slider className={`mt-3 ` + styles.slider_color} color='secondary' defaultValue={500000} min={0.00} max={1000000.00} aria-label="Value slider" onChange={handleInputValues} step={100}></Slider>
                     </Box>
                     <Typography component={'p'} variant="body2" className='fw-light mt-3 text-center' sx={{ fontSize: '16px', lineHeight: '1.6rem', color: '#fff' }}>
                         Arraste e veja os valores em vendas:
