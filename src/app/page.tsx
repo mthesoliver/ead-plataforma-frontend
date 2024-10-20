@@ -75,9 +75,7 @@ export default function Home() {
         <section id="video_container" className="container d-flex flex-row row mb-5 w-100">
           <div id="placeholder_wrapper" className="container d-flex flex-column col w-100">
             <IframeForm />
-            <div>
-              <VideoPlaceholder videoId="OnH8go5IKEc" />
-            </div>
+            <VideoPlaceholder videoId="OnH8go5IKEc" />
           </div>
         </section>
 

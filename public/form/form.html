@@ -18,7 +18,7 @@
     <main class="container-fluid m-auto">
 
         <section id="main_cta">
-            <div class="text-center m-1 pt-5 ">
+            <div class="text-left m-1 pt-5 ">
                 <h1 id="main_title" class=" fw-bolder main_title_size main_tittle_color">
                     Crie seu curso online agora
                 </h1>
@@ -31,11 +31,11 @@
 
         <section class="d-flex flex-column justify-content-center text-center m-auto w-100">
 
-            <div id="step_one_form" class="d-flex justify-content-center text-center mx-3 ">
-
+            <div id="step_one_form"
+                class="d-flex justify-content-lg-start justify-content-center text-center mx-lg-3 col-12 col-lg-10">
                 <img src="../assets/images/arrow/arrow_curve_banner.svg" class="form_arrow">
 
-                <form onsubmit={handleSubmit(event)} class="m-4 p-3 placeholder_wrapper">
+                <form onsubmit={handleSubmit(event)} class="mt-5 mb-4 p-3 placeholder_wrapper">
                     <input id="input_course" onchange={handleInput(event)} type="text"
                         class="text-end fw-medium border-0 pe-0 " placeholder=seu-site aria-label="Seu curso"
                         required />
@@ -72,7 +72,7 @@
 
             </div>
 
-            <div id="step_two_form" class="d-flex justify-content-center text-center mx-3 hidden">
+            <div id="step_two_form" class="d-flex justify-content-lg-start justify-content-center text-center mx-3 hidden">
 
                 <form onsubmit={handleSubmitStepTwo(event)}>
                     <div class="m-2 p-2 ps-3 placeholder_wrapper">
@@ -122,13 +122,15 @@
 
             </div>
 
-            <span id="helper_text_close" class="m-auto text-center w-100 helper_text hidden">
-                Ops! Esse nome não está mais disponível. Que tal tentar outro?
-            </span>
+            <div id="helpers" class="col-12 col-lg-10">
+                <span id="helper_text_close" class="m-auto helper_text hidden">
+                    Ops! Esse nome não está mais disponível. Que tal tentar outro?
+                </span>
 
-            <span id="helper_text_okay" class="m-auto text-center w-100 helper_text hidden">
-                Ótimo! O nome está disponível! Você será redirecionado para nosso formulário.
-            </span>
+                <span id="helper_text_okay" class="m-auto helper_text hidden">
+                    Ótimo! O nome está disponível! Você será redirecionado para nosso formulário.
+                </span>
+            </div>
         </section>
 
     </main>

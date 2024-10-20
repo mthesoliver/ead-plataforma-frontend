@@ -72,7 +72,6 @@ h6 {
     align-items: center !important;
     border-radius: 120px 120px 120px 120px;
     font-family: "Rajdhani", sans-serif;
-    margin-inline: auto !important;
 }
 
 .placeholder_wrapper input {
@@ -88,7 +87,7 @@ h6 {
 .form_arrow {
     position: absolute;
     top: 6rem;
-    right: 9rem;
+    right: 26rem;
     width: 120px;
     transform: rotate(12deg);
     transition: all .2s linear;
@@ -119,7 +118,7 @@ h6 {
 .helper_text {
     margin-top: -12px !important;
     font-size: 16px !important;
-    text-align: center;
+    text-align: left !important;
     font-weight: 600;
 }
 
@@ -160,6 +159,7 @@ h6 {
     }
 
     .sub_title {
+        padding-left: 1rem !important;
         font-size: 18px !important;
         color: #fff;
     }
@@ -186,7 +186,7 @@ h6 {
     .form_arrow {
         position: absolute;
         top: 6rem;
-        right: 1rem;
+        right: 16rem;
         width: 100px;
         transform: rotate(12deg);
         transition: all .2s linear;

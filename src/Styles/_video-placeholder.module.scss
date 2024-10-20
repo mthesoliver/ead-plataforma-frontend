@@ -36,6 +36,32 @@
     display: none;
 }
 
+.video_placeholder {
+    top: -90%;
+    right: -65%;
+    z-index: -1;
+    margin-bottom: 60px;
+}
+
+.video_mock {
+    opacity: .5;
+    animation-name: blurred;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.play_icon {
+    left: 25%;
+    z-index: 99;
+    font-size: 82px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
 @media screen and (max-width:760px) {
     .video_wrapper {
         position: relative;
@@ -61,5 +87,42 @@
             linear-gradient(145deg, #727272 0%, rgba(208, 208, 208, 1) 49%, #4d4d4d 100%) !important;
         border-radius: 16px;
         padding: 6px !important;
+    }
+.video_placeholder {
+    top: -6%;
+    right: 0%;
+    z-index: -1;
+    margin-bottom: 160px;
+}
+
+.video_mock {
+    opacity: .5;
+    width: 150%;
+}
+
+.play_icon {
+    left: 42%;
+    z-index: 99;
+    font-size: 52px
+}
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(1.1)
+    }
+}
+
+@keyframes blurred {
+    from {
+        filter: blur(0) brightness(1);
+    }
+
+    to {
+        filter: blur(3px) brightness(.3);
     }
 }
