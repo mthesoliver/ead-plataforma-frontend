@@ -14,6 +14,31 @@
     transition: .2s linear;
 }
 
+.background_card:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .1) !important;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    transform: skew(-5deg) !important;
+    filter: blur(10px);
+}
+
+.background_card:hover:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .2) !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 110%;
+    transition: .3s linear;
+    transform: skew(-5deg) !important;
+    filter: blur(25px);
+}
+
 @media screen and (max-width:760px) {
     .background_card {
         max-width: 100% !important;

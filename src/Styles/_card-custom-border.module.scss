@@ -13,19 +13,6 @@
     box-shadow: $box_shadow-1;
 }
 
-.card_custom:after {
-    content: '';
-    position: absolute;
-    background: radial-gradient(#FE00FE 40%, #7C038E 30%);
-    mix-blend-mode: color-dodge;
-    filter: blur(50px);
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    top: 60px;
-    right: 0;
-}
-
 .card_custom:before {
     content: '';
     position: absolute;
@@ -50,6 +37,7 @@
     transform: skew(-5deg) !important;
     filter: blur(25px);
 }
+
 .icon_container {
     background: linear-gradient(135deg,
             #160528 0%,
