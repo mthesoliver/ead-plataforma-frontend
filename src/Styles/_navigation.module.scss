@@ -7,7 +7,14 @@
     li {
         list-style: none !important;
         font-size: calc($fs-sm + 2px);
-    }
+        transition: .2s ease-out;
+        }
+        
+        li:hover {
+            letter-spacing: .6px;
+            text-decoration: underline;
+            transition: .2s ease-out;
+}
 }
 
 .nav_bar {
