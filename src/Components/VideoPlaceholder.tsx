@@ -5,7 +5,7 @@ import styles from 'Ead/Styles/_video-placeholder.module.scss';
 import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     const [openVideo, setOpenVideo] = useState(false);
@@ -19,16 +19,9 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
         },
     };
 
-    const openModalVideo = () => {
-        setOpenVideo(true);
+    const handleOpenVideo = () => {
+        setOpenVideo(!openVideo);
     }
-
-    const closeModalVideo = () => {
-        setOpenVideo(false);
-    }
-
-    useEffect(() => {
-    }, [openVideo]);
 
     return (
 
@@ -38,12 +31,12 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
                 <Box className={stylesClass}>
                     <YouTube videoId={props.videoId} options={opts} id={styles.video_content} />
 
-                    <Box component={'a'} onClick={closeModalVideo} sx={{ cursor: 'pointer' }}>
+                    <Box component={'a'} onClick={handleOpenVideo} sx={{ cursor: 'pointer' }}>
                         <CancelIcon sx={{ color: '#fff' }} className={'position-absolute ' + styles.cancel_icon} />
                     </Box>
                 </Box>
             )}
-            <Box component={'a'} className={styles.link_wrapper} onClick={openModalVideo} sx={{ cursor: 'pointer' }}>
+            <Box component={'a'} className={styles.link_wrapper} onClick={handleOpenVideo} sx={{ cursor: 'pointer' }}>
                 <PlayCircleOutlineIcon sx={{ color: '#fff' }} className={'position-absolute ' + styles.play_icon} />
                 <span className={styles.echo_icon}></span>
             </Box>
