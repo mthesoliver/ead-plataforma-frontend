@@ -39,7 +39,7 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
                     <YouTube videoId={props.videoId} options={opts} id={styles.video_content} />
 
                     <Box component={'a'} onClick={closeModalVideo} sx={{ cursor: 'pointer' }}>
-                        <CancelIcon sx={{ color: '#fff', zIndex: 99, fontSize: 44, top: 0, right: 120 }} className={'position-absolute '} />
+                        <CancelIcon sx={{ color: '#fff' }} className={'position-absolute ' + styles.cancel_icon} />
                     </Box>
                 </Box>
             )}
