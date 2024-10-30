@@ -29,6 +29,7 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
             <Box component={"section"} className={'position-relative ' + styles.video_placeholder}>
                 <Box component={"div"} className={'position-absolute d-flex justify-content-center align-items-center m-auto '}>
                     <PlayCircleOutlineIcon sx={{ color: '#fff' }} className={'position-absolute ' + styles.play_icon} />
+                    <span className={'position-absolute ' + styles.echo_icon}></span>
                     <img src='/assets/images/plataform_dash.png' className={styles.video_mock}></img>
                 </Box>
             </Box>

@@ -36,7 +36,7 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
                     {children === '0' ? '0.00' : children}
                 </Typography>
 
-                <Typography component={'p'} className='fw-bolder d-flex flex-column' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: "24px !important", color: '#fff' }}>
+                <Typography component={'p'} className='fw-bolder d-flex flex-column ' sx={{ fontSize: !isMobile ? 20 : 16, lineHeight: "24px !important", color: '#fff' }}>
                     <Box component={'span'} className='fw-light' sx={{ fontSize: 16, color: '#fff' }}>
                         Taxas
                     </Box>
@@ -46,7 +46,7 @@ const CardFeeContentEad = ({ children, fee, aditional = '0.00' }: CardFeeInner) 
                 <Typography component={'p'} gutterBottom className='fw-light mt-2 m-auto d-flex flex-column' sx={{ fontSize: !isMobile ? 16 : 12, lineHeight: !isMobile ? "24px !important" : "18px !important", color: '#fff', maxWidth: '320px!important' }} >
                     Oferecemos taxas mais competitivas que a concorrência. Compare e comprove!
 
-                    <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
+                    <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3 mt-lg-5 pt-lg-4'>
                         <CheckCircleIcon className={'me-1'} sx={{ color: '#23CF5C', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
                             Juros de parcelamento é seu
@@ -300,7 +300,7 @@ function SliderBestFee({ direction = 'row' }: Readonly<CardFeeContainerType>) {
                         R$ {currentValue},00
                     </Typography>
                 </Box>
-                <Box className={`d-flex flex-${direction} py-${!isMobile ? '5' : '2'} w-100  justify-content-center align-items-center`}>
+                <Box className={`d-flex flex-${direction} py-${!isMobile ? '5' : '2'} w-100  justify-content-center align-items-stretch`}>
                     <CardFeeContentEad fee={taxMethod} aditional={additionalTaxes}>
                         {formatCurrency(parseInt(finalValue))}
                     </CardFeeContentEad>

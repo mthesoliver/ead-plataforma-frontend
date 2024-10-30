@@ -6,6 +6,7 @@ const helperIconClose = document.getElementById('helper_icon_close');
 const helperTextClose = document.getElementById('helper_text_close');
 const helperIconOpen = document.getElementById('helper_icon_okay');
 const helperTextOpen = document.getElementById('helper_text_okay');
+const helperTextDefault = document.getElementById('helper_text_default');
 // title variables & form
 let inputValuePhone = document.getElementById('input_phone').value;
 const mainTitle = document.getElementById('main_title');
@@ -85,6 +86,7 @@ async function handleSubmit(event) {
                 helperTextOpen.classList.remove('hidden');
                 helperIconClose.classList.add('hidden');
                 helperTextClose.classList.add('hidden');
+                helperTextDefault.classList.add('hidden');
 
                 setTimeout(() => {
                     stepOneForm.classList.add('hidden');
@@ -98,8 +100,12 @@ async function handleSubmit(event) {
                 helperTextClose.classList.remove('hidden');
                 helperIconOpen.classList.add('hidden');
                 helperTextOpen.classList.add('hidden');
+                helperTextDefault.classList.add('hidden');
 
                 removeStyle([helperIconOpen, helperTextOpen, helperIconClose, helperTextClose], 10000);
+                setTimeout(() => {
+                    helperTextDefault.classList.remove('hidden');
+                }, 10000)
             }
         } catch (error) {
             return ''

@@ -86,10 +86,10 @@ h6 {
 
 .form_arrow {
     position: absolute;
-    top: 6rem;
-    right: 26rem;
+    top: 7rem;
+        left: -.5rem;
     width: 120px;
-    transform: rotate(12deg);
+    transform: rotate(155deg) scaleY(-1) scale(.80);
     transition: all .2s linear;
 }
 
@@ -120,6 +120,10 @@ h6 {
     font-size: 16px !important;
     text-align: left !important;
     font-weight: 600;
+}
+
+#helper_text_default {
+    margin-left: -5rem !important;
 }
 
 #helper_text_close {
@@ -180,16 +184,24 @@ h6 {
     .helper_text {
         font-size: 12px !important;
     }
+
+    #helper_text_default {
+        margin-left: 0 !important;
+    }
 }
 
-@media screen and (max-width:1200px) {
-    .form_arrow {
-        position: absolute;
-        top: 6rem;
-        right: 16rem;
-        width: 100px;
-        transform: rotate(12deg);
-        transition: all .2s linear;
+@media screen and (min-width:765px) {
+    main {
+        padding-left: 3rem !important;
+    }
+
+    #main_title,
+    #main_subtitle {
+        padding-left: 2.5rem;
+    }
+
+    #helpers {
+        margin-left: -5rem;
     }
 }
 

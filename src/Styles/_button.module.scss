@@ -14,8 +14,22 @@
     border-radius: 8px !important;
 }
 
+.btn_color_light:hover {
+    text-decoration: underline;
+}
+
 .btn_wrapper {
     min-width: fit-content;
+    background-size: 100% !important;
+    transition: .5s !important;
+}
+
+.btn_wrapper:hover:not(.btn_color_light) {
+    min-width: fit-content;
+    text-decoration: underline;
+    background: $primary-color-hover !important;
+    background-size: 150% !important;
+    transition: .5s !important;
 }
 
 .btn_fs {
