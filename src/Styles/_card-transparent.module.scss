@@ -24,6 +24,7 @@
     left: -50%;
     transform: skew(-5deg) !important;
     filter: blur(10px);
+    opacity: 0;
 }
 
 .background_card:hover:before {
@@ -37,6 +38,7 @@
     transition: .3s linear;
     transform: skew(-5deg) !important;
     filter: blur(25px);
+    opacity: 1;
 }
 
 @media screen and (max-width:760px) {
