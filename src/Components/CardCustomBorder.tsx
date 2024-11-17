@@ -19,7 +19,7 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, ini
     const customCardAnimation = () => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.from(`.card_custom_border_${initialPos}`, {
-            y: initialPos,
+            y: initialPos!,
             position: "relative",
             ease: 'power2.inOut',
             opacity: 0,
@@ -33,10 +33,10 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, ini
             opacity: 1,
             scrollTrigger: {
                 trigger: `.card_custom_border_${initialPos}`,
-                start: `-${initialPos + 300}px 320px`,
-                end: `0 ${initialPos + 150}px`,
+                start: `-520px 520px`,
+                end: `0 ${initialPos! + 150}px`,
                 scrub: true,
-                //markers: true,
+                markers: true,
             }
         })
 
