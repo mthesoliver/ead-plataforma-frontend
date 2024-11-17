@@ -34,7 +34,7 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, ini
                 start: `-520px 520px`,
                 end: `0 ${initialPos! + 150}px`,
                 scrub: true,
-                markers: true,
+                //markers: true,
             }
         })
 
