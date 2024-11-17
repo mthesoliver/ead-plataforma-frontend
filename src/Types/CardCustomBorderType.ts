@@ -6,4 +6,5 @@ export type CardCustomType = {
     title: string;
     content: string;
     size?: number;
+    initialPos?: number;
 }

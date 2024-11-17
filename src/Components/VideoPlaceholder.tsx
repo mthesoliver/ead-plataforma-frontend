@@ -8,8 +8,10 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import { useLayoutEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import useResize from 'Ead/CustomHooks/useResize';
 
 function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
+    const { isMobile } = useResize();
     const [openVideo, setOpenVideo] = useState(false);
     const stylesClass = styles.video_wrapper + ' ' + styles.video_overlay;
     const opts: YouTubeProps['opts'] = {
@@ -46,8 +48,10 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     }
 
     useLayoutEffect(() => {
-        videoMockAnimation();
-    }, [])
+        if (!isMobile) {
+            videoMockAnimation();
+        }
+    }, [isMobile])
 
     return (
 

@@ -85,18 +85,22 @@ export default function Home() {
             <div id="carousel_cards" className={`d-flex flex-row justify-content-${!isMobile ? 'center' : 'start'} z3 position-relative gap-4 `}>
               <CardCustomBorder givenIcon={ImportantDevicesIcon}
                 size={!isMobile ? 3 : 10}
+                initialPos={300}
                 title="Venda seus cursos em nossa vitrine"
                 content="Com nossa plataforma, você pode criar, gerenciar e vender infoprodutos de forma fácil e eficaz." />
               <CardCustomBorder givenIcon={Diversity3Icon}
                 size={!isMobile ? 3 : 10}
+                initialPos={400}
                 title="Criação de cursos coorporativos"
                 content="Nossa plataforma oferece tudo o que você precisa para criar uma escola de cursos online completa." />
               <CardCustomBorder givenIcon={DashboardCustomizeIcon}
                 size={!isMobile ? 3 : 10}
+                initialPos={500}
                 title="Transforme sua plataforma para seu nicho"
                 content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
               <CardCustomBorder givenIcon={GroupIcon}
                 size={!isMobile ? 3 : 10}
+                initialPos={600}
                 title="Crie a sua própria área de membros"
                 content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
             </div>
