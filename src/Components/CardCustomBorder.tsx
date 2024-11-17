@@ -23,13 +23,11 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, ini
             position: "relative",
             ease: 'power2.inOut',
             opacity: 0,
-            zIndex: 99
         })
         gsap.to(`.card_custom_border_${initialPos}`, {
             y: 0,
             position: "relative",
             ease: 'power2.inOut',
-            zIndex: 99,
             opacity: 1,
             scrollTrigger: {
                 trigger: `.card_custom_border_${initialPos}`,
