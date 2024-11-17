@@ -13,7 +13,7 @@ import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
-function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, initialPos = 520 }: Readonly<CardCustomType>) {
+function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, initialPos }: Readonly<CardCustomType>) {
     const { isMobile } = useResize();
 
     const customCardAnimation = () => {
