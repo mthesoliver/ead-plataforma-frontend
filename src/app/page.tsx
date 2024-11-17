@@ -32,12 +32,12 @@ import ScheduleFixButton from "Ead/Components/ScheduleFixButton";
 import SliderBestFee from "Ead/Components/SliderBestFee";
 import WhatsAppFixButton from "Ead/Components/WhatsAppFixButton";
 import PersonalizePlataform from "Ead/Components/PersonalizePlataform";
+import Link from "next/link";
 
 export default function Home() {
   const { isMobile } = useResize();
   const [oveflowCard, setOverflowCard] = useState<boolean>(false);
 
-  const [switchPay, setSwitchPay] = useState<boolean>(true);
   const [typeOfPay, setTypeOfPay] = useState<string>('mensal');
 
   const handleOverflow = (e: any) => {
@@ -52,10 +52,8 @@ export default function Home() {
 
     // Muda o estado apenas se o botão clicado for diferente do atual
     if (selectedPay === 'mensal') {
-      setSwitchPay(true);
       setTypeOfPay('mensal');
     } else if (selectedPay === 'anual') {
-      setSwitchPay(false);
       setTypeOfPay('anual');
     }
   };
@@ -229,9 +227,11 @@ export default function Home() {
             <section id="features_overflow" className={"row " + (!oveflowCard ? styles.features_overflow + ' ' + styles.features_overflow_closed : styles.features_overflow + ' ' + styles.features_overflow_open)}>
               {!isMobile && (
                 <span className={"d-flex flex-row justify-content-center " + (!oveflowCard ? styles.features_overflow_btn : styles.features_overflow_btn_open)} onClick={(e: any) => handleOverflow(e)}>
+                  <Link href={"#features_container"}>
                   <Button btnColor="light" rounded>
                     {!oveflowCard ? 'Confira a lista completa de funcionalidades' : 'Ocultar a lista de funcionalidades'}
                   </Button>
+                  </Link>
                 </span>
               )}
               <div id="features_cards" className={`d-flex flex-row ${!isMobile ? 'row' : 'col'} pt-5 m-auto gap-4 justify-content-start w-100`}>

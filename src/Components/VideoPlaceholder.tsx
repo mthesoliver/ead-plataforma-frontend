@@ -2,10 +2,12 @@
 
 import { Box, StyledEngineProvider } from '@mui/material';
 import styles from 'Ead/Styles/_video-placeholder.module.scss';
-import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
+import YouTube, { YouTubeProps } from "react-youtube";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     const [openVideo, setOpenVideo] = useState(false);
@@ -22,6 +24,30 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
     const handleOpenVideo = () => {
         setOpenVideo(!openVideo);
     }
+
+    const videoMockAnimation = () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("#video_mock", {
+            y: 200,
+            position: "relative",
+            ease: 'power2.inOut',
+            scrollTrigger: {
+                trigger: "#placeholder_wrapper",
+                start: "0 120px",
+                end: "720px 200px",
+                scrub: true,
+                //markers: true,
+            }
+        })
+
+        return (() => {
+            gsap.killTweensOf("#video_mock");
+        });
+    }
+
+    useLayoutEffect(() => {
+        videoMockAnimation();
+    }, [])
 
     return (
 
@@ -42,7 +68,7 @@ function VideoPlaceholder(props: Readonly<{ videoId: string }>) {
             </Box>
             <Box component={"section"} className={'position-relative ' + styles.video_placeholder}>
                 <Box component={"div"} className={'position-absolute d-flex justify-content-center align-items-center m-auto '}>
-                    <img src='/assets/images/plataform_dash.png' className={styles.video_mock}></img>
+                    <img id="video_mock" src='/assets/images/plataform_dash.png' className={styles.video_mock}></img>
                 </Box>
             </Box>
 
