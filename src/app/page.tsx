@@ -23,7 +23,7 @@ import IntegrationsImageCols from "Ead/Components/IntegrationsImageCols";
 import PriceCard from "Ead/Components/PriceCard";
 import AccordionCustom from "Ead/Components/AccordionCustom";
 import Footer from "Ead/Components/Footer";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import DemonstrationCta from "Ead/Components/DemonstrationCta";
 import GroupIcon from '@mui/icons-material/Group';
 import useResize from "Ead/CustomHooks/useResize";
@@ -33,6 +33,8 @@ import SliderBestFee from "Ead/Components/SliderBestFee";
 import WhatsAppFixButton from "Ead/Components/WhatsAppFixButton";
 import PersonalizePlataform from "Ead/Components/PersonalizePlataform";
 import Link from "next/link";
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 export default function Home() {
   const { isMobile } = useResize();
@@ -57,6 +59,35 @@ export default function Home() {
       setTypeOfPay('anual');
     }
   };
+
+  const laptopAnimation = () => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(`.laptop_image`, {
+      ease: 'power2.inOut',
+      opacity: 0,
+    })
+    gsap.to(`.laptop_image`, {
+      ease: 'power2.inOut',
+      opacity: 1,
+      scrollTrigger: {
+        trigger: `#trust_us_container`,
+        start: `-150px 300px`,
+        end: `-50px  600px`,
+        scrub: true,
+        //markers: true,
+      }
+    })
+
+    return (() => {
+      gsap.killTweensOf(`.laptop_image`);
+    });
+  }
+
+  useLayoutEffect(() => {
+    if (!isMobile) {
+      laptopAnimation();
+    }
+  }, [isMobile])
 
   return (
 
@@ -112,20 +143,24 @@ export default function Home() {
             <HeroTextCustom sub={"da nossa plataforma?"} title={"Quais são os principais recursos"} titleSize={80} />
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="EAD Live"
+                initialPos={-200}
                 link="https://docs.eadplataforma.com/docs/aulas-ao-vivo"
                 subTitle="Deixe seus alunos mais engajados criando aulas ao vivo. Você pode disponibilizar um chat em tempo real para comunicação."
                 imagePath="/assets/images/bg_card_image_2.png" size={!isMobile ? 7 : 12} />
               <CardSimple title="EAD Player"
+                initialPos={300}
                 link="https://eadplataforma.com/eadplayer"
                 subTitle="Nosso player oferece os recursos mais utilizados pelos players tradicionais, reunidos em um só."
                 imagePath="/assets/images/bg_card_image_1.png" size={!isMobile ? 5 : 12} />
             </div>
             <div className={`d-flex flex-row gap-4 flex-${!isMobile ? 'nowrap' : 'wrap'}`}>
               <CardSimple title="Provas e Certificados"
+                initialPos={-300}
                 link="https://docs.eadplataforma.com/docs/certificados-emitidos"
                 subTitle="Insira provas entre aulas e módulos, torne a prova requisito, programe a liberação com data fixa ou flexível, área de boletim."
                 imagePath="/assets/images/bg_card_image_4.png" size={!isMobile ? 5 : 12} />
               <CardSimple title="EAD Checkout"
+                initialPos={200}
                 link="https://docs.eadplataforma.com/docs/ead-checkout"
                 subTitle="Ofereça opções customizadas de pagamentos, configure parcelamento, juros e vencimento do boleto por curso."
                 imagePath="/assets/images/bg_card_image_3.png" size={!isMobile ? 7 : 12} />
@@ -168,7 +203,7 @@ export default function Home() {
             <HeroTextCustom sub={"Sucesso com nossa plataforma EAD"} title={"Quem confia em nós!"} titleSize={60} />
             <figure>
               <img src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
-                className="position-relative top-0 start-50 translate-middle-x"></img>
+                className="laptop_image position-relative top-0 start-50 translate-middle-x"></img>
             </figure>
             <section className="text-center my-2 py-2">
               <StampCircle>Mais de 1.600 escolas confiam em nós</StampCircle>
