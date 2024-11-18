@@ -23,7 +23,7 @@ import IntegrationsImageCols from "Ead/Components/IntegrationsImageCols";
 import PriceCard from "Ead/Components/PriceCard";
 import AccordionCustom from "Ead/Components/AccordionCustom";
 import Footer from "Ead/Components/Footer";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import DemonstrationCta from "Ead/Components/DemonstrationCta";
 import GroupIcon from '@mui/icons-material/Group';
 import useResize from "Ead/CustomHooks/useResize";
@@ -35,9 +35,11 @@ import PersonalizePlataform from "Ead/Components/PersonalizePlataform";
 import Link from "next/link";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import { relative } from "path";
 
 export default function Home() {
   const { isMobile } = useResize();
+  const laptopImage = useRef(null);
   const [oveflowCard, setOverflowCard] = useState<boolean>(false);
 
   const [typeOfPay, setTypeOfPay] = useState<string>('mensal');
@@ -62,24 +64,29 @@ export default function Home() {
 
   const laptopAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(`.laptop_image`, {
-      ease: 'power2.inOut',
+    gsap.from(laptopImage.current, {
       opacity: 0,
+      scrollTrigger: {
+        trigger: laptopImage.current,
+        start: "-150px 300px",
+        end: "-50px  600px",
+        scrub: false,
+        //markers: true,
+      }
     })
-    gsap.to(`.laptop_image`, {
-      ease: 'power2.inOut',
+    gsap.to(laptopImage.current, {
       opacity: 1,
       scrollTrigger: {
-        trigger: `#trust_us_container`,
-        start: `-150px 300px`,
-        end: `-50px  600px`,
-        scrub: true,
+        trigger: laptopImage.current,
+        start: "-150px 300px",
+        end: "-50px  600px",
+        scrub: false,
         //markers: true,
       }
     })
 
     return (() => {
-      gsap.killTweensOf(`.laptop_image`);
+      gsap.killTweensOf(laptopImage.current);
     });
   }
 
@@ -126,12 +133,12 @@ export default function Home() {
                 content="Nossa plataforma oferece tudo o que você precisa para criar uma escola de cursos online completa." />
               <CardCustomBorder givenIcon={DashboardCustomizeIcon}
                 size={!isMobile ? 3 : 10}
-                initialPos={500}
+                initialPos={350}
                 title="Transforme sua plataforma para seu nicho"
                 content="Com nossa plataforma, você pode desenvolver capacitar seus colaboradores e acompanhar o progresso de cada um." />
               <CardCustomBorder givenIcon={GroupIcon}
                 size={!isMobile ? 3 : 10}
-                initialPos={600}
+                initialPos={500}
                 title="Crie a sua própria área de membros"
                 content="Com a nossa ferramenta de criação de áreas de membros, você pode oferecer acesso a materiais exclusivos e muito mais." />
             </div>
@@ -202,8 +209,8 @@ export default function Home() {
           <div className="container d-flex flex-column col gap-4">
             <HeroTextCustom sub={"Sucesso com nossa plataforma EAD"} title={"Quem confia em nós!"} titleSize={60} />
             <figure>
-              <img src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
-                className="laptop_image position-relative top-0 start-50 translate-middle-x"></img>
+              <img ref={laptopImage} src="/assets/images/trust_us_image.png" width={!isMobile ? 1440 : 480} height={!isMobile ? 450 : 160} alt="Imagem com clientes da empresa"
+                className="position-relative top-0 start-50 translate-middle-x"></img>
             </figure>
             <section className="text-center my-2 py-2">
               <StampCircle>Mais de 1.600 escolas confiam em nós</StampCircle>

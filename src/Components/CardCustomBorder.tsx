@@ -21,19 +21,24 @@ function CardCustomBorder({ givenIcon: GivenIcon, title, content, size = 12, ini
         gsap.from(`.card_custom_border_${initialPos}`, {
             y: initialPos!,
             position: "relative",
-            ease: 'power2.inOut',
             opacity: 0,
+            scrollTrigger: {
+                trigger: `.card_custom_border_${initialPos}`,
+                start: `-320px 520px`,
+                end: `0 ${initialPos! + 300}px`,
+                scrub: false,
+                //markers: true,
+            }
         })
         gsap.to(`.card_custom_border_${initialPos}`, {
             y: 0,
             position: "relative",
-            ease: 'power2.inOut',
             opacity: 1,
             scrollTrigger: {
                 trigger: `.card_custom_border_${initialPos}`,
-                start: `-520px 520px`,
-                end: `0 ${initialPos! + 150}px`,
-                scrub: true,
+                start: `-320px 520px`,
+                end: `0 ${initialPos! + 300}px`,
+                scrub: false,
                 //markers: true,
             }
         })

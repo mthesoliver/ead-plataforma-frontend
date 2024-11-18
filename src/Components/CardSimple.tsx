@@ -21,19 +21,24 @@ function CardSimple({ title, subTitle, imagePath, size, link, initialPos = 100 }
         gsap.from(`.card_simple${initialPos!}`, {
             x: initialPos!,
             position: "relative",
-            ease: 'power2.inOut',
             opacity: 0,
+            scrollTrigger: {
+                trigger: `#cards_img_container`,
+                start: `-150px 300px`,
+                end: `-50px  600px`,
+                scrub: false,
+                //markers: true,
+            }
         })
         gsap.to(`.card_simple${initialPos!}`, {
             x: 0,
             position: "relative",
-            ease: 'power2.inOut',
             opacity: 1,
             scrollTrigger: {
                 trigger: `#cards_img_container`,
                 start: `-150px 300px`,
                 end: `-50px  600px`,
-                scrub: true,
+                scrub: false,
                 //markers: true,
             }
         })
