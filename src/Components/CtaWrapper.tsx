@@ -1,17 +1,57 @@
 'use client'
 
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
 
 import { CtaType } from 'Ead/Types/CtaType';
 import { Box, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children, border }: Readonly<CtaType>) {
     const { isMobile } = useResize();
+    const ctaWrapper = useRef(null);
+
+    const ctaAnimation = () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(ctaWrapper.current, {
+            y: 300,
+            position: "relative",
+            opacity: 0,
+            scrollTrigger: {
+                trigger: ctaWrapper.current,
+                start: "-150px 300px",
+                end: "-200px  600px",
+                scrub: false,
+                //markers: true,
+            }
+        })
+        gsap.to(ctaWrapper.current, {
+            y: 0,
+            position: "relative",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ctaWrapper.current,
+                start: "-150px 300px",
+                end: "-200px  600px",
+                scrub: false,
+                //markers: true,
+            }
+        });
+
+        return (() => {
+            gsap.killTweensOf(ctaWrapper.current);
+        });
+    }
+
+    useLayoutEffect(() => {
+        if (!isMobile) {
+            ctaAnimation();
+        }
+    }, [isMobile])
 
     const CustomCardContent = ({ title, titleSize, subTitle, fontColor, children }: Readonly<CtaType>) => {
         return (
@@ -31,7 +71,7 @@ function CtaWrapper({ title, titleSize, subTitle, imagePath, fontColor, children
 
     return (
         <StyledEngineProvider injectFirst>
-            <Card className={"d-flex flex-row p-4 align-items-center justify-content-center text-center"}
+            <Card ref={ctaWrapper} className={"d-flex flex-row p-4 align-items-center justify-content-center text-center"}
                 variant="outlined"
                 sx={
                     {

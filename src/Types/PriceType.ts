@@ -11,4 +11,5 @@ export type PriceType = {
     color?: string;
     column?: boolean;
     opts?: { description: string, smallDescription?: string };
+    initialPos?: number;
 }

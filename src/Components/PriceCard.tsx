@@ -10,6 +10,9 @@ import { PriceType } from 'Ead/Types/PriceType';
 import Button from './Button';
 import { Badge, StyledEngineProvider } from '@mui/material';
 import useResize from 'Ead/CustomHooks/useResize';
+import { useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readonly<PriceType>) => {
     const { isMobile } = useResize();
@@ -56,12 +59,48 @@ export const PriceListAdvantages = ({ children, btnText, color, btnLink }: Reado
 };
 
 
-function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink }: Readonly<PriceType>) {
+function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink, initialPos }: Readonly<PriceType>) {
     const isColumn = column ? 'flex-column' : 'flex-row';
+
+    const customCardAnimation = () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(`.price_card_${initialPos}`, {
+            y: initialPos!,
+            position: "relative",
+            opacity: 0,
+            scrollTrigger: {
+                trigger: `.price_card_${initialPos}`,
+                start: `-200px 520px`,
+                end: `400px ${initialPos! + 300}px`,
+                scrub: false,
+                //markers: true,
+            }
+        })
+        gsap.to(`.price_card_${initialPos}`, {
+            y: 0,
+            position: "relative",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: `.price_card_${initialPos}`,
+                start: `-200px 520px`,
+                end: `400px ${initialPos! + 300}px`,
+                scrub: false,
+                //markers: true,
+            }
+        })
+
+        return (() => {
+            gsap.killTweensOf(`.price_card_${initialPos}`);
+        });
+    }
+
+    useLayoutEffect(() => {
+        customCardAnimation();
+    }, [])
 
     return (
         <StyledEngineProvider injectFirst>
-            <Card component={'div'} className={`d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
+            <Card component={'div'} className={`price_card_${initialPos} d-flex py-5 align-items-center justify-content-center text-center gap-1 position-relative z-1 ` + (color ? styles.background_card_dark : styles.background_card) + ' ' + isColumn} variant="outlined" >
                 {badge && (
                     <Badge sx={{ color: "#fff", padding: '.6rem 1.5rem !important', borderRadius: '120px' }} className={styles.badge_wrapper}>
                         {badge}

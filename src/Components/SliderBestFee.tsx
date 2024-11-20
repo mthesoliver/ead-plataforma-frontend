@@ -129,7 +129,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
     return (
         <CardContent className={`d-flex flex-row row align-items-center justify-content-center ` + (!isMobile ? 'col-6' : 'col-12')}>
             <Box className={`d-flex flex-row align-items-center justify-content-center`}>
-                <img src={mainImage} alt='Logotipo da Ead Plataforma' width={!isMobile ? 237 : 237 / 2} height={!isMobile ? 75 : 75 / 2} />
+                <img src={mainImage} alt='Logotipo da Ead Plataforma' width={!isMobile ? 100 : 100 / 2} height={!isMobile ? 100 : 100 / 2} />
             </Box>
 
             <Box className={'d-flex flex-column row text-center'}>
@@ -162,7 +162,7 @@ const CardFeeContentOthers = ({ currentValue }: CardFeeInnerOthers) => {
                     <Box component={'span'} className='d-flex flex-row m-auto align-items-center mt-3'>
                         <CancelIcon className={'me-1'} sx={{ color: '#D12C38', fontSize: '18px' }} />
                         <Typography component={'p'} variant="body2" className='fw-bolder' sx={{ fontSize: 14, lineHeight: 1.6, color: '#fff' }}>
-                            Juros de parcelamento <b>{currentConcurrent}</b>
+                            Juros de parcelamento
                         </Typography>
                     </Box>
                 </Typography>

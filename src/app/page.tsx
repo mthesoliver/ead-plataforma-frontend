@@ -35,11 +35,11 @@ import PersonalizePlataform from "Ead/Components/PersonalizePlataform";
 import Link from "next/link";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
-import { relative } from "path";
 
 export default function Home() {
   const { isMobile } = useResize();
   const laptopImage = useRef(null);
+  const youtube = useRef(null);
   const [oveflowCard, setOverflowCard] = useState<boolean>(false);
 
   const [typeOfPay, setTypeOfPay] = useState<string>('mensal');
@@ -62,7 +62,7 @@ export default function Home() {
     }
   };
 
-  const laptopAnimation = () => {
+  const homeAnimations = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(laptopImage.current, {
       opacity: 0,
@@ -83,16 +83,40 @@ export default function Home() {
         scrub: false,
         //markers: true,
       }
+    });
+
+    gsap.from('.youtube_animation', {
+      y: 300,
+      position: "relative",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.youtube_animation',
+        start: `-650px 300px`,
+        scrub: false,
+        //markers: true,
+      }
     })
+    gsap.to('.youtube_animation', {
+      y: 0,
+      position: "relative",
+      opacity: 1,
+      scrollTrigger: {
+        trigger: '.youtube_animation',
+        start: `-650px 300px`,
+        scrub: false,
+        //markers: true,
+      }
+    });
 
     return (() => {
       gsap.killTweensOf(laptopImage.current);
+      gsap.killTweensOf(youtube.current);
     });
   }
 
   useLayoutEffect(() => {
     if (!isMobile) {
-      laptopAnimation();
+      homeAnimations();
     }
   }, [isMobile])
 
@@ -227,8 +251,8 @@ export default function Home() {
                   Veja o que nossos cliente falam sobre nós
                 </Typography>
                 <div className={`d-inline-flex flex-${!isMobile ? 'row' : 'column'} gap-4 justify-content-center align-items-center`}>
-                  <YouTube videoId={'YNDLz591K1g'} className={styles.round_border_video} />
-                  <YouTube videoId={'92Cyo_axj2w'} className={styles.round_border_video} />
+                  <YouTube ref={youtube} videoId={'YNDLz591K1g'} className={styles.round_border_video + ' youtube_animation'} />
+                  <YouTube videoId={'92Cyo_axj2w'} className={styles.round_border_video + ' youtube_animation'} />
                 </div>
 
                 <section className={`d-flex flex-${!isMobile ? 'row' : 'column'} gap-4 flex-nowrap text-center justify-content-center align-items-center my-5`}>
@@ -437,6 +461,7 @@ export default function Home() {
 
                 <div id="price_cards" className={`d-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
                   <PriceCard
+                    initialPos={300}
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -485,6 +510,7 @@ export default function Home() {
                   </PriceCard>
 
                   <PriceCard
+                    initialPos={350}
                     plans={'Essencials'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -535,6 +561,7 @@ export default function Home() {
                   </PriceCard>
 
                   <PriceCard
+                    initialPos={300}
                     plans={'Premium'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -687,3 +714,4 @@ export default function Home() {
     </StyledEngineProvider >
   );
 }
+
