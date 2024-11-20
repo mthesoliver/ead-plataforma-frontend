@@ -12,4 +12,5 @@ export type PriceType = {
     column?: boolean;
     opts?: { description: string, smallDescription?: string };
     initialPos?: number;
+    anualValue?: string
 }

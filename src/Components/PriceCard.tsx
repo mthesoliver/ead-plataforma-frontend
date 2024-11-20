@@ -14,7 +14,7 @@ import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
-export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readonly<PriceType>) => {
+export const PriceContent = ({ plans, opts, color, children, typeOfpay, anualValue }: Readonly<PriceType>) => {
     const { isMobile } = useResize();
 
     return (
@@ -29,7 +29,7 @@ export const PriceContent = ({ plans, opts, color, children, typeOfpay }: Readon
                 {children}
                 {typeOfpay && (
                     <span className='fs-6 fw-regular mb-4'>
-                        {typeOfpay === 'mensal' ? 'Cobrado mensalmente no cartão de crédito, pix ou boleto' : 'Parcelado no cartão ou 3.999 anualmente à vista no pix ou boleto'}
+                        {typeOfpay === 'mensal' ? 'Cobrado mensalmente no cartão de crédito, pix ou boleto' : `Parcelado no cartão ou ${anualValue} anualmente à vista no pix ou boleto`}
                     </span>
                 )}
             </Typography>
@@ -59,7 +59,7 @@ export const PriceListAdvantages = ({ children, btnText, color, btnLink }: Reado
 };
 
 
-function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink, initialPos }: Readonly<PriceType>) {
+function PriceCard({ plans, opts, color, children, column, listchildren, btnText, typeOfpay, badge, btnLink, initialPos, anualValue }: Readonly<PriceType>) {
     const isColumn = column ? 'flex-column' : 'flex-row';
 
     const customCardAnimation = () => {
@@ -107,7 +107,7 @@ function PriceCard({ plans, opts, color, children, column, listchildren, btnText
                     </Badge>
                 )}
                 <CardContent className={"px-4 mb-2 d-flex flex-column col " + (column ? 'col-12' : 'col-6')} >
-                    <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay} btnLink={btnLink}>
+                    <PriceContent opts={opts} plans={plans} color={color} typeOfpay={typeOfpay} btnLink={btnLink} anualValue={anualValue}>
                         <div className='d-flex flex-row align-items-end justify-content-center'>
                             {typeOfpay === 'anual' && (
                                 <Typography sx={{ fontSize: "20px !important", paddingBottom: "25px!important", paddingRight: "10px!important" }} className='fw-bold'>

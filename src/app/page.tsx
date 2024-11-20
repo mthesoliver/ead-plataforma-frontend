@@ -462,6 +462,7 @@ export default function Home() {
                 <div id="price_cards" className={`d-flex flex-row gap-4 mt-5 justify-content-center align-items-center ` + (isMobile ? 'row' : '')}>
                   <PriceCard
                     initialPos={300}
+                    anualValue="3.999"
                     plans={'Standard'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -511,6 +512,7 @@ export default function Home() {
 
                   <PriceCard
                     initialPos={350}
+                    anualValue="5.999"
                     plans={'Essencials'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -557,11 +559,12 @@ export default function Home() {
                         </ListItem>
                       </List>
                     }>
-                    R$499
+                    R$599
                   </PriceCard>
 
                   <PriceCard
                     initialPos={300}
+                    anualValue="7.999"
                     plans={'Premium'}
                     btnText={'Comece hoje mesmo'}
                     btnLink="#video_container"
@@ -602,7 +605,7 @@ export default function Home() {
                         </ListItem>
                       </List>
                     }>
-                    R$599
+                    R$799
                   </PriceCard>
                 </div>
 
