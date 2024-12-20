@@ -12,7 +12,6 @@ function removeStyle(arr, time) {
     return setTimeout(() => {
         arr.forEach(el => {
             el.classList.add('hidden');
-            console.log(el);
         });
     }, time);
 }

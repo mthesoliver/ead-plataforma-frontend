@@ -26,7 +26,7 @@ function DemonstrationForm() {
         }
 
         if (email && name) {
-            console.log(email, name)
+            return;
         }
     }
 
